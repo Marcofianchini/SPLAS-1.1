@@ -1,0 +1,56 @@
+{
+  "splas_simulation":"open_system",
+
+  "filepath" :
+      {
+      "dir_out":"./OUTPUT"
+      },
+
+  "cell" :
+  {
+    "input_supply_nut":4,
+    "time-varying":0,
+    "nutrients":
+
+      {"name":"N","value":1.0}
+
+  },
+
+  "scalar" :
+  {
+    "number_nutrients":3,
+    "phyto_class_size":70,
+    "zoo_class_size":70,
+    "phyto_x_min":1.0,
+    "phyto_x_max":200.0,
+    "zoo_x_min":2.0,
+    "zoo_x_max":1000.0,
+    "zoo_growth_eff":0.33,
+    "zoo_eg_frac":0.33,
+    "phyto_mort":0.05,
+    "phyto_sinking":0.0041,
+    "zoo_mort":0.2,
+    "zoo_half_sat":3.0,
+    "zoo_prey_size_tolerance":0.25,
+    "initial_p":0.01,
+    "initial_z":0.001,
+    "initial_p_quota":0.1,
+    "initial_diff":0.0001
+
+
+  },
+
+  "simulation_par":
+  {
+    "sim_length":3652.0,
+    "delta_t":0.012,
+    "print_step":300,
+    "delta_z":5.0,
+    "n_layers":41,
+    "izero":959.825439,
+    "sd":0,
+    "delta":0
+
+  }
+
+}
