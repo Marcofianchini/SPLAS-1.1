@@ -20,10 +20,10 @@ If you would like to use this code for further development or modifications/adap
 Marco put all of his effort in developing this stuff, so please give the right credit to this work.
 Thank you! :) 
 
-SPLAS 1.1 (Fianchini,2021):
+SPLAS 1.1 :
 - inclusion of light input (izero),the possibility to increase/decrease light input linearly in time (delta) and the possibility to make it normally distributed(choosing the standard deviation,sd, parameter). 
 - subroutines supply_season and supply_day added in functions.f90 to simulate seasonal and daily light input variation.
-For further details ask to fianchini.marco@libero.it 
+For further details see the Master's degree Thesis by Marco Fianchini, "The role of light in community structure, biodiversity and biogeochemical fluxes: a modeling approach"         (2021) OR just ask to fianchini.marco@libero.it :)
 
 ### Set-up of the model ###
 
@@ -60,12 +60,13 @@ Please refer to the documentation cited above (and here recalled):
 
 * For further details see the PhD Thesis by Marco De Pasquale, "The role of plankton size in community structure, biodiversity and biogeochemical fluxes: a modeling approach" (2018).
   If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this work.
+* For further details see the Master's degree Thesis by Marco Fianchini, "The role of light in community structure, biodiversity and biogeochemical fluxes: a modeling approach"         (2021).
+  If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this work.
 * For the technical part, try to use the libraries reported in the section above ("Set-up of the model") which make up the two possible environments
   that were used to conduct the experiments reported in the thesis. Since such experiments were finished at the end of 2017, if using those libraries is not possible for some reason,
   or if updates with breaking changes have been released meantime...well, good luck with that!
   UPDATE 07/2021 it still works but the warning for the future remains. 
-* For further details see the Master's degree Thesis by Marco Fianchini, "The role of light in community structure, biodiversity and biogeochemical fluxes: a modeling approach" (2021).
-  If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this works.
+
 
 ### Contacts ###
 
