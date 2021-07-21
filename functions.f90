@@ -13,7 +13,7 @@
   public :: allometric,monod,p_growth
   public :: nut_metrics,graz_metrics,time_mean_biomass
   public :: shannon_evenness,initialise,eff_grazing,small_biomass
-  public :: supply_per
+  public :: supply_per,supply_season, supply_day
   public :: mu_tang
   public :: phyto_sink
   public :: phyto_carbon,phyto_c_export,zoo_c_export
@@ -431,12 +431,36 @@ implicit none
 double precision, intent(in) :: dt
 integer, intent(in) :: i
 double precision, parameter :: pie = 3.1415926535
-double precision, parameter :: OM = pie/1.0
+double precision, parameter :: OM = pie/365.0
 double precision, parameter :: A = 1.0
 
-r = A*(sin(OM*i))**2    !tolto dt dentro la parentesi del seno
+r = A*(sin(OM*i*dt))**2    
 
 end function supply_per
+
+double precision function supply_season(dt,i) result(r) !Light supply..seasonal(time-varying) Fianchini (2021)
+implicit none
+double precision, intent(in) :: dt
+integer, intent(in) :: i
+double precision, parameter :: pie = 3.1415926535
+double precision, parameter :: OM = pie/(365.0/2)
+double precision, parameter :: A = 1.0
+
+r = A*(sin(OM*i*dt))**2
+
+end function supply_season
+
+double precision function supply_day(dt,i) result(r) !Light supply..daily (time-varying)  Fianchini (2021)
+implicit none									     ! BE CAREFUL! not implemented in solver.f90
+double precision, intent(in) :: dt
+integer, intent(in) :: i
+double precision, parameter :: pie = 3.1415926535
+double precision, parameter :: OM = pie
+double precision, parameter :: A = 1.0
+
+r = A*(sin(OM*i*dt))**2
+
+end function supply_day
 
 !-------------------------------------------------------------------------------------------------------------------------!
 !-------------------------------------------------------------------------------------------------------------------------!

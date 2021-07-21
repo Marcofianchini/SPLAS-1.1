@@ -13,17 +13,17 @@ import time
 
 def ensemble_ns():
 
-    file1 = "./input/ns0.01.json"
-    file2 = "./input/ns0.1.json"
-    file3 = "./input/ns0.5.json"
-    filenew1 = "./input/ns2.json"
-    filenew2 = "./input/ns3.5.json"
-    filenew3 = "./input/ns7.json"
-    file4 = "./input/ns5.json"
-    filedef = './input/input0.json'
-    file5 = "./input/ns10.json"
-    file6 = "./input/ns20.json"
-    ns = [file1,file2,file3,filenew1,filenew2,filenew3,file4,filedef,file5,file6]
+    file1 = "./input/input1.json"
+    file2 = "./input/input4.json"
+    file3 = "./input/input3.json"
+    #filenew1 = "./input/ns2.json"
+    #filenew2 = "./input/ns3.5.json"
+    #filenew3 = "./input/ns7.json"
+    file4 = "./input/input0.json"
+    #filedef = './input/input0.json'
+    file5 = "./input/input5.json"
+    file6 = "./input/input6.json"
+    ns = [file1,file2,file3,file4,file5,file6]
     return ns
 
 ################################################################################################################################################################################################################
@@ -155,8 +155,8 @@ def ensemble_double():
     #file3 ="./sensitivity_json/sensitivity_wp1.json"
     #file4 ="./sensitivity_json/sensitivity_wp2.json"
     #double = [file1,file2,file3,file4]
-    file1 = "./input/default4.json"
-    file2 = "./input/gumble4.json"
+    file1 = "./input/input0.json"
+    file2 = "./input/input6.json"
     simu = splas.splas(file1)
     simu.get_input()
     simu.write()
@@ -176,8 +176,8 @@ def ensemble_double():
 
 def one_sim():
 
-    filexx = "./input_ps1/input6.json"
-    #filexx = "./input_closed_world_tv/input1.json"
+    filexx = "./input/input3.json"
+    #filexx = "./input/input0.json"
     #filexx = "./input_closed_world_tv/input2.json"
     #filexx = "./input_closed_world_tv/input3.json"
     #filexx = "./input_closed_world_tv/input4.json"
@@ -186,6 +186,7 @@ def one_sim():
     print("Using file {}".format(filexx))
     simu = splas.splas(filexx)
     simu.get_input()
+    #splas.splas.load_file(simu,"./SPLAS_PICKLE/",simu.io.name)
     simu.write()
     simu.sim()
     simu.store()
@@ -241,7 +242,7 @@ def slave(comm):
         default.store()
 
         #write files for results
-        default.get_simulation_output()
+        #default.get_simulation_output()
 
         t2=time.time()
         print(comm_rank,filedef," time = ",t2-t1)

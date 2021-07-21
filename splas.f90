@@ -325,7 +325,7 @@ subroutine calculation(this)
   do i = 1,this%number_layers
     call initialise(this%splas_1_phyto_class(:,1,i),this%splas_1_zoo_class(:,1,i),this%splas_1_nutrients(:,1,i),&
                     this%splas_1_p_quota(:,1,i),i*this%nut_value,this%initial_p,this%initial_z,this%initial_pquota)
-    this%diffusion_coeff(i) = this%initial_diff
+    this%diffusion_coeff(i) = this%initial_diff !tolto i*nut_value
     this%splas_detritus(1,i) = 0.0E0
     this%splas_irradiance(1,i) = 0.0E0
   end do

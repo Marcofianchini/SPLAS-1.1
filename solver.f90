@@ -162,7 +162,8 @@ call det_c_export(wdet,detritus(1,m),z_c_export(1))
 
 !!!!!!!!!!!!!TIME LOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 do k =1,nt
-i0 = ivalue(k+1)
+!i0=ivalue(k+1)            
+i0 =(0.5+0.5* supply_season(delta_t,k))*ivalue(k+1) !quote this and unquote previous line to set fixed light input (Fianchini)
   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!UPDATE OF THE VARIABLES...OUT OF SPACE LOOP!!!!!!!!!!
   do i = 1,m
 
@@ -193,7 +194,7 @@ i0 = ivalue(k+1)
 
   !!!!!!!!!!!!!SPACE LOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   do i = 2,m-1
-
+    !print*,det_old(i)
     !LIGHT LIMITATION, DEPENDING ON DEPTH
     !call p_light_lim(irradiance(i,dz),mu_0,pll)
     !
@@ -262,7 +263,9 @@ i0 = ivalue(k+1)
     pq_temp(:,i) = pq_temp(:,i) + pqb(:,i)
     !detritus
     det_temp(i) = det_temp(i) + detb(i)
-      
+    det_old(i) = detb(i)
+    !print*,det_old(i)  
+    det_old(i) = detb(i)
     !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
   end do
@@ -288,7 +291,7 @@ i0 = ivalue(k+1)
   pqb(:,m) = pqb(:,m-1) + psizesink*(delta_t/dz)*pqb(:,m-1)  !no exchange other than sinking
   !detritus
   detb(m) = detb(m-1) + wdet*(delta_t/dz)*detb(m-1)        !no exchange other than sinking
-  print*,detb(m)
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!average calculation for the boundaries
 
   ntemp(:,1) = ntemp(:,1) + nb(:,1)
@@ -304,7 +307,7 @@ i0 = ivalue(k+1)
   pq_temp(:,m) = pq_temp(:,m) + pqb(:,m)
   !detritus
   det_temp(m) = det_temp(m) + detb(m)
-
+  irr_temp(m)= irr_temp(m-1)
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PRINT
@@ -317,11 +320,14 @@ i0 = ivalue(k+1)
       call dcopy(dim,pq_temp(:,i)/pstep,1,pq(:,int(k/pstep)+1,i),1)
       detritus(int(k/pstep)+1,i) = det_temp(i)/pstep
       irradiance(int(k/pstep)+1,i) = irr_temp(i)
-      if( detritus(int(k/pstep+1),m) /= detritus(int(k/pstep+1),m)) then
-        write(*,*) 'NaN'
-        stop 
+      if(detritus(int(k/pstep)+1,i) /= detritus(int(k/pstep)+1,i)) then
+        print*,detritus(int(k/pstep)+1,i),k
+        stop
       end if
-      !  end if  
+      if(detritus(int(k/pstep)+1,i) <0) then
+        print*,detritus(int(k/pstep)+1,i),k
+        stop
+      end if
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       call nut_metrics(phs,n(1,int(k/pstep)+1,i),nmet(:,int(k/pstep)+1,i))
       call eff_grazing(mu_0,z(:,int(k/pstep)+1,i),phim,zir,kz,tot_pred(:,i),gmet(:,int(k/pstep)+1,i))
@@ -368,7 +374,7 @@ do i = 1,m
 
   pmeansi(i) = (1.0/(nt*delta_t))*dasum(int(nt/pstep)+1,pstep*delta_t*psi(:,i),1)
   zmeansi(i) = (1.0/(nt*delta_t))*dasum(int(nt/pstep)+1,pstep*delta_t*zsi(:,i),1)
-  !print*,detritus(12000,10)
+  print*,detritus(nt/pstep,i)
 end do
 
 end subroutine eq_solver
