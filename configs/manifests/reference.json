@@ -1,0 +1,25 @@
+{
+  "name": "reference",
+  "runs": [
+    {
+      "config": "../reference/reference_open_constant_default.json",
+      "config_hash": "e4f98bd3d7fe36f967d5ef9ab1f3c29eac6df049f8f4e0c4097ae0970cfbac04",
+      "duration_days": 3652.0,
+      "name": "reference_open_constant_default",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../reference/reference_closed_constant_default.json",
+      "config_hash": "a6d068960a745121658f1d677a34f24673d7b3c094116f65901e9c3fe02e97a4",
+      "duration_days": 3652.0,
+      "name": "reference_closed_constant_default",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    }
+  ]
+}

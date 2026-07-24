@@ -1,0 +1,75 @@
+{
+  "name": "critical_depth_100m",
+  "runs": [
+    {
+      "config": "../critical_depth_100m/I_m30.json",
+      "config_hash": "b3279cce1331851634d92719a58c52c6fc161a22f6184ac956bed5decb02f413",
+      "duration_days": 3652.0,
+      "name": "seasonal_100m_I_m30",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../critical_depth_100m/I_m20.json",
+      "config_hash": "a1f192d254c4ce2dbcd06eff508afdad5398ceb7c53f9c801fdd3d008da5693a",
+      "duration_days": 3652.0,
+      "name": "seasonal_100m_I_m20",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../critical_depth_100m/I_m10.json",
+      "config_hash": "538ae03acb9c8c9e9cb13067783c0df6daec629593cb00be1feea10615d58660",
+      "duration_days": 3652.0,
+      "name": "seasonal_100m_I_m10",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../critical_depth_100m/I_default.json",
+      "config_hash": "faeb0bd627009a570d1da6c137688b3029ff6d6c476cfc69cd6b2a260061c681",
+      "duration_days": 3652.0,
+      "name": "seasonal_100m_I_default",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../critical_depth_100m/I_p10.json",
+      "config_hash": "1048fb69debe8010918cc5493f7b5fde60296ab190d7051732064f8a76922ee9",
+      "duration_days": 3652.0,
+      "name": "seasonal_100m_I_p10",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../critical_depth_100m/I_p20.json",
+      "config_hash": "02d611328af3d12b5af3c9059f0138cfe82beb583960e3b3e82d477b82d21f0b",
+      "duration_days": 3652.0,
+      "name": "seasonal_100m_I_p20",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../critical_depth_100m/I_p30.json",
+      "config_hash": "3cd97c6e44548e1402dedf116a4ec5199ea879656a75ba75a6f5f457b9c27adc",
+      "duration_days": 3652.0,
+      "name": "seasonal_100m_I_p30",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    }
+  ]
+}

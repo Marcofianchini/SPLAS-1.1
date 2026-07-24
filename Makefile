@@ -1,93 +1,46 @@
-#
-#    SPLAS v 0.1 MAKEFILE
-#
+PYTHON ?= python3
+FC = gfortran
+export FC
+F90FLAGS ?= -O2 -fPIC -ffree-form -ffree-line-length-none
+DEBUG_F90FLAGS ?= -O0 -g -fPIC -ffree-form -ffree-line-length-none -Wall -Wextra -Wimplicit-interface -fcheck=all -ffpe-trap=invalid,zero,overflow -fbacktrace
+PACKAGE_DIR := src/splas
+CORE_SOURCE := src/fortran/splas_core.f90
 
-########################################## COMPILER AND FLAGS
+.PHONY: all build build-debug install test test-python smoke reproduce-thesis clean audit
 
-FC=gfortran
-F2PY=f2py3.5
+all: build
 
-ifeq ($(FC),ifort)
-F2PYFLAG = --fcompiler=intelem
-F2PYFFLAG = "-free -fPIC -g"
-FFLAG = -free -fPIC -g -cpp
-DEBUG_FLAG= -g -O0
-LIBFLAG= -qopenmp
+build:
+	@command -v $(FC) >/dev/null || { echo "ERROR: Fortran compiler '$(FC)' not found."; exit 2; }
+	$(PYTHON) -m numpy.f2py -c -m _core $(CORE_SOURCE) --backend meson --f90flags="$(F90FLAGS)" --build-dir build/f2py
+	$(PYTHON) scripts/install_extension.py --module "_core*.so" --destination "$(PACKAGE_DIR)"
+	PYTHONPATH=src $(PYTHON) -c "from splas.backend import require_core; require_core(); print('SPLAS Fortran core import: OK')"
 
-else ifeq ($(FC),gfortran)
+build-debug:
+	@command -v $(FC) >/dev/null || { echo "ERROR: Fortran compiler '$(FC)' not found."; exit 2; }
+	$(PYTHON) -m numpy.f2py -c -m _core $(CORE_SOURCE) --backend meson --f90flags="$(DEBUG_F90FLAGS)" --build-dir build/f2py-debug
+	$(PYTHON) scripts/install_extension.py --module "_core*.so" --destination "$(PACKAGE_DIR)"
+	PYTHONPATH=src $(PYTHON) -c "from splas.backend import require_core; require_core(); print('SPLAS debug core import: OK')"
 
-F2PYFLAG =
-F2PYFFLAG = "-ffree-form -fPIC -Wall -g -ffree-line-length-none"
-FFLAG = -ffree-form -fPIC -Wall -ffree-line-length-none -g -cpp
-DEBUG_FLAG = -ffpe-trap=zero,invalid,overflow,underflow -fbacktrace -fbounds-check -g -O0
-LIBFLAG=
+install:
+	$(PYTHON) -m pip install -e .
 
-endif
+test: build
+	PYTHONPATH=src MPLCONFIGDIR=/tmp/splas-mpl SPLAS_REQUIRE_CORE=1 $(PYTHON) -m unittest discover -s tests -v
 
-########################################## LIBRARY FLAGS
+test-python:
+	PYTHONPATH=src MPLCONFIGDIR=/tmp/splas-mpl $(PYTHON) -m unittest discover -s tests -v
 
-SPLAS_LIB=./
-SPLAS_INC=./
+smoke: build
+	PYTHONPATH=src $(PYTHON) -m splas run configs/reference/smoke.json --output reproduction/results/smoke
+	PYTHONPATH=src $(PYTHON) -m splas analyze reproduction/results/smoke --output reproduction/tables/smoke
+	PYTHONPATH=src MPLCONFIGDIR=/tmp/splas-mpl $(PYTHON) -m splas figures reproduction/results/smoke --output reproduction/figures/smoke
 
-#USE SYSTEM LIB
-ifndef BLAS_LIB
+reproduce-thesis: build
+	PYTHONPATH=src MPLCONFIGDIR=/tmp/splas-mpl $(PYTHON) -m splas reproduce-thesis --output reproduction
 
-BLAS_LIB=/usr/lib/x86_64-linux-gnu/
-BLAS_INC=/usr/include/x86_64-linux-gnu/
+audit:
+	PYTHONPATH=src $(PYTHON) scripts/baseline_audit.py
 
-endif
-
-#MKL OR OTHER BLAS
-ifeq ($(FC),ifort) #running on pico
-
-LIB= -L${MKLROOT}/lib/intel64 -lmkl_rt -lmkl_core -lmkl_intel_thread -lpthread -lm -ldl
-INC= -qopenmp -I${MKLROOT}/include
-MKLSPLAS = 1
-
-else ifeq ($(FC),gfortran)
-
-LIB= -L$(BLAS_LIB) -lblas
-
-ifdef BLAS_INC
-INC= -I$(BLAS_INC)
-endif
-
-endif
-
-########################################## LIB AND WRAPPER
-
-OBJECTS=splas.o solver.o functions.o heuns_method.o
-
-libsplas.so : $(OBJECTS)
-		$(FC) -shared $(LIBFLAG) $^ $(LIB) -o $@
-
-splaspy : splas_py_wrapper.f90
-		$(F2PY) $(F2PYFLAG)  --f90flags=$(F2PYFFLAG) -L$(SPLAS_LIB) -I$(SPLAS_INC) -lsplas -c $^ -m $@
-
-
-########################################## DEPENDENCIES
-
-splas.o: functions.o solver.o
-
-functions.o:
-
-heuns_method.o:
-
-solver.o: heuns_method.o functions.o
-
-########################################## DEFAULTS AND PHONIES
-
-default :
- 	%.o : %.f90
-	$(FC) $(FFLAG) $(DEBUG_FLAG) $(INC) -c $<  -o $@
-
-.PHONY: all lib clean
-
-all : libsplas.so splaspy
-
-lib : libsplas.so
-
-wrapper_py : splaspy
-
-clean :
-	rm *.so *.mod *.o
+clean:
+	$(PYTHON) scripts/clean_build.py

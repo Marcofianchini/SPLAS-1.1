@@ -1,0 +1,15 @@
+{
+  "extends": "../base/thesis_reported.json",
+  "name": "reference_closed_constant_default",
+  "system": {
+    "mode": "closed",
+    "nutrient_supply_uM_N_d": 0.0,
+    "diffusion_m2_s": 0.0,
+    "remineralization_d": 0.5,
+    "detritus_sinking_m_d": 0.0,
+    "mortality_recycling_fraction": 1.0
+  },
+  "community": {
+    "phyto_sinking_coefficient_m_d": 0.0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "complete": false,
+  "result_groups": {
+    "reference": 0,
+    "constant_open": 0,
+    "constant_closed": 0,
+    "seasonal_200m": 0,
+    "critical_depth_100m": 0
+  },
+  "reason": "The current execution image has no Fortran compiler; run make reproduce-thesis in the supplied Dockerfile or another GNU Fortran environment.",
+  "verification": {
+    "python_tests_passed": 18,
+    "core_tests_skipped": 4,
+    "fortran_f2py_signature_parsed": true,
+    "smoke_run_completed": false
+  }
+}

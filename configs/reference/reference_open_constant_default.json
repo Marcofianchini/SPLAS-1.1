@@ -1,0 +1,4 @@
+{
+  "extends": "../base/thesis_reported.json",
+  "name": "reference_open_constant_default"
+}

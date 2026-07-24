@@ -1,74 +1,64 @@
-# SPLAS 1.1 #
+# SPLAS 1.1 - reproducible thesis pipeline
 
-SPLAS 1.0 (Sea PLAnkton Simulator) is a size-structure resolving N-P-Z (nutrient-phytoplankton-zooplankton) model, based on two simple assumptions: 
-fundamental plankton physiological traits scale with organism size and grazing by zooplankton is structured by an optimal predator-prey length ratio
-(along with a complex log-gaussian preference function in this case).
-The model is based on empirical allometric relationships used to parameterize all major plankton characteristics (taken from available literature).
-70 size-classes are defined for phytoplankton, in the range 1-200 μm, and there are 70 matching size-classes for zooplankton,
-in the range 2-1000 μm. Here phytoplankton are considered all autotrophic, uptaking Nitrogen and growing according to an internal dynamics (cellular quota).
-The cellular quota is very important as it allows to link phytoplankton biomass with the density of cell, which is also an important derived variable of the model,
-allowing for a conversion from Nitrogen to Carbon biomass and fluxes.
-Zooplankton are all heterotrophic, feeding on phytoplankton through a size-based preference. No mixotrophy is represented inside SPLAS.
-Despite the idealized approach, the 0-D version of the model is able to catch the overall pattern of plankton size distribution and diversity, and reproduces correctly the bottom-up and top-down interactions,
-showing an emergent pattern of plankton size-structure consistent with theoretical and model prediction, e.g. Ward et al. (2013).
-SPLAS was also extended to a 1-D framework (adding the vertical dimension) with further complications as detritus compartments, light effects and turbulent vertical diffusion.
-With 1-D SPLAS we obtained sensible vertical profiles of phytoplankton total biomass along with depth-inhomogeneous size-structures 
-(which are not possible to reproduce without light inclusion).
-We also obtained a reasonable interval of estimates for Carbon export (central value about 68 mgC m-2 day-1).
-For further details, see the PhD Thesis by Marco De Pasquale (2018) "The role of plankton size in community structure, biodiversity and biogeochemical fluxes: a modeling approach". It is present in this repository.
-If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this thesis.
-Marco put all of his effort in developing this stuff, so please give the right credit to this work.
-Thank you! :) 
+This repository reconstructs the 1-D, size-structured NPZD model used in Marco
+Fianchini's 2021 thesis on light, plankton community structure, biodiversity,
+stoichiometry, blooms, critical depth, and carbon export.
 
-SPLAS 1.1 :
-- inclusion of light input (izero),the possibility to increase/decrease light input linearly in time (delta) and the possibility to make it normally distributed(choosing the standard deviation,sd, parameter). 
-- subroutines supply_season and supply_day added in functions.f90 to simulate seasonal and daily light input variation.
-For further details see the Master's degree Thesis by Marco Fianchini, "The role of light in community structure, biodiversity and biogeochemical fluxes: a modeling approach"         (2021) OR just ask to fianchini.marco@libero.it :)
+The numerical core remains Fortran. Python provides validated configuration,
+serial/parallel ensemble orchestration, self-describing NetCDF output,
+post-processing, figures, and reproducibility reports. The historical sources
+are retained for archaeology; the active implementation is under `src/`.
 
-### Set-up of the model ###
+## Quick start
 
-Technical notes:
+Requirements: Python 3.10+, GNU Fortran, Make, NumPy, SciPy, and Matplotlib.
 
-* Fortran 2003 mathematical libraries + Python 3.5 I/O interface
-* Makefile compiles Fortran libraries and then python3.5 calls the main program (main.py)
-* 2 possible configurations or sets of dependencies: 
-	* intel environment (compile with ifort)
-		- intel/pe-xe-2016--binary
- 	    - intelmpi/5.1.3--binary
- 		- python/3.5.0
- 		- mkl/11.3.3--binary
+```bash
+python3 -m pip install -e .
+make build
+make test
+make smoke
+```
 
-	* gnu environment (compile with gfortran)
-		- mpi4py/1.3.1--openmpi--1.8.2--gnu--4.8.3
-		- lapack/3.5.0--gnu--4.8.3
-		- blas/3.5.0--gnu--4.8.3
-		- python/3.5.0
-		- openmpi/1.8.2--gnu--4.8.3
-		
-* Some profiling has been performed using vtune/16.3 and code has been optimized to a certain extent
+Run one case:
 
-Few further notes:
+```bash
+splas run configs/reference/reference_open_constant_default.json \
+  --output reproduction/results/reference_open
+splas analyze reproduction/results/reference_open \
+  --output reproduction/tables/reference_open
+splas figures reproduction/results/reference_open \
+  --output reproduction/figures/reference_open
+```
 
-* SPLAS is already tested and validated for the 0-D part
-* 1-D part could be further developed and improved (link with biogeochemistry and C export should be enforced in particular!),
-  but it works well and gives rise to interesting patterns (although still far from reality)
-* SPLAS 1.1 improves light dynamics and works well for seasonal changes in light input, but still lot of work have to be done. 
+Run or resume all thesis experiments:
 
-### Contribution guidelines ###
+```bash
+make reproduce-thesis
+# or:
+splas reproduce-thesis --jobs 4 --output reproduction
+```
 
-Please refer to the documentation cited above (and here recalled):
+The full suite contains 30 ten-year simulations and is intentionally much
+larger than the two-day smoke run. Existing completed runs are reused only when
+their resolved configuration hash matches.
 
-* For further details see the PhD Thesis by Marco De Pasquale, "The role of plankton size in community structure, biodiversity and biogeochemical fluxes: a modeling approach" (2018).
-  If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this work.
-* For further details see the Master's degree Thesis by Marco Fianchini, "The role of light in community structure, biodiversity and biogeochemical fluxes: a modeling approach"         (2021).
-  If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this work.
-* For the technical part, try to use the libraries reported in the section above ("Set-up of the model") which make up the two possible environments
-  that were used to conduct the experiments reported in the thesis. Since such experiments were finished at the end of 2017, if using those libraries is not possible for some reason,
-  or if updates with breaking changes have been released meantime...well, good luck with that!
-  UPDATE 07/2021 it still works but the warning for the future remains. 
+## Scientific profiles
 
+- `thesis_consistent` is recommended. It follows the thesis parameters and
+  supply profile, uses a complete coupled Heun step, and uses a conservative
+  dissolved-N/realized-production coupling required by the closed-system mass
+  contract.
+- `legacy_reconstructed` retains the historical uptake term and legacy timing
+  choices without undefined memory access.
 
-### Contacts ###
+Every run writes `resolved_config.json`, `run_metadata.json`, `manifest.json`,
+and `results.nc`. See [docs/user_guide.md](docs/user_guide.md) for the schema
+and [docs/source_discrepancies.md](docs/source_discrepancies.md) for choices
+that cannot be resolved silently.
 
-* For any issue or question, admin of this project are: Fianchini Marco, Marco De Pasquale
-* Contact by E-mail: fianchini.marco@libero.it , depasquale.marco@gmail.com
+## Attribution
+
+SPLAS was developed by Marco De Pasquale and extended for light experiments by
+Marco Fianchini. The historical README, code, and thesis remain the scientific
+provenance for this reconstruction.

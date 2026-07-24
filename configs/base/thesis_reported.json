@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "name": "thesis_reported_base",
+  "scientific_profile": "thesis_consistent",
+  "system": {
+    "mode": "open",
+    "nutrient_supply_uM_N_d": 4.0,
+    "interior_supply_fraction": 0.1,
+    "diffusion_m2_s": 0.0001,
+    "remineralization_d": 0.15,
+    "detritus_sinking_m_d": 8.0,
+    "mortality_recycling_fraction": 0.5
+  },
+  "grid": {
+    "layers": 41,
+    "dz_m": 5.0
+  },
+  "community": {
+    "phyto_classes": 70,
+    "zoo_classes": 70,
+    "nutrient_pools": 3,
+    "phyto_size_min_um": 1.0,
+    "phyto_size_max_um": 200.0,
+    "zoo_size_min_um": 2.0,
+    "zoo_size_max_um": 1000.0,
+    "initial_phyto_uM_N": 0.01,
+    "initial_zoo_uM_N": 0.001,
+    "initial_nutrient_uM_N": 1.0,
+    "initial_detritus_uM_N": 0.0,
+    "initial_quota_qmin_multiplier": 1.1,
+    "phyto_mortality_d": 0.05,
+    "phyto_sinking_coefficient_m_d": 0.0041,
+    "zoo_growth_efficiency": 0.33,
+    "zoo_egestion_fraction": 0.33,
+    "zoo_mortality_uM_N_d": 0.2,
+    "zoo_half_saturation_uM_N": 3.0,
+    "prey_tolerance_log10_um": 0.25
+  },
+  "optics": {
+    "kw_m": 0.03,
+    "kp_m_uM_N": 0.01,
+    "theta_chl_c": 0.02,
+    "alpha_m2_W": 0.32
+  },
+  "forcing": {
+    "mode": "constant",
+    "reference_irradiance_W_m2": 959.825439,
+    "multiplier": 1.0,
+    "total_delta_W_m2": 0.0,
+    "normal_sd_W_m2": 0.0
+  },
+  "numerics": {
+    "duration_days": 3652.0,
+    "timestep_days": 0.08333333333333333,
+    "output_interval_days": 4.0,
+    "seed": 20210714
+  },
+  "analysis": {
+    "transient_days": 365.0,
+    "diversity_absolute_threshold": 1e-12,
+    "diversity_relative_threshold": 1e-8,
+    "diversity_biomass_threshold": 1e-10,
+    "bloom_minimum_biomass": 0.001,
+    "maximum_relative_prominence": 0.05
+  }
+}

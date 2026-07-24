@@ -1,0 +1,7 @@
+{
+  "extends": "../reference/reference_closed_constant_default.json",
+  "forcing": {
+    "multiplier": 1.1
+  },
+  "name": "constant_closed_I_p10"
+}

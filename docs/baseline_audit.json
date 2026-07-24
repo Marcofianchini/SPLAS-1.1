@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "gfortran": null,
+    "python": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3"
+  },
+  "files": {
+    "functions.f90": "50668ad994360326c5d3d00dbe00009f9d8b4300d1abae1423fde2ed707b8196",
+    "input_default.json": "f13d2c7021c1966821881934f06a33e453aeb0555bf043c042e76dd466a6b6f0",
+    "legacy/main.py": "416b11deb6668f535980928879a27801f13182db5e90112394e0e1d4e0dc62b2",
+    "legacy/splas.py": "5642e3195735ced3fb146ee2b50174473335a2c1700190090b0756a9ea4aefa3",
+    "solver.f90": "a1886cff0154ad9e4616519c02c0dedec77cf268c6905804c4ac031d4add45a7",
+    "solver_closed_system.f90": "10cfffe37b0e69338b87374fd434c1961d68e4ad68fc2bb340b7ee127881d82f",
+    "splas.f90": "52f1dffd496f945f872783edfe61e8356952641fe8af1dd2154d78fcbf7a0e0f",
+    "splas_py_wrapper.f90": "4220526f3e9400249f1a9a7a699b48d2af0b13bb08159008eeae486e931fbe9b"
+  },
+  "known_missing_original_directories": [
+    "input",
+    "inputIC",
+    "input_closed_world_tv",
+    "input_test_1.5",
+    "sensitivity_json",
+    "SPLAS_PICKLE"
+  ]
+}

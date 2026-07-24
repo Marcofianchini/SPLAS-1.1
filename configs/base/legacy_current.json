@@ -1,0 +1,13 @@
+{
+  "extends": "thesis_reported.json",
+  "name": "legacy_current_base",
+  "scientific_profile": "legacy_reconstructed",
+  "system": {
+    "nutrient_supply_uM_N_d": 1.0
+  },
+  "numerics": {
+    "timestep_days": 0.012,
+    "output_interval_days": 3.6,
+    "duration_days": 3650.4
+  }
+}

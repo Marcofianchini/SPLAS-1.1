@@ -1,0 +1,75 @@
+{
+  "name": "constant_open",
+  "runs": [
+    {
+      "config": "../constant_light/I_m30_open.json",
+      "config_hash": "af04f2c3ca26f64d1fd42926444a474e6c824d9d92d43cf5ab536da29b8948f3",
+      "duration_days": 3652.0,
+      "name": "constant_open_I_m30",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../constant_light/I_m20_open.json",
+      "config_hash": "cb80584d405ee9d0077ec5decbf1f5411e5f5e486d844935ae5b6f644c001c2c",
+      "duration_days": 3652.0,
+      "name": "constant_open_I_m20",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../constant_light/I_m10_open.json",
+      "config_hash": "c317d35796f155fcaa93598cf214acf694d064c8213597319e0b9b5e4def4678",
+      "duration_days": 3652.0,
+      "name": "constant_open_I_m10",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../constant_light/I_default_open.json",
+      "config_hash": "3ed3b8b3ee08f25762530ef3f81c0b4af9e07247b4683fff0b50db7000228387",
+      "duration_days": 3652.0,
+      "name": "constant_open_I_default",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../constant_light/I_p10_open.json",
+      "config_hash": "aaf778af7a2f1f347b6c2ea8631a75c9193af3573aeffd8e99e21b6fd4f6c16e",
+      "duration_days": 3652.0,
+      "name": "constant_open_I_p10",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../constant_light/I_p20_open.json",
+      "config_hash": "f4d84487d9ad3850dce51c4d26c76cca5dfc54e9b06140f1ac300ba1414a855a",
+      "duration_days": 3652.0,
+      "name": "constant_open_I_p20",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../constant_light/I_p30_open.json",
+      "config_hash": "4d50432f4eeb4531b5bfdfd011b3a82f76bb9c5c88207b7ad95e0714929b2a2b",
+      "duration_days": 3652.0,
+      "name": "constant_open_I_p30",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    }
+  ]
+}

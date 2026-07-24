@@ -1,0 +1,75 @@
+{
+  "name": "seasonal_200m",
+  "runs": [
+    {
+      "config": "../seasonal_light/I_m30.json",
+      "config_hash": "fec811cd473465415b75b345c67aec277c817f3137c07aeba8ffef05d9fc12c4",
+      "duration_days": 3652.0,
+      "name": "seasonal_200m_I_m30",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../seasonal_light/I_m20.json",
+      "config_hash": "645c5557f0fd290bc4cac70c96662f642dfba1d1af34a7265ca117d32dec021f",
+      "duration_days": 3652.0,
+      "name": "seasonal_200m_I_m20",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../seasonal_light/I_m10.json",
+      "config_hash": "d5e41271414ecf2fc09e070df4c33bfadb86f98bb538bc5ea042e50ef0d02e40",
+      "duration_days": 3652.0,
+      "name": "seasonal_200m_I_m10",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../seasonal_light/I_default.json",
+      "config_hash": "ce9988c2a7718ef5fe06ba7ba1a84d2ea049b8ed9063530b598af53f945bd6aa",
+      "duration_days": 3652.0,
+      "name": "seasonal_200m_I_default",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../seasonal_light/I_p10.json",
+      "config_hash": "e89b2631f143e47074ff9bf64758abbbaf4ff7836772ff47eb21f5cdc37d7dbb",
+      "duration_days": 3652.0,
+      "name": "seasonal_200m_I_p10",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../seasonal_light/I_p20.json",
+      "config_hash": "c25b0705e8c2fa4f157c3392e20adf2eb2f12c4a37b9716d87df014434c9460e",
+      "duration_days": 3652.0,
+      "name": "seasonal_200m_I_p20",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    },
+    {
+      "config": "../seasonal_light/I_p30.json",
+      "config_hash": "42cca06027b57da3c11c76835bc81629efb145456fc582f8349fb6d7d7cf8aea",
+      "duration_days": 3652.0,
+      "name": "seasonal_200m_I_p30",
+      "output_interval_days": 4.0,
+      "scientific_profile": "thesis_consistent",
+      "seed": 20210714,
+      "timestep_days": 0.08333333333333333
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "extends": "../base/thesis_reported.json",
+  "forcing": {
+    "mode": "seasonal",
+    "multiplier": 0.8
+  },
+  "name": "seasonal_200m_I_m20"
+}

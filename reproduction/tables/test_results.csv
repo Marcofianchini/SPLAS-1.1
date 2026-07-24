@@ -1,0 +1,5 @@
+suite,passed,skipped,failed,status,explanation
+compiler_independent,18,4,0,partial,Core tests are skipped only because the extension cannot be built without a Fortran compiler
+fortran_core,0,4,0,R0,Build and execution not verifiable in the current image
+smoke,0,0,1,R0,Blocked before execution because gfortran is unavailable
+thesis_suite,0,0,0,R0,Not run because the core cannot be built

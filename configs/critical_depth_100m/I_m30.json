@@ -1,0 +1,12 @@
+{
+  "extends": "../base/thesis_reported.json",
+  "forcing": {
+    "mode": "seasonal",
+    "multiplier": 0.7
+  },
+  "grid": {
+    "dz_m": 5.0,
+    "layers": 21
+  },
+  "name": "seasonal_100m_I_m30"
+}

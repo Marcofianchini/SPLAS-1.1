@@ -1,0 +1,33 @@
+thesis_figure,file,source_run,metrics,status,explanation
+3.1,,reference,profiles,R0,Not generated because the Fortran compiler is unavailable
+3.2,,reference,size-depth spectra,R0,Not generated because the Fortran compiler is unavailable
+3.3,,reference,diversity profiles,R0,Not generated because the Fortran compiler is unavailable
+3.4,,reference,C:N profiles,R0,Not generated because the Fortran compiler is unavailable
+3.5,,reference,export biomass and spectra,R0,Not generated because the Fortran compiler is unavailable
+4.2,,constant_open,biomass time series,R0,Not generated because the Fortran compiler is unavailable
+4.3,,constant_open,biomass profiles,R0,Not generated because the Fortran compiler is unavailable
+4.4,,constant_open,Z:P and TTE,R0,Not generated because the Fortran compiler is unavailable
+4.5,,constant_open,mean size,R0,Not generated because the Fortran compiler is unavailable
+4.6,,constant_open,size-volume response,R0,Not generated because the Fortran compiler is unavailable
+4.7,,constant_open,size-depth response,R0,Not generated because the Fortran compiler is unavailable
+4.8,,constant_open,limitation spectrum,R0,Not generated because the Fortran compiler is unavailable
+4.9,,constant_open,total growth reduction,R0,Not generated because the Fortran compiler is unavailable
+4.10,,constant_open,nitrogen profiles,R0,Not generated because the Fortran compiler is unavailable
+4.11,,constant_open and constant_closed,diversity deltas,R0,Not generated because the Fortran compiler is unavailable
+4.12,,constant_open,carbon export,R0,Not generated because the Fortran compiler is unavailable
+4.13,,seasonal_200m,seasonal forcing,R0,Not generated because the Fortran compiler is unavailable
+4.14,,seasonal_200m,size-time spectrum,R0,Not generated because the Fortran compiler is unavailable
+4.15,,seasonal_200m,spectrum detail,R0,Not generated because the Fortran compiler is unavailable
+4.16,,seasonal_200m,biomass Z:P and N,R0,Not generated because the Fortran compiler is unavailable
+4.17,,seasonal_200m,critical depth and compensation light,R0,Not generated because the Fortran compiler is unavailable
+4.18,,seasonal_200m,critical-depth timing,R0,Not generated because the Fortran compiler is unavailable
+4.19,,seasonal_200m,diversity time series,R0,Not generated because the Fortran compiler is unavailable
+4.20,,seasonal_200m,C:N time series,R0,Not generated because the Fortran compiler is unavailable
+4.21,,seasonal_200m,carbon export versus light,R0,Not generated because the Fortran compiler is unavailable
+4.22,,seasonal_200m,export efficiency,R0,Not generated because the Fortran compiler is unavailable
+5.2,,critical_depth_100m,biomass and Z:P,R0,Not generated because the Fortran compiler is unavailable
+5.3,,critical_depth_100m,limitation,R0,Not generated because the Fortran compiler is unavailable
+5.4,,critical_depth_100m,critical-depth crossing,R0,Not generated because the Fortran compiler is unavailable
+5.5,,critical_depth_100m,euphotic-depth crossing,R0,Not generated because the Fortran compiler is unavailable
+5.6,,critical_depth_100m,carbon export,R0,Not generated because the Fortran compiler is unavailable
+5.7,,critical_depth_100m,export efficiency,R0,Not generated because the Fortran compiler is unavailable
