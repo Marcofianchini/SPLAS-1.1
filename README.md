@@ -13,11 +13,15 @@ claim validated ocean export, sequestration, or full C:N:P dynamics.
 
 Python 3.10+; the recorded reference environment is Python3.12, NumPy2.3.5,
 SciPy1.17, Numba0.68. Numba is strongly recommended for ensembles.
+`research/requirements-reference.txt` records exact scientific-package versions
+as install constraints; Python3.12.14/Linux was used for the reported runs.
 
 ```bash
-python -m pip install -e '.[fast,research]'
+python -m pip install -c research/requirements-reference.txt -e '.[fast,research]'
 python -m unittest discover -s tests -v
 python -m splas2 --days 30 --output results/example.npz
+# Revised idealized column (a short run, not a spin-up):
+python -m splas2 --config research/recommended_idealized.json --days 30 --output results/column.npz
 ```
 
 The default CLI uses20 phytoplankton and20 grazer classes. The thesis
@@ -29,10 +33,19 @@ python scripts/prepare_cultures.py
 python scripts/calibrate_cultures.py
 python scripts/run_experiments.py --workers 4
 python scripts/run_mechanisms.py
+python scripts/run_physiological_protocols.py
+python scripts/run_supplement.py
+python scripts/run_carbon_boundary.py
+python scripts/run_recommended.py
+python scripts/run_recommended_refinement.py
+python scripts/run_export_interventions.py
 python scripts/analyze_results.py
+python scripts/assess_validation.py
+python scripts/make_validation_report.py
+python scripts/package_report_data.py
 ```
 
-`run_experiments.py --filter F02_ --workers 2` selects a family. Every case
+`run_experiments.py --filter F02_,F03_ --workers 2` selects a family. Every case
 saves actual configuration, initial inventory, diagnostics and reduced
 trajectories. Cached runs are keyed by configuration and model source hash.
 Large generated trajectories are excluded from Git. The scientific report
@@ -57,6 +70,7 @@ and aggregate validation results document the tested revision and failures.
 
 See [mathematical specification](research/MODEL.md),
 [data provenance](data/README.md), [experiment registry](research/experiment_registry.json)
+[thesis experiment map](research/THESIS_REPLAY.md),
 and [validation conclusions](research/VALIDATION.md).
 
 ## Relation to the old code and Moloney-Field
@@ -87,3 +101,21 @@ quotas/densities, and not an untouched prospective test set.
 against2024-2026 primary studies. P, Fe, Si, O2, carbonate chemistry, bacteria,
 mixotrophy, aggregation and explicit macromolecular allocation are absent.
 More physiological states do not themselves establish greater predictive skill.
+
+The improved idealized research configuration is in
+`research/recommended_idealized.json`: buffered DIC with an external ledger,
+16 particle bins,70+70 plankton classes,40 cells of5m and max_step0.0125day.
+Its status must be read with the same-state step-refinement results, not
+assumed to establish field validity. The historical irradiation is retained
+for traceability and does not describe a measured ocean site.
+
+The nominally open-N legacy counterpart has no matching C input and can
+become strongly DIC limited. `run_carbon_boundary.py` tests that confound
+with declared C reservoirs. More N does not mean a pure bottom-up N test
+when another modeled resource changes its limiting role.
+
+The distributed PDF embeds generated numerical evidence as an attached ZIP.
+Extract it with `python scripts/extract_report_results.py report.pdf --output results`.
+Checksums are verified automatically; `--output results` restores the directory expected
+by the analysis scripts. Repository source and tracked files stay
+in Git; the report attachment contains generated outputs.

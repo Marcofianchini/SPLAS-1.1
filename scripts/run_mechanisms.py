@@ -1,5 +1,7 @@
 """R* oracle, predator assembly, culture phase uncertainty, and optical/mixing separation."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from dataclasses import replace,asdict
 import json,time
 import numpy as np

@@ -53,10 +53,15 @@ The following are hypotheses, with numerical defaults in `Physiology`:
     nstatus = min(1, B_N/(Nref*a))
     theta = theta_min+(theta_max-theta_min)*nstatus/(1+PAR/acclimation_PAR)
     p_specific = photo_scale*mu_cap
-    F = a*Cref*p_specific*nstatus*(1-exp(-alpha*theta*PAR/(p_specific*nstatus)))
+    fT = Q10^((temperature-18)/10)
+    F = fT*a*Cref*p_specific*nstatus*(1-exp(-alpha*theta*PAR/(p_specific*nstatus)))
         * DIC/(K_DIC+DIC) * max(0,1-(R_C/(Cmax*a-c0*a-rho_R*R_N))^2).
 
-The low-PAR slope is alpha*theta. nstatus must occur in the saturation
+At18C the low-PAR slope per reference carbon is alpha*theta; at other
+temperatures it is fT*alpha*theta. The universal Q10 thus changes both
+photosynthetic maximum and low-light slope in this formulation. This is an
+explicit temperature hypothesis, not a demonstrated acclimation law.
+nstatus must occur in the saturation
 **denominator** as well as maximum, otherwise low-PAR N limitation is counted
 twice. Theta is diagnostic instantaneous acclimation, not a prognostic pigment
 pool; photoinhibition and acclimation lags are absent.
@@ -92,6 +97,8 @@ removed in the same fractional amount, so N ingestion follows actual prey C:N.
 Carbon and nitrogen assimilation efficiencies are distinct. Consumer production
 is min(eta_C*I_C/(1+cost_growth), rho_Z*eta_N*I_N). Assimilated excess C is
 respired and excess N excreted; unassimilated C,N enters detritus.
+Basal consumer respiration removes homeostatic biomass C and returns its
+paired N to DIN; consumer C reserves are not separately represented.
 Community-dependent mortality xi*(sum Z_N)*Z_C and own quadratic mortality
 xi*Z_Nj*Z_Cj are separate hypotheses. Recycled fraction goes to detritus;
 nonrecycled fraction is an explicit higher-trophic export ledger. This export
@@ -206,3 +213,51 @@ This avoids chemical stiffness without imposing extinction thresholds or
 altering a completed state by clipping. Compare against the full explicit
 solver and refine h; do not interpret the implicit solver's rtol as a bound on
 full splitting error.
+
+
+### Further scope limits
+
+The positive carbon charge for N assimilation is energetic bookkeeping, not a
+closed ATP/electron/redox budget. DIN lumps nitrate and ammonium; the fixed
+cost_N=1.5 is a prior, not an identified or universal substrate-specific cost.
+No claim of thermodynamic completeness follows from atomic C/N conservation.
+The fixed-C:N Monod example and fixed-ratio culture nulls do not isolate the
+effect of stoichiometry while retaining identical kinetic responses. A matched
+conservative fixed-ratio counterpart is still required for that causal claim.
+
+
+### Trait and encounter limits
+
+The size class is a reference structural trait, not a prognostic measurement
+of instantaneous cell volume. Carbon storage can alter density/volume in real
+cells, but the grazing kernel and sinking law here do not adapt to that change.
+Large Cmax values are weakly constrained by starvation data; a fitted capacity
+is not proof of a physically possible carbon density. Carbon-based saturation
+of feeding, rather than cell-number/biovolume-based encounters, is a specific
+food-web hypothesis and is not empirically validated by the culture test.
+
+Given the community parameters, the modeled net grazer production per unit
+ingested carbon is bounded by
+`min(0.396/1.2, 5.5*0.67/(prey C:N))`. The transition to N-limited growth is
+at prey C:N~11.17. At C:N45 the bound is~0.082, compared with0.33 at6.625.
+This is a consequence of the model assumptions, not a measured trophic
+efficiency; consumer adaptation, prey biochemistry and compensatory feeding
+could change the relation.
+
+
+### Compatibility of inherited allometries
+
+The ingestion curve26ESD^(-0.4) is an inherited modeling prior. Hansen1997
+reports group differences and no satisfactory overall cross-group regression;
+a successful saturation bound does not empirically validate this rate law.
+The available carbon-ingestion table needs matched ESD/temperature/trophic
+identity before it can test the specific ESD rule; no guessed body conversion
+is used as an empirical fit here.
+
+Likewise, independent trait regressions are not automatically jointly viable.
+With corrected MontagnesC and a fixed6.625 reference C:N, the historical
+Qmin=1.36e-12V^0.77 mmolN/cell exceeds referenceN in the smallest bins.
+`allometry_admissibility.json` records that algebraic check. The new model
+uses fitted minimum-quota fractions and explicitly does not claim to retain
+or validate that historical absolute quota curve. This change matters when
+interpreting differences from the original size spectra.

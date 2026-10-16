@@ -1,5 +1,7 @@
 """Small carbon/energy challenge protocols with explicit pulse/dilution ledgers."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from dataclasses import replace
 import json
 import numpy as np

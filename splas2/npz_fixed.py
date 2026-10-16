@@ -47,6 +47,7 @@ def _fixed_advance(y,x,xz,phi,end,maxstep,mort,sink):
  return y,steps
 
 def run_fixed(n_zoo=0,days=3652.,max_step=.04,mortality=.1,sinking=.0001):
+ if not 0<=n_zoo<=70 or days<=0 or max_step<=0:raise ValueError('Invalid fixed-NPZ experiment')
  x=np.geomspace(1,200,70);xz=np.geomspace(2,1000,70)[:n_zoo]
  opt=.16*xz*np.exp(-.02*np.log(xz)**2)
  phi=np.exp(-((np.log10(x[:,None])-np.log10(opt[None,:]))/.25)**2)

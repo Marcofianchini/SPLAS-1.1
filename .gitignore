@@ -7,3 +7,8 @@ build/
 dist/
 results/
 data/raw/*.html
+output/
+pip-*/
+tmp_*/
+research/*.log
+research/PROGRESS.md

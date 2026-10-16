@@ -3,8 +3,10 @@ Run from repository root: python scripts/run_experiments.py --workers 4.
 Every case records actual configuration and assumptions; no archival bitwise replay.
 """
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from dataclasses import replace,asdict
-import json,sys,time,argparse,traceback,hashlib
+import json,time,argparse,traceback,hashlib,zipfile,os
 from concurrent.futures import ProcessPoolExecutor,as_completed
 import numpy as np
 from splas2 import *
@@ -76,26 +78,40 @@ def registry():
  return cases
 
 def execute(case):
- path=OUT/case['id'];jp=OUT/(case['id']+'.json')
+ OUT.mkdir(parents=True,exist_ok=True)
+ path=OUT/(case['id']+'.npz');jp=OUT/(case['id']+'.json')
  signature=hashlib.sha256((json.dumps(case,sort_keys=True)+(ROOT/'splas2/model.py').read_text()).encode()).hexdigest()
- if jp.exists():
-  cached=json.loads(jp.read_text())
-  if cached.get('run_signature')==signature:return cached
+ if jp.exists() and path.exists():
+  try:
+   cached=json.loads(jp.read_text())
+   if cached.get('run_signature')==signature:
+    with zipfile.ZipFile(path) as archive:
+     if archive.testzip() is None:return cached
+  except (OSError,ValueError,zipfile.BadZipFile):pass
  m=Model(Config(**case['config']),Physiology(**case['physiology']))
- y=m.initial(**case['initial'])
+ if case.get('initial_state_file'):
+  y=np.load(ROOT/case['initial_state_file'])['final_state'].copy()
+  digest=hashlib.sha256(y.tobytes()).hexdigest()
+  if digest!=case['initial_state_sha256']:raise ValueError('Initial-state checksum mismatch')
+  y[m.ntr:]=0.
+ else:y=m.initial(**case['initial'])
  if case['id'].startswith('F07_'):y[0]=.5+m.depth/5
  # Monthly early record, every2days in final2years resolves seasonal means/phase.
  days=case['days'];times=np.unique(np.r_[np.arange(0,max(0,days-730),30),np.arange(max(0,days-730),days,2),days])
  r=simulate(m,days,y0=y,max_step=case['max_step'],times=times,method=case['method'])
  summary,arr=summarize(r)
- rec={**case,'run_signature':signature,'summary':summary};np.savez_compressed(path,**arr)
- jp.write_text(json.dumps(rec,indent=2,allow_nan=False))
+ rec={**case,'run_signature':signature,'summary':summary}
+ temporary=OUT/(case['id']+'.'+str(os.getpid())+'.tmp.npz')
+ np.savez_compressed(temporary,**arr);temporary.replace(path)
+ tempjson=OUT/(case['id']+'.'+str(os.getpid())+'.tmp.json')
+ tempjson.write_text(json.dumps(rec,indent=2,allow_nan=False));tempjson.replace(jp)
  return rec
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--workers',type=int,default=4);ap.add_argument('--filter',default='');args=ap.parse_args()
  OUT.mkdir(parents=True,exist_ok=True);cases=registry();(ROOT/'research/experiment_registry.json').write_text(json.dumps(cases,indent=2))
- todo=[c for c in cases if args.filter in c['id']];start=time.perf_counter();errors=[]
+ filters=args.filter.split(',')
+ todo=[c for c in cases if any(part in c['id'] for part in filters)];start=time.perf_counter();errors=[]
  with ProcessPoolExecutor(max_workers=args.workers) as pool:
   fs={pool.submit(execute,c):c['id'] for c in todo}
   for f in as_completed(fs):
@@ -103,6 +119,7 @@ def main():
     r=f.result();s=r['summary'];print(json.dumps({'id':r['id'],'runtime':s['runtime_seconds'],'N':s['phyto_N_mmol_m2'],'CN':s['phyto_CN_inventory_ratio'],'C_error':s['max_relative_mass_error_C'],'N_error':s['max_relative_mass_error_N']}),flush=True)
    except Exception as exc:
     err={'id':fs[f],'error':repr(exc)};errors.append(err);print(json.dumps(err),flush=True);traceback.print_exc()
- (OUT/'run_status.json').write_text(json.dumps({'cases_requested':len(todo),'errors':errors,'wall_seconds':time.perf_counter()-start},indent=2))
+ status='run_status'+('_'+''.join(ch if ch.isalnum() else '_' for ch in args.filter) if args.filter else '')+'.json'
+ (OUT/status).write_text(json.dumps({'cases_requested':len(todo),'errors':errors,'wall_seconds':time.perf_counter()-start},indent=2))
  if errors:sys.exit(1)
 if __name__=='__main__':main()

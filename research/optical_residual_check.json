@@ -1,0 +1,6 @@
+{
+  "case": "F00_open_reference",
+  "reference_day": 3652.0,
+  "max_relative_residual_PAR_above1": 0.01118485653747841,
+  "interpretation": "Residual of three local diagnostic-chlorophyll iterations; not a full prognostic photoacclimation validation."
+}

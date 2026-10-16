@@ -1,5 +1,7 @@
 """Shared parameters on Ot/Tw; predict Tp/Ms without refitting; no field validation."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import json,time
 from dataclasses import replace,asdict
 import numpy as np

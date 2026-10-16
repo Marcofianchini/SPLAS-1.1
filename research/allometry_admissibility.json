@@ -1,0 +1,13 @@
+{
+  "question": "Can a fixed6.625 reference C:N be combined unchanged with correctedMontagnesC and the historical Litchman-attributed Qmin law?",
+  "reference_C_pg_formula": "0.109V^0.991",
+  "historical_Qmin_mmolN_per1e8_cells": "1.36e-4V^0.77",
+  "incompatible_reference_bins": 3,
+  "incompatible_ESD_um": [
+    1.0,
+    1.0798122767574028,
+    1.1659945530360056
+  ],
+  "Qmin_over_referenceN_at1um": 1.1444078905644581,
+  "interpretation": "This tests compatibility of separately sourced trait assumptions, not a new empirical Qmin estimate. The implemented model uses fitted nmin fractions and does not assert the historical absolute quota law is retained."
+}
