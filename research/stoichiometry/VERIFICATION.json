@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-16",
+  "distinct_configurations": 166,
+  "initially_planned": 142,
+  "exploratory_followup_controls": 24,
+  "scientific_tests": {"passed": 23, "failed": 0, "local_runtime_seconds": 73.047},
+  "completed_run_archive_audit": {"sha256_verified": 166, "zip_crc_verified": 166, "failed_after_recovery": 0},
+  "recovered_local_archives_before_final_analysis": ["C_L405_N16_noZ", "A_L405_Z16"],
+  "recovery": "Two local files failed integrity checks and were regenerated from their unchanged registered inputs. They were excluded from the definitive analysis until SHA256 and CRC checks passed. No ecological configuration was retuned.",
+  "max_relative_inventory_residual_C": 6.649843927181473e-11,
+  "max_relative_inventory_residual_N": 4.940212708469526e-10,
+  "minimum_saved_live_state": 0.0,
+  "minimum_DIC": 1299.6957075918629,
+  "baseline_preserved": {"files_verified": 333, "community_signatures_verified": 117, "model_unchanged": true},
+  "numerical_model_sha256": "e7de66b3983742fc84e8114862c9a3c8fe9969fe950dc303e720395fcb6c3f85",
+  "interpretation": "Element closure is a necessary check, not an ecological validity score. Reference time/size refinement does not establish full convergence; signs of the principal paired contrast are checked separately. Pulse-memory inference remains unresolved."
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "species": "Ot",
+    "volume_um3": 1.8,
+    "predicted_C_pg": 0.19516482679574423,
+    "observed_replete_C_pg": 0.2773581079891246,
+    "relative_error": -0.29634353143410974
+  },
+  {
+    "species": "Tw",
+    "volume_um3": 1630.0,
+    "predicted_C_pg": 166.22808967191955,
+    "observed_replete_C_pg": 139.1024503229379,
+    "relative_error": 0.19500475574662568
+  },
+  {
+    "species": "Tp",
+    "volume_um3": 158.0,
+    "predicted_C_pg": 16.454916056371506,
+    "observed_replete_C_pg": 15.069008709809973,
+    "relative_error": 0.09197070446042699
+  },
+  {
+    "species": "Ms",
+    "volume_um3": 1.8,
+    "predicted_C_pg": 0.19516482679574423,
+    "observed_replete_C_pg": 0.5815755029067253,
+    "relative_error": -0.6644204822584399
+  }
+]

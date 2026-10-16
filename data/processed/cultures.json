@@ -1,0 +1,411 @@
+{
+  "dataset_doi": "10.1594/PANGAEA.900248",
+  "paper_doi": "10.3389/fmicb.2019.00763",
+  "license": "CC-BY-4.0; Liefer et al. (2026), original experiments 2016, article 2019",
+  "curation_caveat": "No final formal author approval per PANGAEA. Raw units label micromolar (mM) is contradictory; article establishes micromolar (= mmol m^-3). O. tauri day2 C,N exactly repeat day0. Dates not used to infer time.",
+  "protocol": "Conditional predictions after unquantified dilution; initial cell C,N,density,DIN observed. Day0 replete C,N and volumes are reference traits, including held-out species. No subsequent held-out data used for estimation. 85 umol photons m^-2 s^-1, 12:12 light:dark. Initial phase assumed lights-on; evaluate phase sensitivity.",
+  "replicate_rows": 81,
+  "excluded_contamination_rows": 6,
+  "raw_sha256": "25a58ff992104ed97b891682cb3f86b4f3fb056f1c97b907b3b9545a59265a98",
+  "table1_crosscheck": [
+    {
+      "species": "Ot",
+      "published": [
+        0.277,
+        0.0536,
+        0.362,
+        0.0269
+      ],
+      "raw_means": [
+        0.2773581079891246,
+        0.05357445946183823,
+        0.3624037657604433,
+        0.026898757208756258
+      ],
+      "max_relative_difference": 0.001292808624998365,
+      "agrees_to_rounding_1pct": true
+    },
+    {
+      "species": "Tw",
+      "published": [
+        139.0,
+        26.6,
+        368.0,
+        8.3
+      ],
+      "raw_means": [
+        139.1024503229379,
+        26.627313519521504,
+        367.8268573012693,
+        8.300773813043028
+      ],
+      "max_relative_difference": 0.0010268240421618113,
+      "agrees_to_rounding_1pct": true
+    },
+    {
+      "species": "Tp",
+      "published": [
+        15.1,
+        2.7,
+        26.7,
+        1.29
+      ],
+      "raw_means": [
+        15.069008709809973,
+        2.699435508873862,
+        26.740920400163933,
+        1.2939681825316904
+      ],
+      "max_relative_difference": 0.003076110489682371,
+      "agrees_to_rounding_1pct": true
+    },
+    {
+      "species": "Ms",
+      "published": [
+        0.582,
+        0.105,
+        0.634,
+        0.0604
+      ],
+      "raw_means": [
+        0.5815755029067253,
+        0.10458468419338544,
+        0.6336532929629786,
+        0.0603776786474603
+      ],
+      "max_relative_difference": 0.0039553886344243505,
+      "agrees_to_rounding_1pct": true
+    }
+  ],
+  "species": {
+    "Ot": {
+      "name": "Ostreococcus tauri",
+      "volume_um3": 1.8,
+      "temperature_C": 18.0,
+      "split": "calibration",
+      "start_day": 2.0,
+      "reference_C_pg": 0.2773581079891246,
+      "reference_N_pg": 0.05357445946183823,
+      "observations": [
+        {
+          "day": 2.0,
+          "t": 0.0,
+          "stage": "Late Exponential",
+          "C_pg": 0.2773581079891246,
+          "C_pg_sd": 0.012784352362126142,
+          "N_pg": 0.05357445946183823,
+          "N_pg_sd": 0.01078457241819348,
+          "cells_ml": 5414500.0,
+          "cells_ml_sd": 412228.0922013928,
+          "DIN_uM": 9.092066666666666,
+          "DIN_uM_sd": 1.2474821735533275,
+          "CN_molar": 6.174796121500381,
+          "CN_molar_sd": 1.0251498557314966
+        },
+        {
+          "day": 3.0,
+          "t": 1.0,
+          "stage": "Late Exponential",
+          "C_pg": 0.2741525311529082,
+          "C_pg_sd": 0.008657903791846715,
+          "N_pg": 0.04420984056214359,
+          "N_pg_sd": 0.0011779565254424723,
+          "cells_ml": 10030000.0,
+          "cells_ml_sd": 347149.82356325636,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 7.239488265538078,
+          "CN_molar_sd": 0.3421059936299358
+        },
+        {
+          "day": 4.0,
+          "t": 2.0,
+          "stage": "Late Exponential",
+          "C_pg": 0.3084141783160132,
+          "C_pg_sd": 0.0045612183642291925,
+          "N_pg": 0.03705836176349311,
+          "N_pg_sd": 0.0017968210426550536,
+          "cells_ml": 12486500.0,
+          "cells_ml_sd": 651290.8336526778,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 9.720761923559406,
+          "CN_molar_sd": 0.35803587024549294
+        },
+        {
+          "day": 7.0,
+          "t": 5.0,
+          "stage": "Early Stationary",
+          "C_pg": 0.32638296597868116,
+          "C_pg_sd": 0.017254571245260898,
+          "N_pg": 0.02908660741253895,
+          "N_pg_sd": 0.0017131770512134915,
+          "cells_ml": 15419963.333333334,
+          "cells_ml_sd": 520322.10603945464,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 13.099195232606627,
+          "CN_molar_sd": 0.42484205560643634
+        },
+        {
+          "day": 11.0,
+          "t": 9.0,
+          "stage": "Mid Stationary",
+          "C_pg": 0.3624037657604433,
+          "C_pg_sd": 0.015487110382414314,
+          "N_pg": 0.026898757208756258,
+          "N_pg_sd": 0.001881952903595553,
+          "cells_ml": 14787166.666666666,
+          "cells_ml_sd": 504683.3991061461,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 15.738897098585094,
+          "CN_molar_sd": 0.45929400909026175
+        }
+      ]
+    },
+    "Tw": {
+      "name": "Thalassiosira weissflogii",
+      "volume_um3": 1630.0,
+      "temperature_C": 18.0,
+      "split": "calibration",
+      "start_day": 3.0,
+      "reference_C_pg": 139.1024503229379,
+      "reference_N_pg": 26.627313519521504,
+      "observations": [
+        {
+          "day": 3.0,
+          "t": 0.0,
+          "stage": "Late Exponential",
+          "C_pg": 125.80730927858787,
+          "C_pg_sd": 7.1937337087151265,
+          "N_pg": 12.995799422104087,
+          "N_pg_sd": 1.262655249818544,
+          "cells_ml": 23851.0,
+          "cells_ml_sd": 716.4244551939862,
+          "DIN_uM": 0.8740666666666667,
+          "DIN_uM_sd": 0.41624811511084747,
+          "CN_molar": 11.32961685926985,
+          "CN_molar_sd": 0.6122791348249967
+        },
+        {
+          "day": 6.0,
+          "t": 3.0,
+          "stage": "Late Exponential",
+          "C_pg": 214.70124619875125,
+          "C_pg_sd": 6.517321638516536,
+          "N_pg": 9.794036255885674,
+          "N_pg_sd": 0.564849148755555,
+          "cells_ml": 36481.666666666664,
+          "cells_ml_sd": 1663.6773525336368,
+          "DIN_uM": null,
+          "DIN_uM_sd": null,
+          "CN_molar": 25.604939973785648,
+          "CN_molar_sd": 0.8547867227452912
+        },
+        {
+          "day": 7.0,
+          "t": 4.0,
+          "stage": "Early Stationary",
+          "C_pg": 270.7636977257501,
+          "C_pg_sd": 6.9499117066379235,
+          "N_pg": 8.40716336186304,
+          "N_pg_sd": 0.2370168510118137,
+          "cells_ml": 37315.0,
+          "cells_ml_sd": 1038.916390103169,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 37.587162898845015,
+          "CN_molar_sd": 1.1507660895949217
+        },
+        {
+          "day": 11.0,
+          "t": 8.0,
+          "stage": "Mid Stationary",
+          "C_pg": 367.8268573012693,
+          "C_pg_sd": 26.26759028485181,
+          "N_pg": 8.300773813043028,
+          "N_pg_sd": 0.45178399283540555,
+          "cells_ml": 37612.5,
+          "cells_ml_sd": 1690.2768819042637,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 51.665315038112254,
+          "CN_molar_sd": 0.927723510697234
+        },
+        {
+          "day": 16.0,
+          "t": 13.0,
+          "stage": "Late Stationary",
+          "C_pg": 415.32317224810294,
+          "C_pg_sd": 35.40831160736155,
+          "N_pg": 7.5717215355022995,
+          "N_pg_sd": 0.27283273294362237,
+          "cells_ml": 40066.875,
+          "cells_ml_sd": 283.3111970519344,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 64.07706907731698,
+          "CN_molar_sd": 6.2477821915758
+        }
+      ]
+    },
+    "Tp": {
+      "name": "Thalassiosira pseudonana",
+      "volume_um3": 158.0,
+      "temperature_C": 18.0,
+      "split": "held_out",
+      "start_day": 1.0,
+      "reference_C_pg": 15.069008709809973,
+      "reference_N_pg": 2.699435508873862,
+      "observations": [
+        {
+          "day": 1.0,
+          "t": 0.0,
+          "stage": "Late Exponential",
+          "C_pg": 17.215657826707528,
+          "C_pg_sd": 0.44660349649788406,
+          "N_pg": 3.343597049604847,
+          "N_pg_sd": 0.1251897628310925,
+          "cells_ml": 115883.33333333333,
+          "cells_ml_sd": 9079.93820341184,
+          "DIN_uM": 7.345733333333334,
+          "DIN_uM_sd": 2.671281410359705,
+          "CN_molar": 6.010487154573006,
+          "CN_molar_sd": 0.18863637259287602
+        },
+        {
+          "day": 2.0,
+          "t": 1.0,
+          "stage": "Late Exponential",
+          "C_pg": 17.48272936532632,
+          "C_pg_sd": 0.8083307401010996,
+          "N_pg": 2.062103730132853,
+          "N_pg_sd": 0.11439746981925025,
+          "cells_ml": 233372.22222222225,
+          "cells_ml_sd": 13229.977884139298,
+          "DIN_uM": null,
+          "DIN_uM_sd": null,
+          "CN_molar": 9.89477403660466,
+          "CN_molar_sd": 0.14146446144226466
+        },
+        {
+          "day": 3.0,
+          "t": 2.0,
+          "stage": "Early Stationary",
+          "C_pg": 20.212510121250563,
+          "C_pg_sd": 0.9247592547845626,
+          "N_pg": 1.4777230894512485,
+          "N_pg_sd": 0.08594433018839251,
+          "cells_ml": 307700.0,
+          "cells_ml_sd": 15436.629530114402,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 15.973191531741493,
+          "CN_molar_sd": 0.6490893255370296
+        },
+        {
+          "day": 5.0,
+          "t": 4.0,
+          "stage": "Mid Stationary",
+          "C_pg": 25.673014879062304,
+          "C_pg_sd": 2.025528425957353,
+          "N_pg": 1.2879016206352214,
+          "N_pg_sd": 0.12413240441324801,
+          "cells_ml": 347177.7777777778,
+          "cells_ml_sd": 31501.434417663735,
+          "DIN_uM": null,
+          "DIN_uM_sd": null,
+          "CN_molar": 23.285217508207563,
+          "CN_molar_sd": 0.6289378445126308
+        },
+        {
+          "day": 7.0,
+          "t": 6.0,
+          "stage": "Mid Stationary",
+          "C_pg": 26.740920400163933,
+          "C_pg_sd": 0.9143416679153947,
+          "N_pg": 1.2939681825316904,
+          "N_pg_sd": 0.15213114627602453,
+          "cells_ml": 335088.88888888893,
+          "cells_ml_sd": 28946.259273452346,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 24.283463304193674,
+          "CN_molar_sd": 2.226815524175631
+        }
+      ]
+    },
+    "Ms": {
+      "name": "Micromonas sp.",
+      "volume_um3": 1.8,
+      "temperature_C": 6.0,
+      "split": "held_out",
+      "start_day": 6.0,
+      "reference_C_pg": 0.5815755029067253,
+      "reference_N_pg": 0.10458468419338544,
+      "observations": [
+        {
+          "day": 6.0,
+          "t": 0.0,
+          "stage": "Late Exponential",
+          "C_pg": 0.5438534779445329,
+          "C_pg_sd": 0.017675367256376723,
+          "N_pg": 0.061119844581154464,
+          "N_pg_sd": 0.0018297184213096178,
+          "cells_ml": 11483500.0,
+          "cells_ml_sd": 265412.41493193194,
+          "DIN_uM": 0.0,
+          "DIN_uM_sd": 0.0,
+          "CN_molar": 10.380714410847993,
+          "CN_molar_sd": 0.058142762519705904
+        },
+        {
+          "day": 8.0,
+          "t": 2.0,
+          "stage": "Early Stationary",
+          "C_pg": 0.5863639405979161,
+          "C_pg_sd": 0.029132189455655683,
+          "N_pg": 0.0598257869481058,
+          "N_pg_sd": 0.005079588177157068,
+          "cells_ml": 11475000.0,
+          "cells_ml_sd": 425933.9737564967,
+          "DIN_uM": 0.15656666666666666,
+          "DIN_uM_sd": 0.27118142143836726,
+          "CN_molar": 11.462831048755426,
+          "CN_molar_sd": 0.5615731889970186
+        },
+        {
+          "day": 11.0,
+          "t": 5.0,
+          "stage": "Mid Stationary",
+          "C_pg": 0.6336532929629785,
+          "C_pg_sd": 0.034438491045191914,
+          "N_pg": 0.0603776786474603,
+          "N_pg_sd": 0.003238771640823317,
+          "cells_ml": 11701666.666666666,
+          "cells_ml_sd": 619295.6348411747,
+          "DIN_uM": 0.3118666666666667,
+          "DIN_uM_sd": 0.5401689118538139,
+          "CN_molar": 12.24366524511108,
+          "CN_molar_sd": 0.0134257986336813
+        },
+        {
+          "day": 17.0,
+          "t": 11.0,
+          "stage": "Late Stationary",
+          "C_pg": 0.6211742083167815,
+          "C_pg_sd": 0.01173504775598609,
+          "N_pg": 0.056673380592174055,
+          "N_pg_sd": 0.0028800058812946372,
+          "cells_ml": 12084166.666666666,
+          "cells_ml_sd": 49074.772881118326,
+          "DIN_uM": 0.021233333333333337,
+          "DIN_uM_sd": 0.03677721214737916,
+          "CN_molar": 12.817331407306433,
+          "CN_molar_sd": 0.8942591120124718
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2446 @@
+{
+  "current_cases": 117,
+  "requested_cases": 117,
+  "missing_cases": [],
+  "decadal_case_count": 105,
+  "annual_continuation_count": 12,
+  "model_sha256": "e7de66b3983742fc84e8114862c9a3c8fe9969fe950dc303e720395fcb6c3f85",
+  "mass_C_max_relative": 1.6174041253540978e-11,
+  "mass_N_max_relative": 4.229028182562197e-09,
+  "minimum_state": 0.0,
+  "negative_state_cases": [],
+  "drifting_cases": [
+    "D01_supply_7",
+    "D02_zmort_0.05",
+    "D02_zmort_0.15",
+    "D04_kernel_0.5",
+    "D04_kernel_1.0",
+    "D10_periodic_phase_91.25",
+    "F01_closed_light_0.7",
+    "F01_closed_light_0.9",
+    "F01_closed_light_1.1",
+    "F01_closed_light_1.2",
+    "F04_mixing_10"
+  ],
+  "elapsed_compute_seconds": 69853.529258256,
+  "numerical_comparisons": [
+    {
+      "reference": "D00_reference",
+      "alternative": "D07_size_bins_35",
+      "phyto_N_mmol_m2_relative_change": -0.027700983784465172,
+      "phyto_CN_inventory_ratio_relative_change": 0.06377666015112915,
+      "N_weighted_geomean_ESD_um_relative_change": 0.07239855492683533,
+      "NPP_C_mmol_m2_d_relative_change": 0.027472834684910907
+    },
+    {
+      "reference": "D00_reference",
+      "alternative": "D07_size_bins_140",
+      "phyto_N_mmol_m2_relative_change": -0.02192734104431615,
+      "phyto_CN_inventory_ratio_relative_change": -0.02465582164271274,
+      "N_weighted_geomean_ESD_um_relative_change": -0.01914635670983722,
+      "NPP_C_mmol_m2_d_relative_change": -0.037056740403472954
+    },
+    {
+      "reference": "D00_reference",
+      "alternative": "D12_dt_0.025",
+      "phyto_N_mmol_m2_relative_change": -0.04130860422458116,
+      "phyto_CN_inventory_ratio_relative_change": 0.07818604909199878,
+      "N_weighted_geomean_ESD_um_relative_change": 0.13851104477521003,
+      "NPP_C_mmol_m2_d_relative_change": 0.02996999033901604
+    },
+    {
+      "reference": "D00_reference",
+      "alternative": "D12_dt_0.0125",
+      "phyto_N_mmol_m2_relative_change": -0.010106675681889055,
+      "phyto_CN_inventory_ratio_relative_change": -0.005545604430541418,
+      "N_weighted_geomean_ESD_um_relative_change": 0.059136883288300135,
+      "NPP_C_mmol_m2_d_relative_change": -0.009293281925122132
+    },
+    {
+      "reference": "F00_open_reference",
+      "alternative": "F07_layers_20",
+      "phyto_N_mmol_m2_relative_change": 0.06695662081645937,
+      "phyto_CN_inventory_ratio_relative_change": -0.028161213489947046,
+      "N_weighted_geomean_ESD_um_relative_change": 0.07125761360918914,
+      "NPP_C_mmol_m2_d_relative_change": -0.026782423487066387,
+      "bottom_export_C_mmol_m2_d_relative_change": -0.05781425612275648
+    },
+    {
+      "reference": "F00_open_reference",
+      "alternative": "F07_layers_80",
+      "phyto_N_mmol_m2_relative_change": -0.027506417843227715,
+      "phyto_CN_inventory_ratio_relative_change": 0.0061338538196524794,
+      "N_weighted_geomean_ESD_um_relative_change": -0.05689719499457324,
+      "NPP_C_mmol_m2_d_relative_change": 0.0070409780232250085,
+      "bottom_export_C_mmol_m2_d_relative_change": 0.004784426875413583
+    },
+    {
+      "reference": "F00_open_reference",
+      "alternative": "F08_detritus_bins_4",
+      "phyto_N_mmol_m2_relative_change": 0.2989700097855732,
+      "phyto_CN_inventory_ratio_relative_change": 0.09771967569669004,
+      "N_weighted_geomean_ESD_um_relative_change": 0.19050146573464555,
+      "NPP_C_mmol_m2_d_relative_change": 0.5775318205524747,
+      "bottom_export_C_mmol_m2_d_relative_change": -0.34299682637169837
+    },
+    {
+      "reference": "F00_open_reference",
+      "alternative": "F08_detritus_bins_8",
+      "phyto_N_mmol_m2_relative_change": 0.35708055488216006,
+      "phyto_CN_inventory_ratio_relative_change": 0.10414021186422318,
+      "N_weighted_geomean_ESD_um_relative_change": 0.1933422213065652,
+      "NPP_C_mmol_m2_d_relative_change": 0.6709260971625066,
+      "bottom_export_C_mmol_m2_d_relative_change": -0.4664021377119162
+    },
+    {
+      "reference": "F00_open_reference",
+      "alternative": "F08_detritus_bins_16",
+      "phyto_N_mmol_m2_relative_change": 0.36873989773481397,
+      "phyto_CN_inventory_ratio_relative_change": 0.10530354799610375,
+      "N_weighted_geomean_ESD_um_relative_change": 0.20009417828560339,
+      "NPP_C_mmol_m2_d_relative_change": 0.6773837579110022,
+      "bottom_export_C_mmol_m2_d_relative_change": -0.47869650479075454
+    },
+    {
+      "reference": "F00_open_reference",
+      "alternative": "F09_dt_0.025",
+      "phyto_N_mmol_m2_relative_change": 0.01117536767704097,
+      "phyto_CN_inventory_ratio_relative_change": -0.00554336527023247,
+      "N_weighted_geomean_ESD_um_relative_change": -0.039039979693097804,
+      "NPP_C_mmol_m2_d_relative_change": -0.009392021286122154,
+      "bottom_export_C_mmol_m2_d_relative_change": -0.015545123615276712
+    },
+    {
+      "reference": "F00_open_reference",
+      "alternative": "F09_dt_0.0125",
+      "phyto_N_mmol_m2_relative_change": 0.00545380196626688,
+      "phyto_CN_inventory_ratio_relative_change": -0.0005598477256046896,
+      "N_weighted_geomean_ESD_um_relative_change": -0.03962990120132159,
+      "NPP_C_mmol_m2_d_relative_change": -0.01053243424329564,
+      "bottom_export_C_mmol_m2_d_relative_change": -0.0018401607046728552
+    }
+  ],
+  "stoichiometric_decompositions": [
+    {
+      "reference": "F01_open_light_0.7",
+      "alternative": "F01_open_light_1.3",
+      "total_CN_change": -0.11984579240560134,
+      "within_class_term": -0.10619847483032403,
+      "composition_term": -0.013647317575276707,
+      "identity_error": -5.967448757360216e-16,
+      "note": "Symmetric N-weighted decomposition of ratios of time-mean stocks. Absent-class quota is copied from the other case; not a unique mechanistic attribution."
+    },
+    {
+      "reference": "F01_closed_light_0.7",
+      "alternative": "F01_closed_light_1.3",
+      "total_CN_change": 4.846794532935881,
+      "within_class_term": -2.798173790881527,
+      "composition_term": 7.644968323817413,
+      "identity_error": -4.440892098500626e-15,
+      "note": "Symmetric N-weighted decomposition of ratios of time-mean stocks. Absent-class quota is copied from the other case; not a unique mechanistic attribution."
+    }
+  ],
+  "time_window_diagnostic": [
+    {
+      "id": "D00_reference",
+      "two_year_CN_ratio": 34.148023909266996,
+      "two_year_phyto_N": 1451.0967772298281,
+      "whole_run_mean_NPP_C": 9266.800641203226,
+      "whole_run_mean_export_C": 1758.1809682377234
+    },
+    {
+      "id": "D12_dt_0.025",
+      "two_year_CN_ratio": 37.614476855852054,
+      "two_year_phyto_N": 1360.4076279827252,
+      "whole_run_mean_NPP_C": 9451.870402528759,
+      "whole_run_mean_export_C": 1805.6017875100454
+    },
+    {
+      "id": "D12_dt_0.0125",
+      "two_year_CN_ratio": 31.05037670428634,
+      "two_year_phyto_N": 1498.6300291952568,
+      "whole_run_mean_NPP_C": 9357.916933803976,
+      "whole_run_mean_export_C": 1778.9706934711512
+    },
+    {
+      "id": "F00_open_reference",
+      "two_year_CN_ratio": 6.142439549388127,
+      "two_year_phyto_N": 254.54470487260204,
+      "whole_run_mean_NPP_C": 413.00290046551925,
+      "whole_run_mean_export_C": 65.13394083747848
+    },
+    {
+      "id": "F09_dt_0.025",
+      "two_year_CN_ratio": 6.126595631040366,
+      "two_year_phyto_N": 256.5008829943625,
+      "whole_run_mean_NPP_C": 410.5924753696164,
+      "whole_run_mean_export_C": 65.62577655868803
+    },
+    {
+      "id": "F09_dt_0.0125",
+      "two_year_CN_ratio": 6.166278013440637,
+      "two_year_phyto_N": 254.93729271379965,
+      "whole_run_mean_NPP_C": 410.93506845385986,
+      "whole_run_mean_export_C": 65.62531713752242
+    }
+  ],
+  "last_window_element_balance": [
+    {
+      "id": "D00_reference",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2059.556686774786,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 100.45906804884527,
+      "N_inventory_accumulation_mmol_m2_d": -0.45906804884526053,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.020162506374463957,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_0.001",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.6106975612648772,
+      "N_external_input_mmol_m2_d": 0.09999999999941167,
+      "N_external_output_mmol_m2_d": 0.10000217843859907,
+      "N_inventory_accumulation_mmol_m2_d": -2.1784391874002385e-06,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02729485294854969,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_0.01",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 6.593289676814715,
+      "N_external_input_mmol_m2_d": 1.0000000000012221,
+      "N_external_output_mmol_m2_d": 1.0000432253759457,
+      "N_inventory_accumulation_mmol_m2_d": -4.322537472345456e-05,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027133416606367783,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_0.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 129.78266751958853,
+      "N_external_input_mmol_m2_d": 9.999999999956799,
+      "N_external_output_mmol_m2_d": 10.04995476485568,
+      "N_inventory_accumulation_mmol_m2_d": -0.04995476489888162,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.025905195044037144,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_0.5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1110.458250999799,
+      "N_external_input_mmol_m2_d": 50.0,
+      "N_external_output_mmol_m2_d": 50.09332033423874,
+      "N_inventory_accumulation_mmol_m2_d": -0.09332033423873654,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02194541764309969,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2001.7145988372017,
+      "N_external_input_mmol_m2_d": 200.0,
+      "N_external_output_mmol_m2_d": 200.59819547635584,
+      "N_inventory_accumulation_mmol_m2_d": -0.5981954763558548,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.39861583952943663,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2192.252943886142,
+      "N_external_input_mmol_m2_d": 499.999999998181,
+      "N_external_output_mmol_m2_d": 265.0393754764623,
+      "N_inventory_accumulation_mmol_m2_d": 234.96062452171876,
+      "DIN_whole_run_change_mean_mmol_m2_d": 219.32007786026355,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_7",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2168.8001788151337,
+      "N_external_input_mmol_m2_d": 699.9999999952436,
+      "N_external_output_mmol_m2_d": 321.1228201708041,
+      "N_inventory_accumulation_mmol_m2_d": 378.87717982443945,
+      "DIN_whole_run_change_mean_mmol_m2_d": 407.6413628598483,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D01_supply_10",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2191.3761764797127,
+      "N_external_input_mmol_m2_d": 999.999999996362,
+      "N_external_output_mmol_m2_d": 263.08852739970524,
+      "N_inventory_accumulation_mmol_m2_d": 736.9114725966567,
+      "DIN_whole_run_change_mean_mmol_m2_d": 718.0127664450737,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D02_zmort_0.05",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1381.97542809378,
+      "N_external_input_mmol_m2_d": 99.999999999999,
+      "N_external_output_mmol_m2_d": 108.29933016435777,
+      "N_inventory_accumulation_mmol_m2_d": -8.299330164358757,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.8516626593154281,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D02_zmort_0.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1758.1072347764166,
+      "N_external_input_mmol_m2_d": 100.00000000000038,
+      "N_external_output_mmol_m2_d": 97.90222351065611,
+      "N_inventory_accumulation_mmol_m2_d": 2.0977764893442767,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.6364655262377477,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D02_zmort_0.15",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2053.129318635067,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 107.84919723753849,
+      "N_inventory_accumulation_mmol_m2_d": -7.84919723753849,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.0006206642404183052,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D02_zmort_0.25",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2174.8255312866386,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 99.68665493458845,
+      "N_inventory_accumulation_mmol_m2_d": 0.3133450654115535,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.025847455143328226,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D03_own_closure",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 515.5624202099171,
+      "N_external_input_mmol_m2_d": 100.00000000000038,
+      "N_external_output_mmol_m2_d": 45.12252749018475,
+      "N_inventory_accumulation_mmol_m2_d": 54.87747250981563,
+      "DIN_whole_run_change_mean_mmol_m2_d": 66.64436136277187,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D04_kernel_0.177",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2111.799208480259,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 101.98112635485359,
+      "N_inventory_accumulation_mmol_m2_d": -1.9811263548535933,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.025883924179713684,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D04_kernel_0.2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2164.3082178455456,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 101.32148618477048,
+      "N_inventory_accumulation_mmol_m2_d": -1.3214861847704782,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.022536425972989327,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D04_kernel_0.354",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2099.0681976668857,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 100.12589109056618,
+      "N_inventory_accumulation_mmol_m2_d": -0.12589109056618497,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.012309887246646996,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D04_kernel_0.5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 881.8950218496317,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 56.63781711925316,
+      "N_inventory_accumulation_mmol_m2_d": 43.36218288074684,
+      "DIN_whole_run_change_mean_mmol_m2_d": 7.5337882875217215,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D04_kernel_1.0",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 20.9428242250539,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 2.783291467557949,
+      "N_inventory_accumulation_mmol_m2_d": 97.21670853244206,
+      "DIN_whole_run_change_mean_mmol_m2_d": 96.99177553559265,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D05_pmort_0.05",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2172.768300329763,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 103.29724721251691,
+      "N_inventory_accumulation_mmol_m2_d": -3.2972472125169148,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027229196679124042,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D05_pmort_0.2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1457.9554303240084,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 102.86580602218916,
+      "N_inventory_accumulation_mmol_m2_d": -2.8658060221891546,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.025297594667468965,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D05_pmort_0.4",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 60.75558031070988,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 5.402597122914892,
+      "N_inventory_accumulation_mmol_m2_d": 94.5974028770851,
+      "DIN_whole_run_change_mean_mmol_m2_d": 94.60262878705015,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D06_sink_0.0",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2039.9281993313248,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 99.25888917088346,
+      "N_inventory_accumulation_mmol_m2_d": 0.7411108291165363,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02026418161660983,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D06_sink_0.001",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2018.8773323837659,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 99.88147872316387,
+      "N_inventory_accumulation_mmol_m2_d": 0.1185212768361339,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.0018433030016239682,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D06_sink_0.01",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 254.3875864827027,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 23.687303989856883,
+      "N_inventory_accumulation_mmol_m2_d": 76.31269601014311,
+      "DIN_whole_run_change_mean_mmol_m2_d": 75.66658043300016,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D07_size_bins_35",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2106.1219784293116,
+      "N_external_input_mmol_m2_d": 100.00000000000011,
+      "N_external_output_mmol_m2_d": 100.7044905361347,
+      "N_inventory_accumulation_mmol_m2_d": -0.7044905361345855,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.019739277647105435,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D07_size_bins_140",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1998.7583121322261,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 99.33467657633946,
+      "N_inventory_accumulation_mmol_m2_d": 0.6653234236605385,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.018949818444130923,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D08_yield_0.16",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2197.9753467900064,
+      "N_external_input_mmol_m2_d": 499.99999999821097,
+      "N_external_output_mmol_m2_d": 384.7777123438415,
+      "N_inventory_accumulation_mmol_m2_d": 115.2222876543695,
+      "DIN_whole_run_change_mean_mmol_m2_d": 152.29590478636263,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D08_yield_0.5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2190.952748975682,
+      "N_external_input_mmol_m2_d": 499.999999998181,
+      "N_external_output_mmol_m2_d": 265.59645477438687,
+      "N_inventory_accumulation_mmol_m2_d": 234.40354522379417,
+      "DIN_whole_run_change_mean_mmol_m2_d": 220.79779095365282,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D08_yield_0.66",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2190.7375144280063,
+      "N_external_input_mmol_m2_d": 499.999999998181,
+      "N_external_output_mmol_m2_d": 276.9739079633424,
+      "N_inventory_accumulation_mmol_m2_d": 223.0260920348386,
+      "DIN_whole_run_change_mean_mmol_m2_d": 206.2064419925562,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D09_Kz_1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2142.7132247280365,
+      "N_external_input_mmol_m2_d": 499.99999999818806,
+      "N_external_output_mmol_m2_d": 184.24252735451068,
+      "N_inventory_accumulation_mmol_m2_d": 315.7574726436774,
+      "DIN_whole_run_change_mean_mmol_m2_d": 305.2649585768194,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D09_Kz_2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2181.66598623909,
+      "N_external_input_mmol_m2_d": 499.999999998181,
+      "N_external_output_mmol_m2_d": 229.6081977720063,
+      "N_inventory_accumulation_mmol_m2_d": 270.3918022261747,
+      "DIN_whole_run_change_mean_mmol_m2_d": 251.74989508418292,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D09_Kz_4",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2194.793966613837,
+      "N_external_input_mmol_m2_d": 499.999999998181,
+      "N_external_output_mmol_m2_d": 288.328609292688,
+      "N_inventory_accumulation_mmol_m2_d": 211.67139070549305,
+      "DIN_whole_run_change_mean_mmol_m2_d": 200.3128416733277,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D09_Kz_5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2195.539711836646,
+      "N_external_input_mmol_m2_d": 499.999999998181,
+      "N_external_output_mmol_m2_d": 299.61648792041296,
+      "N_inventory_accumulation_mmol_m2_d": 200.38351207776805,
+      "DIN_whole_run_change_mean_mmol_m2_d": 185.41554509006028,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D10_constant_mean",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1110.458250999799,
+      "N_external_input_mmol_m2_d": 50.0,
+      "N_external_output_mmol_m2_d": 50.09332033423874,
+      "N_inventory_accumulation_mmol_m2_d": -0.09332033423873654,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02194541764309969,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D10_periodic_phase_0",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1306.500165650001,
+      "N_external_input_mmol_m2_d": 50.13723376075001,
+      "N_external_output_mmol_m2_d": 50.37529202981558,
+      "N_inventory_accumulation_mmol_m2_d": -0.2380582690655757,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.024452583793309238,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D10_periodic_phase_91.25",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1172.1265561786772,
+      "N_external_input_mmol_m2_d": 49.99409042539644,
+      "N_external_output_mmol_m2_d": 50.050531316616784,
+      "N_inventory_accumulation_mmol_m2_d": -0.05644089122034046,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.01921379589096905,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D11_quota_assembly_0",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027359401634850854,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D11_quota_assembly_1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027349136011924298,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D11_quota_assembly_2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027343776123410064,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D11_quota_assembly_4",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02733040669615662,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D11_quota_assembly_8",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027290170169321164,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D11_quota_assembly_16",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027107626796694272,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F00_open_reference",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.81556131773576,
+      "N_inventory_accumulation_mmol_m2_d": 91.1844386819564,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.5407005811803,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F00_closed_reference",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.009712135735937218,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_open_light_0.7",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.680956361644975,
+      "N_inventory_accumulation_mmol_m2_d": 91.31904363804716,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.09800929607863,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_closed_light_0.7",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.010557948684586198,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_open_light_0.8",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.77059191186977,
+      "N_inventory_accumulation_mmol_m2_d": 91.22940808782238,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.88426742235825,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_closed_light_0.8",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.018878585177404043,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_open_light_0.9",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.788921144080224,
+      "N_inventory_accumulation_mmol_m2_d": 91.21107885561193,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.71136481117551,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_closed_light_0.9",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.015389625867259976,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_open_light_1.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.85372528155336,
+      "N_inventory_accumulation_mmol_m2_d": 91.14627471813878,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.39939155130062,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_closed_light_1.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.010904491925107616,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_open_light_1.2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.90928306537063,
+      "N_inventory_accumulation_mmol_m2_d": 91.0907169343215,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.2501594626257,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_closed_light_1.2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.015228742491160794,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_open_light_1.3",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.922255650565162,
+      "N_inventory_accumulation_mmol_m2_d": 91.07774434912699,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.11479878766973,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F01_closed_light_1.3",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 0.0,
+      "N_external_output_mmol_m2_d": 0.0,
+      "N_inventory_accumulation_mmol_m2_d": 0.0,
+      "DIN_whole_run_change_mean_mmol_m2_d": 0.013462254248264038,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_semiannual",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.686948874348326,
+      "N_inventory_accumulation_mmol_m2_d": 91.31305112534382,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.05807826353795,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_annual",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.709485752321122,
+      "N_inventory_accumulation_mmol_m2_d": 91.29051424737102,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.04045775364152,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_constant_matched",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.577884215218345,
+      "N_inventory_accumulation_mmol_m2_d": 91.4221157844738,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.00018830955834,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_seasonal_light_0.7",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.424047032827465,
+      "N_inventory_accumulation_mmol_m2_d": 91.57595296686469,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.59508239814457,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_seasonal_light_0.8",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.513929801128146,
+      "N_inventory_accumulation_mmol_m2_d": 91.48607019856401,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.39663163897255,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_seasonal_light_0.9",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.57319149549654,
+      "N_inventory_accumulation_mmol_m2_d": 91.42680850419562,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.20462056499868,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_seasonal_light_1.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.751271953068677,
+      "N_inventory_accumulation_mmol_m2_d": 91.24872804662347,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.9121966338078,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_seasonal_light_1.2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.796512519428079,
+      "N_inventory_accumulation_mmol_m2_d": 91.20348748026407,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.76500270329444,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F02_seasonal_light_1.3",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.77684611050152,
+      "N_inventory_accumulation_mmol_m2_d": 91.22315388919064,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.62676399833951,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F03_100m_light_0.7",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 59.999999999864954,
+      "N_external_output_mmol_m2_d": 0.0040968794152886085,
+      "N_inventory_accumulation_mmol_m2_d": 59.99590312044967,
+      "DIN_whole_run_change_mean_mmol_m2_d": 52.291767249140754,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F03_100m_light_0.8",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 59.999999999864954,
+      "N_external_output_mmol_m2_d": 0.0040198815589502545,
+      "N_inventory_accumulation_mmol_m2_d": 59.99598011830601,
+      "DIN_whole_run_change_mean_mmol_m2_d": 52.28611728724938,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F03_100m_light_0.9",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 59.999999999864954,
+      "N_external_output_mmol_m2_d": 0.0038016012953084144,
+      "N_inventory_accumulation_mmol_m2_d": 59.996198398569646,
+      "DIN_whole_run_change_mean_mmol_m2_d": 52.328497871400494,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F03_100m_light_1.0",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 59.999999999864954,
+      "N_external_output_mmol_m2_d": 0.003759995162111177,
+      "N_inventory_accumulation_mmol_m2_d": 59.99624000470284,
+      "DIN_whole_run_change_mean_mmol_m2_d": 52.32278081923678,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F03_100m_light_1.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 59.999999999864954,
+      "N_external_output_mmol_m2_d": 0.0036583547369094414,
+      "N_inventory_accumulation_mmol_m2_d": 59.99634164512805,
+      "DIN_whole_run_change_mean_mmol_m2_d": 52.375661556809234,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F03_100m_light_1.2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 59.999999999864954,
+      "N_external_output_mmol_m2_d": 0.0035903331064638293,
+      "N_inventory_accumulation_mmol_m2_d": 59.99640966675849,
+      "DIN_whole_run_change_mean_mmol_m2_d": 52.38899362589623,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F03_100m_light_1.3",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 59.999999999864954,
+      "N_external_output_mmol_m2_d": 0.0035119548587504543,
+      "N_inventory_accumulation_mmol_m2_d": 59.9964880450062,
+      "DIN_whole_run_change_mean_mmol_m2_d": 52.4106656075054,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F04_mixing_0.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 6.257507971833073,
+      "N_inventory_accumulation_mmol_m2_d": 93.74249202785907,
+      "DIN_whole_run_change_mean_mmol_m2_d": 91.44335733543213,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F04_mixing_10",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 0.7827820624390548,
+      "N_inventory_accumulation_mmol_m2_d": 99.2172179372531,
+      "DIN_whole_run_change_mean_mmol_m2_d": 82.69927702988186,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F04_variable_mixing",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 7.619381036843839,
+      "N_inventory_accumulation_mmol_m2_d": 92.38061896284832,
+      "DIN_whole_run_change_mean_mmol_m2_d": 88.46584359376455,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F05_no_grazers",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 1.2087876936280675e-07,
+      "N_inventory_accumulation_mmol_m2_d": 99.99999987881338,
+      "DIN_whole_run_change_mean_mmol_m2_d": 99.47452716312608,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F05_no_shading",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 0.003366585221542076,
+      "N_inventory_accumulation_mmol_m2_d": 99.99663341447061,
+      "DIN_whole_run_change_mean_mmol_m2_d": 92.26275423143302,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F06_PAR_fraction_043",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.284808230420907,
+      "N_inventory_accumulation_mmol_m2_d": 91.71519176927124,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.81530039939014,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F06_DIC_exchange",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 219.396871366276,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 30.328181826978494,
+      "N_inventory_accumulation_mmol_m2_d": 69.67181817271366,
+      "DIN_whole_run_change_mean_mmol_m2_d": 72.22219396392221,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F07_layers_20",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999990457,
+      "N_external_output_mmol_m2_d": 8.529277967411838,
+      "N_inventory_accumulation_mmol_m2_d": 91.47072203249274,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.68392446979162,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F07_layers_80",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999949864,
+      "N_external_output_mmol_m2_d": 8.852911069236843,
+      "N_inventory_accumulation_mmol_m2_d": 91.1470889302618,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.48774103299147,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F08_detritus_bins_4",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 9.196889423240524,
+      "N_inventory_accumulation_mmol_m2_d": 90.80311057645162,
+      "DIN_whole_run_change_mean_mmol_m2_d": 88.60312943583209,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F08_detritus_bins_8",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.996328136057027,
+      "N_inventory_accumulation_mmol_m2_d": 91.00367186363512,
+      "DIN_whole_run_change_mean_mmol_m2_d": 89.25233233281551,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F09_dt_0.025",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969651,
+      "N_external_output_mmol_m2_d": 8.69137715255747,
+      "N_inventory_accumulation_mmol_m2_d": 91.30862284713903,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.57116982647845,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F09_dt_0.0125",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 100.00000000328939,
+      "N_external_output_mmol_m2_d": 8.721399438738178,
+      "N_inventory_accumulation_mmol_m2_d": 91.27860056455121,
+      "DIN_whole_run_change_mean_mmol_m2_d": 86.5719960458923,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F10_product_colimitation",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.07340602297567,
+      "N_inventory_accumulation_mmol_m2_d": 91.92659397671648,
+      "DIN_whole_run_change_mean_mmol_m2_d": 88.49284798270168,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F10_prior_physiology",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.500512284703344,
+      "N_inventory_accumulation_mmol_m2_d": 91.4994877149888,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.22801567646498,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F10_selective_remin",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 6.119300474676322,
+      "N_inventory_accumulation_mmol_m2_d": 93.88069952501583,
+      "DIN_whole_run_change_mean_mmol_m2_d": 90.4000693115731,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D12_dt_0.025",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2129.020677297492,
+      "N_external_input_mmol_m2_d": 99.99999999827196,
+      "N_external_output_mmol_m2_d": 99.44913887960757,
+      "N_inventory_accumulation_mmol_m2_d": 0.5508611186643932,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02051561809459695,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D12_dt_0.0125",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1929.0038286655206,
+      "N_external_input_mmol_m2_d": 100.00000000000024,
+      "N_external_output_mmol_m2_d": 101.15146889985934,
+      "N_inventory_accumulation_mmol_m2_d": -1.1514688998590898,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02028416969580902,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "F08_detritus_bins_16",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.0,
+      "N_external_input_mmol_m2_d": 99.99999999969215,
+      "N_external_output_mmol_m2_d": 8.916034225439816,
+      "N_inventory_accumulation_mmol_m2_d": 91.08396577425233,
+      "DIN_whole_run_change_mean_mmol_m2_d": 89.3411764237429,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D13_Ncost_0.5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1913.7953980765114,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 102.42704135258548,
+      "N_inventory_accumulation_mmol_m2_d": -2.4270413525854764,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.020955714575113756,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D13_Ncost_3.0",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2112.2600365533417,
+      "N_external_input_mmol_m2_d": 100.00000000000011,
+      "N_external_output_mmol_m2_d": 99.12274844842298,
+      "N_inventory_accumulation_mmol_m2_d": 0.8772515515771317,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.023345924076198878,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_0.001",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 0.6106988638830887,
+      "N_external_input_mmol_m2_d": 0.09999999999941167,
+      "N_external_output_mmol_m2_d": 0.10000217867724627,
+      "N_inventory_accumulation_mmol_m2_d": -2.178677834599463e-06,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027294852946912584,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_0.01",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 6.592235955834222,
+      "N_external_input_mmol_m2_d": 1.0000000000012221,
+      "N_external_output_mmol_m2_d": 1.000043163449908,
+      "N_inventory_accumulation_mmol_m2_d": -4.316344868604549e-05,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02713341657787252,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_0.1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 128.40320011837184,
+      "N_external_input_mmol_m2_d": 9.999999999956799,
+      "N_external_output_mmol_m2_d": 10.048697309236358,
+      "N_inventory_accumulation_mmol_m2_d": -0.048697309279559065,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.025917595985308774,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_0.5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 1253.050663207482,
+      "N_external_input_mmol_m2_d": 50.0,
+      "N_external_output_mmol_m2_d": 50.23357649753661,
+      "N_inventory_accumulation_mmol_m2_d": -0.23357649753661036,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027088172070559784,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_1",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2541.183921122653,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 99.74452776760765,
+      "N_inventory_accumulation_mmol_m2_d": 0.25547223239234995,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.024835626824926318,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_2",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 5516.0007691173305,
+      "N_external_input_mmol_m2_d": 200.0,
+      "N_external_output_mmol_m2_d": 200.9477474014435,
+      "N_inventory_accumulation_mmol_m2_d": -0.9477474014434932,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02618285816726826,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_5",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 12237.40948905118,
+      "N_external_input_mmol_m2_d": 499.999999998181,
+      "N_external_output_mmol_m2_d": 502.14443911343545,
+      "N_inventory_accumulation_mmol_m2_d": -2.1444391152544426,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02681960009806743,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_7",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 15386.170398435846,
+      "N_external_input_mmol_m2_d": 699.999999994687,
+      "N_external_output_mmol_m2_d": 705.7406668443001,
+      "N_inventory_accumulation_mmol_m2_d": -5.740666849613149,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.02695499501150605,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_supply_10",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 16828.211319013142,
+      "N_external_input_mmol_m2_d": 999.999999996362,
+      "N_external_output_mmol_m2_d": 992.1951364269642,
+      "N_inventory_accumulation_mmol_m2_d": 7.804863569397753,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.027064450348336083,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "D14_Cbath_tau10",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 2499.755069029209,
+      "N_external_input_mmol_m2_d": 100.0,
+      "N_external_output_mmol_m2_d": 99.83701333811004,
+      "N_inventory_accumulation_mmol_m2_d": 0.1629866618899527,
+      "DIN_whole_run_change_mean_mmol_m2_d": -0.024831723058364605,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R00_buffered_reference",
+      "window_days": 364.0,
+      "C_external_net_mmol_m2_d": 97.5200020121878,
+      "N_external_input_mmol_m2_d": 100.00000000328939,
+      "N_external_output_mmol_m2_d": 16.490305512135194,
+      "N_inventory_accumulation_mmol_m2_d": 83.50969449115419,
+      "DIN_whole_run_change_mean_mmol_m2_d": 84.23525089941771,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R01_same_state_dt_0.0125",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 97.26113228529991,
+      "N_external_input_mmol_m2_d": 100.00000000002827,
+      "N_external_output_mmol_m2_d": 16.445913961839565,
+      "N_inventory_accumulation_mmol_m2_d": 83.5540860381887,
+      "DIN_whole_run_change_mean_mmol_m2_d": 83.59508293769521,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R01_same_state_dt_0.00625",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 97.25209635403445,
+      "N_external_input_mmol_m2_d": 99.9999999999459,
+      "N_external_output_mmol_m2_d": 16.44478980323209,
+      "N_inventory_accumulation_mmol_m2_d": 83.55521019671382,
+      "DIN_whole_run_change_mean_mmol_m2_d": 83.59803587584477,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R02_grid80",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 92.7837631615524,
+      "N_external_input_mmol_m2_d": 99.99999999996363,
+      "N_external_output_mmol_m2_d": 16.084826100353077,
+      "N_inventory_accumulation_mmol_m2_d": 83.91517389961056,
+      "DIN_whole_run_change_mean_mmol_m2_d": 84.15002046990587,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R02_grid160",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 97.4609329618994,
+      "N_external_input_mmol_m2_d": 99.99999999998381,
+      "N_external_output_mmol_m2_d": 17.209298047877052,
+      "N_inventory_accumulation_mmol_m2_d": 82.79070195210676,
+      "DIN_whole_run_change_mean_mmol_m2_d": 82.64607813856973,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R02_particles32",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 96.85318104226903,
+      "N_external_input_mmol_m2_d": 100.00000000002827,
+      "N_external_output_mmol_m2_d": 16.372962290249912,
+      "N_inventory_accumulation_mmol_m2_d": 83.62703770977835,
+      "DIN_whole_run_change_mean_mmol_m2_d": 83.66517626209564,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R04_Ninput_0.25",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 97.26523521622937,
+      "N_external_input_mmol_m2_d": 25.000000000007066,
+      "N_external_output_mmol_m2_d": 16.4463250778025,
+      "N_inventory_accumulation_mmol_m2_d": 8.553674922204566,
+      "DIN_whole_run_change_mean_mmol_m2_d": 8.594332029626544,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R04_Ninput_2.0",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 97.25636438785381,
+      "N_external_input_mmol_m2_d": 200.00000000005653,
+      "N_external_output_mmol_m2_d": 16.4454287395764,
+      "N_inventory_accumulation_mmol_m2_d": 183.55457126048015,
+      "DIN_whole_run_change_mean_mmol_m2_d": 183.59594629952304,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R04_remin_twice",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 71.91018100721428,
+      "N_external_input_mmol_m2_d": 100.00000000002827,
+      "N_external_output_mmol_m2_d": 13.983004628369539,
+      "N_inventory_accumulation_mmol_m2_d": 86.01699537165874,
+      "DIN_whole_run_change_mean_mmol_m2_d": 87.25251253512704,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R04_phyto_sink_twice",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 95.03565616021658,
+      "N_external_input_mmol_m2_d": 100.00000000002827,
+      "N_external_output_mmol_m2_d": 16.968073641838984,
+      "N_inventory_accumulation_mmol_m2_d": 83.03192635818928,
+      "DIN_whole_run_change_mean_mmol_m2_d": 83.88001019682517,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R04_lower_C_yield",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 68.39802083550467,
+      "N_external_input_mmol_m2_d": 100.00000000002827,
+      "N_external_output_mmol_m2_d": 9.513107032425204,
+      "N_inventory_accumulation_mmol_m2_d": 90.48689296760305,
+      "DIN_whole_run_change_mean_mmol_m2_d": 89.71064954057185,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R05_water_attenuation_0.015",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 98.67391323199243,
+      "N_external_input_mmol_m2_d": 100.00000000002827,
+      "N_external_output_mmol_m2_d": 16.655696436272226,
+      "N_inventory_accumulation_mmol_m2_d": 83.34430356375604,
+      "DIN_whole_run_change_mean_mmol_m2_d": 83.23715019271368,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    },
+    {
+      "id": "R05_water_attenuation_0.06",
+      "window_days": 365.0,
+      "C_external_net_mmol_m2_d": 94.09148426744571,
+      "N_external_input_mmol_m2_d": 100.00000000002827,
+      "N_external_output_mmol_m2_d": 16.08242990356676,
+      "N_inventory_accumulation_mmol_m2_d": 83.9175700964615,
+      "DIN_whole_run_change_mean_mmol_m2_d": 84.0969417887613,
+      "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+    }
+  ],
+  "Rstar_oracle": {
+    "steps": 904739,
+    "mass_error_N": -4.068745340646274e-12,
+    "mass_error_C": 1.9235955051044584e-09,
+    "n_zoo": 0,
+    "final_DIN": 0.004014589647802703,
+    "winning_phyto_ESD": 1.0,
+    "final_P_N": 7.995985410348126,
+    "final_Z_N": 0.0,
+    "analytic_Rstar": 0.004014589647802712,
+    "Rstar_absolute_error": 9.540979117872439e-18
+  },
+  "mechanism_case_counts": {
+    "fixed_CN_assembly": 8,
+    "culture_phase": 16,
+    "physiology_grid": 25,
+    "mixing_experiments": 18
+  },
+  "culture_phase_uncertainty": {
+    "Ot": {
+      "min_final_CN": 13.81666995588381,
+      "max_final_CN": 14.011238158256099
+    },
+    "Tw": {
+      "min_final_CN": 63.75705289314498,
+      "max_final_CN": 64.08826943555609
+    },
+    "Tp": {
+      "min_final_CN": 39.14078965174242,
+      "max_final_CN": 39.7554853865213
+    },
+    "Ms": {
+      "min_final_CN": 14.877687493615406,
+      "max_final_CN": 15.01276261345371
+    }
+  },
+  "annual_intervention_comparisons": [
+    {
+      "reference": "R01_same_state_dt_0.0125",
+      "alternative": "R04_Ninput_0.25",
+      "relative_changes": {
+        "phyto_N_mmol_m2": 2.860748119104528e-05,
+        "phyto_CN_inventory_ratio": 2.701006378869053e-05,
+        "NPP_C_mmol_m2_d": 4.492578139081438e-05,
+        "bottom_export_C_mmol_m2_d": 1.0956054307120766e-05,
+        "N_weighted_geomean_ESD_um": 5.147871192212605e-06
+      }
+    },
+    {
+      "reference": "R01_same_state_dt_0.0125",
+      "alternative": "R04_Ninput_2.0",
+      "relative_changes": {
+        "phyto_N_mmol_m2": -3.4096047549336816e-05,
+        "phyto_CN_inventory_ratio": -3.108503657578421e-05,
+        "NPP_C_mmol_m2_d": -5.236027810906485e-05,
+        "bottom_export_C_mmol_m2_d": -1.3792816326740898e-05,
+        "N_weighted_geomean_ESD_um": -6.463760951147535e-06
+      }
+    },
+    {
+      "reference": "R01_same_state_dt_0.0125",
+      "alternative": "R04_remin_twice",
+      "relative_changes": {
+        "phyto_N_mmol_m2": 0.0011286442351630122,
+        "phyto_CN_inventory_ratio": 0.0004981818737010979,
+        "NPP_C_mmol_m2_d": 0.0007260344917421335,
+        "bottom_export_C_mmol_m2_d": -0.895792166510487,
+        "N_weighted_geomean_ESD_um": 0.0013110060095919973
+      }
+    },
+    {
+      "reference": "R01_same_state_dt_0.0125",
+      "alternative": "R04_phyto_sink_twice",
+      "relative_changes": {
+        "phyto_N_mmol_m2": -0.24548143819310098,
+        "phyto_CN_inventory_ratio": 0.057269103127636445,
+        "NPP_C_mmol_m2_d": 0.02644768043337109,
+        "bottom_export_C_mmol_m2_d": -0.5515808081930782,
+        "N_weighted_geomean_ESD_um": -0.2991643034335556
+      }
+    },
+    {
+      "reference": "R01_same_state_dt_0.0125",
+      "alternative": "R04_lower_C_yield",
+      "relative_changes": {
+        "phyto_N_mmol_m2": 0.26778118724437894,
+        "phyto_CN_inventory_ratio": -0.1418380558220601,
+        "NPP_C_mmol_m2_d": -0.11720694290335543,
+        "bottom_export_C_mmol_m2_d": -0.11786762995726707,
+        "N_weighted_geomean_ESD_um": -0.03654942335230005
+      }
+    },
+    {
+      "reference": "R01_same_state_dt_0.0125",
+      "alternative": "R05_water_attenuation_0.015",
+      "relative_changes": {
+        "phyto_N_mmol_m2": 0.017909152521209837,
+        "phyto_CN_inventory_ratio": 0.0002531515253303418,
+        "NPP_C_mmol_m2_d": 0.013207066951889113,
+        "bottom_export_C_mmol_m2_d": 0.02279075071917558,
+        "N_weighted_geomean_ESD_um": 0.010317977014499435
+      }
+    },
+    {
+      "reference": "R01_same_state_dt_0.0125",
+      "alternative": "R05_water_attenuation_0.06",
+      "relative_changes": {
+        "phyto_N_mmol_m2": -0.045417471214085015,
+        "phyto_CN_inventory_ratio": 0.003730873226247766,
+        "NPP_C_mmol_m2_d": -0.026268903299600632,
+        "bottom_export_C_mmol_m2_d": -0.05767509706718654,
+        "N_weighted_geomean_ESD_um": -0.02128518786208
+      }
+    }
+  ],
+  "pattern_assessment": [
+    {
+      "family": "Fianchini_constant_open",
+      "cases": [
+        "F01_open_light_0.7",
+        "F01_open_light_0.8",
+        "F01_open_light_0.9",
+        "F00_open_reference",
+        "F01_open_light_1.1",
+        "F01_open_light_1.2",
+        "F01_open_light_1.3"
+      ],
+      "metrics": {
+        "phyto_N_mmol_m2": {
+          "spearman_rho": 0.6785714285714287,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.0021475258091797635,
+          "linear_R2": 0.5457655784763454,
+          "values": [
+            242.38106047928625,
+            244.49832104438872,
+            248.1906092782395,
+            246.92106539719683,
+            250.67191653441284,
+            248.6381792210093,
+            247.58601230556496
+          ]
+        },
+        "phyto_CN_inventory_ratio": {
+          "spearman_rho": -0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -4.716699705897518e-05,
+          "linear_R2": 0.9123750431958577,
+          "values": [
+            6.141204494183341,
+            6.118989519856777,
+            6.069885697041978,
+            6.064474131467098,
+            6.02932886884825,
+            6.029384454922078,
+            6.021358701777739
+          ]
+        },
+        "phyto_evenness_N": {
+          "spearman_rho": 0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 1.0374667879503585e-05,
+          "linear_R2": 0.8582469969619178,
+          "values": [
+            0.47227081829967266,
+            0.4806011786433353,
+            0.4838828967794463,
+            0.49621542669679186,
+            0.4973496541130665,
+            0.49887972134250264,
+            0.4980700413744048
+          ]
+        },
+        "N_weighted_geomean_ESD_um": {
+          "spearman_rho": -0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -0.0008683611028068674,
+          "linear_R2": 0.9676385948289152,
+          "values": [
+            36.33789493198602,
+            36.136770605013666,
+            35.629558037589035,
+            35.04771188580047,
+            35.1275873826828,
+            34.390138720179735,
+            34.11457381971677
+          ]
+        },
+        "N_weighted_ESD95_um": {
+          "spearman_rho": 0.6324555320336759,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.0024121734190496666,
+          "linear_R2": 0.40000000000000013,
+          "values": [
+            92.79987422337048,
+            92.79987422337048,
+            92.79987422337048,
+            92.79987422337048,
+            100.2064434679383,
+            92.79987422337048,
+            100.2064434679383
+          ]
+        },
+        "bottom_export_C_mmol_m2_d": {
+          "spearman_rho": 1.0,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 0.0008441424088302508,
+          "linear_R2": 0.9714207794302026,
+          "values": [
+            42.977113189029566,
+            43.76752640104584,
+            43.77590230779468,
+            44.205393558173895,
+            44.51962735554694,
+            44.99655230244581,
+            45.36576894984267
+          ]
+        },
+        "e_ratio_at_bottom": {
+          "spearman_rho": 1.0,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 4.9741594489302455e-06,
+          "linear_R2": 0.9854071608066893,
+          "values": [
+            0.18057134917904946,
+            0.18406923481564208,
+            0.18458970913715836,
+            0.18719421710875728,
+            0.1894003029350428,
+            0.19141657327215839,
+            0.1944337756579567
+          ]
+        }
+      },
+      "interpretation": "Deterministic rank/monotonicity and descriptive linearity only; not a statistical validation against data."
+    },
+    {
+      "family": "Fianchini_constant_closed",
+      "cases": [
+        "F01_closed_light_0.7",
+        "F01_closed_light_0.8",
+        "F01_closed_light_0.9",
+        "F00_closed_reference",
+        "F01_closed_light_1.1",
+        "F01_closed_light_1.2",
+        "F01_closed_light_1.3"
+      ],
+      "metrics": {
+        "phyto_N_mmol_m2": {
+          "spearman_rho": 0.1785714285714286,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.00015880939943364964,
+          "linear_R2": 0.0011135973474856176,
+          "values": [
+            65.38515285351379,
+            65.08835832576317,
+            71.10923237656709,
+            67.9259941046386,
+            72.86271499967417,
+            59.32300461648024,
+            69.29439265562807
+          ]
+        },
+        "phyto_CN_inventory_ratio": {
+          "spearman_rho": 0.7142857142857144,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.0026359900742008065,
+          "linear_R2": 0.4739263732159067,
+          "values": [
+            37.110064605249185,
+            38.65403382241894,
+            36.763684521998975,
+            38.996385036201644,
+            37.860943707620386,
+            47.022807284187614,
+            41.95685913818507
+          ]
+        },
+        "phyto_evenness_N": {
+          "spearman_rho": -0.8928571428571429,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -2.8838186917989764e-05,
+          "linear_R2": 0.6639158274295449,
+          "values": [
+            0.756177694600465,
+            0.7320681590010183,
+            0.7797651487703431,
+            0.7292986999978943,
+            0.7228164454889705,
+            0.6993238311390306,
+            0.6789267576270056
+          ]
+        },
+        "N_weighted_geomean_ESD_um": {
+          "spearman_rho": 0.7142857142857144,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.0023367286970421893,
+          "linear_R2": 0.44823045594119026,
+          "values": [
+            14.623203837955563,
+            16.5994733236237,
+            13.16408505625203,
+            14.997204629957134,
+            22.593126066816353,
+            18.43525159419741,
+            19.822893340181167
+          ]
+        },
+        "N_weighted_ESD95_um": {
+          "spearman_rho": -0.3187276291558383,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -0.005047031103849151,
+          "linear_R2": 0.15740654402476473,
+          "values": [
+            126.16544702868043,
+            136.23499860415492,
+            126.16544702868043,
+            126.16544702868043,
+            136.23499860415492,
+            100.2064434679383,
+            126.16544702868043
+          ]
+        },
+        "bottom_export_C_mmol_m2_d": {
+          "spearman_rho": null,
+          "nondecreasing": true,
+          "nonincreasing": true,
+          "linear_slope": 0.0,
+          "linear_R2": null,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "e_ratio_at_bottom": {
+          "spearman_rho": null,
+          "nondecreasing": true,
+          "nonincreasing": true,
+          "linear_slope": 0.0,
+          "linear_R2": null,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "interpretation": "Deterministic rank/monotonicity and descriptive linearity only; not a statistical validation against data."
+    },
+    {
+      "family": "Fianchini_semiannual_200m",
+      "cases": [
+        "F02_seasonal_light_0.7",
+        "F02_seasonal_light_0.8",
+        "F02_seasonal_light_0.9",
+        "F02_semiannual",
+        "F02_seasonal_light_1.1",
+        "F02_seasonal_light_1.2",
+        "F02_seasonal_light_1.3"
+      ],
+      "metrics": {
+        "phyto_N_mmol_m2": {
+          "spearman_rho": 0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.004013467711963668,
+          "linear_R2": 0.8999033667444468,
+          "values": [
+            238.74584158326888,
+            242.10126445333958,
+            243.14208951962746,
+            244.628956290992,
+            247.62228312848111,
+            245.86491481371203,
+            251.17445979074023
+          ]
+        },
+        "phyto_CN_inventory_ratio": {
+          "spearman_rho": -0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -3.0836726672662426e-05,
+          "linear_R2": 0.8931125451176147,
+          "values": [
+            6.1446092792136415,
+            6.124633077293687,
+            6.115293078051349,
+            6.1100095019270455,
+            6.091494371057331,
+            6.093282762055649,
+            6.047196990178678
+          ]
+        },
+        "phyto_evenness_N": {
+          "spearman_rho": 0.642857142857143,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 6.47265433319006e-06,
+          "linear_R2": 0.5959170221927051,
+          "values": [
+            0.4677802384746181,
+            0.47626144739522136,
+            0.48969109891200385,
+            0.4810059044288367,
+            0.4822117998247935,
+            0.4876315822075386,
+            0.4891922620818687
+          ]
+        },
+        "N_weighted_geomean_ESD_um": {
+          "spearman_rho": 0.6785714285714287,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.0003107722271258817,
+          "linear_R2": 0.4108024555848353,
+          "values": [
+            35.26621941821492,
+            35.61828309209729,
+            35.316793817559194,
+            36.21461464564499,
+            36.197125322124776,
+            35.48105328292772,
+            36.3365620336493
+          ]
+        },
+        "N_weighted_ESD95_um": {
+          "spearman_rho": 0.6123724356957945,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 0.0018091300642872456,
+          "linear_R2": 0.3750000000000011,
+          "values": [
+            92.79987422337048,
+            92.79987422337048,
+            92.79987422337048,
+            92.79987422337048,
+            92.79987422337048,
+            92.79987422337048,
+            100.2064434679383
+          ]
+        },
+        "bottom_export_C_mmol_m2_d": {
+          "spearman_rho": 0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.0013039383747702996,
+          "linear_R2": 0.9552015648307101,
+          "values": [
+            40.709389896182785,
+            41.446887614957525,
+            42.079471663678156,
+            42.998080852037994,
+            43.44088779845481,
+            43.93625552189695,
+            43.934322960828595
+          ]
+        },
+        "e_ratio_at_bottom": {
+          "spearman_rho": 1.0,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 5.874307388187788e-06,
+          "linear_R2": 0.9856972659420006,
+          "values": [
+            0.17168053941630423,
+            0.1745071899054746,
+            0.17719127873921825,
+            0.18124430158178145,
+            0.18273453323549949,
+            0.18494448042258776,
+            0.18692397868857946
+          ]
+        }
+      },
+      "interpretation": "Deterministic rank/monotonicity and descriptive linearity only; not a statistical validation against data."
+    },
+    {
+      "family": "Fianchini_semiannual_100m",
+      "cases": [
+        "F03_100m_light_0.7",
+        "F03_100m_light_0.8",
+        "F03_100m_light_0.9",
+        "F03_100m_light_1.0",
+        "F03_100m_light_1.1",
+        "F03_100m_light_1.2",
+        "F03_100m_light_1.3"
+      ],
+      "metrics": {
+        "phyto_N_mmol_m2": {
+          "spearman_rho": -0.8571428571428573,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -2.2472227136022685e-05,
+          "linear_R2": 0.6120342093335271,
+          "values": [
+            3.001084947163377,
+            2.9958463597098333,
+            2.9617198830814937,
+            2.9989522116325453,
+            2.9588876310266974,
+            2.9310724559088714,
+            2.9532104505789145
+          ]
+        },
+        "phyto_CN_inventory_ratio": {
+          "spearman_rho": 1.0,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 1.7114468813695301e-06,
+          "linear_R2": 0.9692572863031459,
+          "values": [
+            4.938938399898901,
+            4.939545890952326,
+            4.940873337479031,
+            4.941749968000015,
+            4.942189337191479,
+            4.942476941734379,
+            4.943552354265923
+          ]
+        },
+        "phyto_evenness_N": {
+          "spearman_rho": -0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -2.3555373350756183e-10,
+          "linear_R2": 0.535432134107168,
+          "values": [
+            8.284966496398427e-07,
+            1.8920503565332922e-07,
+            4.4279196059726125e-08,
+            6.187543117977678e-09,
+            4.5697122097035555e-09,
+            4.783286546647148e-09,
+            3.2519490874541495e-10
+          ]
+        },
+        "N_weighted_geomean_ESD_um": {
+          "spearman_rho": -0.9642857142857145,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -6.091085047695268e-11,
+          "linear_R2": 0.5332402768805939,
+          "values": [
+            1.0000002143144153,
+            1.0000000489778291,
+            1.0000000102897784,
+            1.0000000013557442,
+            1.000000000947306,
+            1.000000000975313,
+            1.0000000000615397
+          ]
+        },
+        "N_weighted_ESD95_um": {
+          "spearman_rho": null,
+          "nondecreasing": true,
+          "nonincreasing": true,
+          "linear_slope": 3.268361788459586e-20,
+          "linear_R2": null,
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "bottom_export_C_mmol_m2_d": {
+          "spearman_rho": -1.0,
+          "nondecreasing": false,
+          "nonincreasing": true,
+          "linear_slope": -7.289978976312538e-07,
+          "linear_R2": 0.9691262102450632,
+          "values": [
+            0.019618297081571336,
+            0.019434960547416946,
+            0.018715085529398132,
+            0.018661398603898715,
+            0.01826634900960646,
+            0.01799724974676832,
+            0.01774183611844789
+          ]
+        },
+        "e_ratio_at_bottom": {
+          "spearman_rho": 1.0,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 2.3366632689460074e-07,
+          "linear_R2": 0.9721739733464111,
+          "values": [
+            0.014954657965378811,
+            0.015086827513914993,
+            0.015238730717040181,
+            0.015360396819727482,
+            0.015426315572312697,
+            0.015476492459453902,
+            0.015588981798979152
+          ]
+        }
+      },
+      "interpretation": "Deterministic rank/monotonicity and descriptive linearity only; not a statistical validation against data."
+    },
+    {
+      "family": "DePasquale_N_supply",
+      "cases": [
+        "D01_supply_0.001",
+        "D01_supply_0.01",
+        "D01_supply_0.1",
+        "D01_supply_0.5",
+        "D00_reference",
+        "D01_supply_2",
+        "D01_supply_5",
+        "D01_supply_7",
+        "D01_supply_10"
+      ],
+      "metrics": {
+        "phyto_N_mmol_m2": {
+          "spearman_rho": 0.9500000000000001,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 353.91532747321446,
+          "linear_R2": 0.6422235899593047,
+          "values": [
+            2.1935530992554004,
+            9.698869105983036,
+            80.8208048560355,
+            594.0757730335304,
+            1449.2968983811204,
+            2113.971941698223,
+            2610.2417519725213,
+            4783.50179451443,
+            2553.083993027116
+          ]
+        },
+        "phyto_CN_inventory_ratio": {
+          "spearman_rho": -0.5499999999999999,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -2.2104234024850244,
+          "linear_R2": 0.34734826360836735,
+          "values": [
+            9.851588504752147,
+            18.48201641044653,
+            31.092518497754842,
+            44.21903548779509,
+            34.18378301216825,
+            13.044714654300472,
+            8.596997731818616,
+            6.702182192649992,
+            8.685831645938812
+          ]
+        },
+        "phyto_evenness_N": {
+          "spearman_rho": 0.5666666666666667,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.012950697659495827,
+          "linear_R2": 0.14634143034869962,
+          "values": [
+            4.284863115317116e-45,
+            0.16554625252302543,
+            0.4222844668909594,
+            0.21612379765084377,
+            0.1552474032001034,
+            0.22715123149720232,
+            0.25115455141632326,
+            0.37272004439280654,
+            0.26594899564412755
+          ]
+        },
+        "N_weighted_geomean_ESD_um": {
+          "spearman_rho": 0.9833333333333333,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 5.927290158971859,
+          "linear_R2": 0.7845074057943414,
+          "values": [
+            1.0,
+            1.8919673856798493,
+            5.929880926038067,
+            13.363231487892559,
+            13.595824463584817,
+            23.293375279347995,
+            62.25851355761717,
+            31.992339125984365,
+            64.87532726084874
+          ]
+        },
+        "N_weighted_ESD95_um": {
+          "spearman_rho": 0.991631652042901,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 11.627780677061155,
+          "linear_R2": 0.8980703909910561,
+          "values": [
+            1.0,
+            3.1639084771095454,
+            13.609459183441501,
+            19.97938756249444,
+            19.97938756249444,
+            43.059083279366924,
+            100.2064434679383,
+            100.2064434679383,
+            108.20414786687643
+          ]
+        },
+        "bottom_export_C_mmol_m2_d": {
+          "spearman_rho": 0.8166666666666667,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 152.9204438234081,
+          "linear_R2": 0.4933625573939203,
+          "values": [
+            0.10077243498532067,
+            1.4535773931859122,
+            85.28860242560998,
+            932.8904814590434,
+            1762.4059594582523,
+            1330.74150505598,
+            1692.6722942782242,
+            1733.9170665549498,
+            1708.4465900512282
+          ]
+        },
+        "e_ratio_at_bottom": {
+          "spearman_rho": 0.9833333333333333,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.02871834579658668,
+          "linear_R2": 0.7035504176305233,
+          "values": [
+            0.01282987603413795,
+            0.02897841304703106,
+            0.12658960758885415,
+            0.1870963413809915,
+            0.19410218098602708,
+            0.2200340826555766,
+            0.3484823810410066,
+            0.2882629128621279,
+            0.3572931460650706
+          ]
+        }
+      },
+      "interpretation": "Deterministic rank/monotonicity and descriptive linearity only; not a statistical validation against data."
+    },
+    {
+      "family": "N_supply_carbon_bath",
+      "cases": [
+        "D14_Cbath_supply_0.001",
+        "D14_Cbath_supply_0.01",
+        "D14_Cbath_supply_0.1",
+        "D14_Cbath_supply_0.5",
+        "D14_Cbath_supply_1",
+        "D14_Cbath_supply_2",
+        "D14_Cbath_supply_5",
+        "D14_Cbath_supply_7",
+        "D14_Cbath_supply_10"
+      ],
+      "metrics": {
+        "phyto_N_mmol_m2": {
+          "spearman_rho": 1.0,
+          "nondecreasing": true,
+          "nonincreasing": false,
+          "linear_slope": 3965.2704020358105,
+          "linear_R2": 0.994154207810651,
+          "values": [
+            2.193552991075797,
+            9.698852569544062,
+            80.83138148556193,
+            677.2724469909708,
+            1637.8629891907237,
+            5124.846020082493,
+            17924.198542726717,
+            27992.080271322233,
+            38595.135832273154
+          ]
+        },
+        "phyto_CN_inventory_ratio": {
+          "spearman_rho": 0.4666666666666666,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 0.730770834270612,
+          "linear_R2": 0.034305337125790425,
+          "values": [
+            9.851588910196327,
+            18.482030511531306,
+            31.097765907755655,
+            47.13852551937081,
+            51.256994949933905,
+            50.90415958713324,
+            42.772062217983326,
+            38.972836500118405,
+            33.22850236160459
+          ]
+        },
+        "phyto_evenness_N": {
+          "spearman_rho": -0.06666666666666667,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -0.007766156682390429,
+          "linear_R2": 0.05295177822239827,
+          "values": [
+            4.212843735508628e-45,
+            0.1655467097330861,
+            0.42244876039672147,
+            0.15041795270017483,
+            0.10927247673192111,
+            0.03181286203973305,
+            0.15423311970968773,
+            0.16297406522727323,
+            0.05245394118522173
+          ]
+        },
+        "N_weighted_geomean_ESD_um": {
+          "spearman_rho": 0.16666666666666669,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -0.21869144505906932,
+          "linear_R2": 0.036785779867060664,
+          "values": [
+            1.0,
+            1.8919665259695035,
+            5.9333833364135335,
+            14.325692884088484,
+            10.27758979219978,
+            7.8517367755027,
+            5.5625240089655295,
+            4.837229887202946,
+            3.9653826948827278
+          ]
+        },
+        "N_weighted_ESD95_um": {
+          "spearman_rho": 0.08333333333333334,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -0.5538323949214283,
+          "linear_R2": 0.1268950736248341,
+          "values": [
+            1.0,
+            3.1639084771095454,
+            13.609459183441501,
+            18.502649018300733,
+            11.67197492304344,
+            7.950657436742772,
+            5.848035476425732,
+            5.015491248392775,
+            3.983535524839541
+          ]
+        },
+        "bottom_export_C_mmol_m2_d": {
+          "spearman_rho": 0.9833333333333333,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": 1551.9941575718467,
+          "linear_R2": 0.9138513449375295,
+          "values": [
+            0.10077243493261168,
+            1.4535760200544778,
+            85.32555167363772,
+            1108.33360932188,
+            2160.8497903253533,
+            5012.83131443113,
+            11074.640029422466,
+            13859.949960287728,
+            13240.82313068035
+          ]
+        },
+        "e_ratio_at_bottom": {
+          "spearman_rho": 0.11666666666666665,
+          "nondecreasing": false,
+          "nonincreasing": false,
+          "linear_slope": -0.0021433223076367963,
+          "linear_R2": 0.01882056063977544,
+          "values": [
+            0.012829876024144,
+            0.028978394793920982,
+            0.12658424147279168,
+            0.1948047835608912,
+            0.14449684802236926,
+            0.12320021094161357,
+            0.09778671100944471,
+            0.08732843710396565,
+            0.06885221195458249
+          ]
+        }
+      },
+      "interpretation": "Deterministic rank/monotonicity and descriptive linearity only; not a statistical validation against data."
+    }
+  ],
+  "culture_metrics": [
+    {
+      "species": "Ot",
+      "split": "calibration",
+      "steps": 2529,
+      "rejected_steps": 9,
+      "runtime_seconds": 0.009176065000247036,
+      "minimum_live_state": 0.0,
+      "max_abs_mass_error_C": 1.1823431123048067e-11,
+      "max_abs_mass_error_N": 1.0302869668521453e-13,
+      "max_relative_mass_error_C": 2.8661846860401686e-15,
+      "max_relative_mass_error_N": 3.455948449358371e-15,
+      "final_live_CN": 13.81662614632482,
+      "accelerated": true,
+      "rtol": 0.0002,
+      "atol": 1e-08,
+      "C_pg_RMSLE": 0.10124709121270614,
+      "C_pg_persistence_RMSLE": 0.1653936762516079,
+      "N_pg_RMSLE": 0.11267414015470056,
+      "N_pg_persistence_RMSLE": 0.5051095516032398,
+      "cells_ml_RMSLE": 0.08260352049902582,
+      "cells_ml_persistence_RMSLE": 0.8920426590201719,
+      "CN_RMSLE": 0.11056031884198937,
+      "CN_Redfield_RMSLE": 0.5848732725123192,
+      "CN_initial_ratio_RMSLE": 0.6663120332583073,
+      "final_CN_predicted": 13.816626146324817,
+      "final_CN_observed": 15.738897098585094
+    },
+    {
+      "species": "Tw",
+      "split": "calibration",
+      "steps": 2626,
+      "rejected_steps": 12,
+      "runtime_seconds": 0.008291424000162806,
+      "minimum_live_state": 0.0,
+      "max_abs_mass_error_C": 5.4569682106375694e-12,
+      "max_abs_mass_error_N": 1.0658141036401503e-14,
+      "max_relative_mass_error_C": 1.283976655898308e-15,
+      "max_relative_mass_error_N": 4.631101565507486e-16,
+      "final_live_CN": 63.751654460612194,
+      "accelerated": true,
+      "rtol": 0.0002,
+      "atol": 1e-08,
+      "C_pg_RMSLE": 0.16535846980538396,
+      "C_pg_persistence_RMSLE": 0.9287891021844881,
+      "N_pg_RMSLE": 0.0679162288157923,
+      "N_pg_persistence_RMSLE": 0.4365997401303268,
+      "cells_ml_RMSLE": 0.08717433778507638,
+      "cells_ml_persistence_RMSLE": 0.46300469180075177,
+      "CN_RMSLE": 0.14964739563821547,
+      "CN_Redfield_RMSLE": 1.8847320280911506,
+      "CN_initial_ratio_RMSLE": 1.3638807304098668,
+      "final_CN_predicted": 63.7516544606122,
+      "final_CN_observed": 64.07706907731698
+    },
+    {
+      "species": "Tp",
+      "split": "held_out",
+      "steps": 1270,
+      "rejected_steps": 9,
+      "runtime_seconds": 0.005009348999919894,
+      "minimum_live_state": 0.0,
+      "max_abs_mass_error_C": 7.275957614183426e-12,
+      "max_abs_mass_error_N": 9.237055564881302e-14,
+      "max_relative_mass_error_C": 1.746404194878524e-15,
+      "max_relative_mass_error_N": 2.6375038977563254e-15,
+      "final_live_CN": 39.141271029930955,
+      "accelerated": true,
+      "rtol": 0.0002,
+      "atol": 1e-08,
+      "C_pg_RMSLE": 0.14369555867083736,
+      "C_pg_persistence_RMSLE": 0.3080662975355487,
+      "N_pg_RMSLE": 0.18628918573180767,
+      "N_pg_persistence_RMSLE": 0.8233706824358751,
+      "cells_ml_RMSLE": 0.21357803771727554,
+      "cells_ml_persistence_RMSLE": 0.9714824760548195,
+      "CN_RMSLE": 0.2593337899575073,
+      "CN_Redfield_RMSLE": 1.025019834844938,
+      "CN_initial_ratio_RMSLE": 1.1172000491449987,
+      "final_CN_predicted": 39.141271029930955,
+      "final_CN_observed": 24.283463304193674
+    },
+    {
+      "species": "Ms",
+      "split": "held_out",
+      "steps": 2207,
+      "rejected_steps": 2,
+      "runtime_seconds": 0.0076648419999401085,
+      "minimum_live_state": 0.0,
+      "max_abs_mass_error_C": 1.1823431123048067e-11,
+      "max_abs_mass_error_N": 1.0658141036401503e-13,
+      "max_relative_mass_error_C": 2.615545773669365e-15,
+      "max_relative_mass_error_N": 2.1259496886122886e-15,
+      "final_live_CN": 14.877861791122895,
+      "accelerated": true,
+      "rtol": 0.0002,
+      "atol": 1e-08,
+      "C_pg_RMSLE": 0.13319972967191615,
+      "C_pg_persistence_RMSLE": 0.12475257078758284,
+      "N_pg_RMSLE": 0.06181217522447754,
+      "N_pg_persistence_RMSLE": 0.04587043387394207,
+      "cells_ml_RMSLE": 0.052310894704352434,
+      "cells_ml_persistence_RMSLE": 0.03138044056474621,
+      "CN_RMSLE": 0.18833390458141028,
+      "CN_Redfield_RMSLE": 0.6091825037601293,
+      "CN_initial_ratio_RMSLE": 0.16481531285079004,
+      "final_CN_predicted": 14.877861791122895,
+      "final_CN_observed": 12.817331407306433
+    }
+  ],
+  "culture_fit_bounds": {
+    "mu_scale": [
+      0.3,
+      4.0
+    ],
+    "alpha_Chl": [
+      0.1,
+      4.0
+    ],
+    "nmin_fraction": [
+      0.08,
+      0.4
+    ],
+    "nmin_exponent": [
+      -0.6,
+      0.0
+    ],
+    "cmax_ratio": [
+      1.2,
+      5.0
+    ],
+    "cmax_exponent": [
+      0.0,
+      0.8
+    ]
+  },
+  "culture_jacobian_condition": 2015.5866171000655,
+  "culture_descriptive_replicate_SD_check": [
+    {
+      "species": "Ot",
+      "C_pg_fraction_within_2replicateSD": 0.5,
+      "C_pg_max_abs_SD_residual": 5.001559994378377,
+      "N_pg_fraction_within_2replicateSD": 0.5,
+      "N_pg_max_abs_SD_residual": 3.85281988419295,
+      "cells_ml_fraction_within_2replicateSD": 0.5,
+      "cells_ml_max_abs_SD_residual": 2.890913824716402
+    },
+    {
+      "species": "Tw",
+      "C_pg_fraction_within_2replicateSD": 0.5,
+      "C_pg_max_abs_SD_residual": 8.634653526470636,
+      "N_pg_fraction_within_2replicateSD": 0.75,
+      "N_pg_max_abs_SD_residual": 2.540916433861674,
+      "cells_ml_fraction_within_2replicateSD": 0.75,
+      "cells_ml_max_abs_SD_residual": 20.995029242408016
+    },
+    {
+      "species": "Tp",
+      "C_pg_fraction_within_2replicateSD": 0.5,
+      "C_pg_max_abs_SD_residual": 8.017756260305838,
+      "N_pg_fraction_within_2replicateSD": 0.75,
+      "N_pg_max_abs_SD_residual": 4.254690962239938,
+      "cells_ml_fraction_within_2replicateSD": 0.25,
+      "cells_ml_max_abs_SD_residual": 4.018702482792113
+    },
+    {
+      "species": "Ms",
+      "C_pg_fraction_within_2replicateSD": 0.0,
+      "C_pg_max_abs_SD_residual": 7.42959610086437,
+      "N_pg_fraction_within_2replicateSD": 1.0,
+      "N_pg_max_abs_SD_residual": 1.4863875977497776,
+      "cells_ml_fraction_within_2replicateSD": 0.3333333333333333,
+      "cells_ml_max_abs_SD_residual": 4.4823935359178195
+    }
+  ],
+  "assessed_domain": "Atom-conservative C:N model; N-starvation cultures and idealized thesis counterpart experiments. No site-level field/export validation."
+}

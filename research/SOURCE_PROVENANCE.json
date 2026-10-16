@@ -1,0 +1,43 @@
+{
+  "original_repository": "https://github.com/Marcofianchini/SPLAS-1.1",
+  "original_commit": "76f992c9924420c715a660d017387882efe992dd",
+  "sources": [
+    {
+      "id": "Fianchini2021",
+      "filename": "Fianchini_tesilaurea_2307_corretta.pdf",
+      "bytes": 6019317,
+      "sha256": "19b0ec52dd06d35422e168dc7af506e85fb42d6c130717064bee2cf7faa2922f",
+      "kind": "User-provided corrected thesis",
+      "source": "User attachment",
+      "pages": 51
+    },
+    {
+      "id": "DePasquale2018",
+      "filename": "DePasquale_2018.pdf",
+      "bytes": 11249593,
+      "sha256": "798629976c58fe0681f30ca9c99bc413e31ee6303539a68b14b6a338c5b22f8a",
+      "kind": "Public doctoral thesis",
+      "source": "https://arts.units.it/bitstream/11368/2929831/2/M_DePasquale_TESI_FINAL.pdf",
+      "pages": 165
+    },
+    {
+      "id": "Moloney1988",
+      "filename": "Moloney_1988.pdf",
+      "bytes": 5390897,
+      "sha256": "8c794a451013ff27458810b610b9a8540bb498e4bf685342f6d9a91f5e442b98",
+      "kind": "Public doctoral thesis",
+      "source": "https://hdl.handle.net/11427/22132",
+      "pages": 263
+    },
+    {
+      "id": "MoloneyField0D_v0.1",
+      "filename": "SPLAS_MoloneyField_0D_v0.1(1).zip",
+      "bytes": 13131,
+      "sha256": "75e5bee595fa7fa8ca72794193d833468e581653a29a70b4a1e628ae5d4066de",
+      "kind": "Developmental benchmark supplied in the workspace",
+      "source": "User attachment; not an authenticated archival1991 release",
+      "archive_entry_count": 6
+    }
+  ],
+  "redistribution": "Thesis and benchmark source files are not bundled in the new code. These hashes identify the inspected copies."
+}

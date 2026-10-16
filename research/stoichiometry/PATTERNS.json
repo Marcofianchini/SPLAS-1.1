@@ -1,0 +1,69 @@
+{
+  "purpose": "Qualitative POM assessment, not a count of independent empirical confirmations",
+  "date": "2026-10-16",
+  "patterns": [
+    {
+      "id": "S01", "pattern": "Quantity-quality decoupling",
+      "status": "Recognizable, regime dependent",
+      "imposed": "Homeostatic consumer and minimum of C/N growth potentials",
+      "emergent": "Actual diet, compensation, grazer stocks and production across the light-nutrient plane",
+      "evidence": "At inflow DIN1, light15->405 reduces yield.259->.194 while Z production stays near.201; at DIN.25 production declines modestly; at DIN4 increases.",
+      "counterexample": "No general light-driven grazer collapse",
+      "robustness": "Minimal step controls preserve yield decrease"
+    },
+    {
+      "id": "S02", "pattern": "Trophic filtering of elemental composition",
+      "status": "Recognizable with declared trait and encounter rules",
+      "imposed": "Size-only preference kernel, size-dependent storage hypothesis; no explicit quality choice",
+      "emergent": "Different size and C:N composition of standing biomass and ingested material",
+      "evidence": "PAR405/inflow DIN1: bulk C:N25.64, ingested10.43, yield.330; bulk C:N alone misdiagnoses consumer limitation.",
+      "counterexample": "Flattened storage capacity changes diet and yield despite similar bulk C:N",
+      "robustness": "Reference grid/step variants preserve bulk-diet separation; quantitative gap depends on physiology and storage allometry"
+    },
+    {
+      "id": "S03", "pattern": "Consumer N utilization reorganizes community size and evenness",
+      "status": "Best supported paired qualitative pattern in this campaign",
+      "imposed": "Only N assimilation lowered.67->.335; unassimilated N conservatively routed to detritus",
+      "emergent": "Weaker consumer control, smaller phytoplankton spectrum, lower physical-bin evenness",
+      "evidence": "All9 primary community pairs and6 refined pairs retain negative size/evenness/Z-production contrasts; three prior-physiology pairs retain the size/evenness signs.",
+      "counterexample": "Bulk C:N sign differs by nutrient regime and physiological formulation",
+      "robustness": "h.0125 and70 classes checked as paired contrasts; no complete high-dimensional structural convergence claimed"
+    },
+    {
+      "id": "S04", "pattern": "Predator assembly releases larger competitors",
+      "status": "Recognizable under equal initial total C and N",
+      "imposed": "Ordered introduction of smallest0/1/2/4/8/16 predator classes",
+      "emergent": "Winning phytoplankton size rises1->3.48micrometres at both PAR45 and405",
+      "evidence": "Closed assembly N_total8,C_total2246.375 in every case",
+      "counterexample": "Without grazers smallest class excludes others in the chemostat plane",
+      "robustness": "Two light levels; no independent claim that allometric C:N increase is cellular plasticity"
+    },
+    {
+      "id": "S05", "pattern": "Within-class plasticity opposed by community turnover",
+      "status": "Mechanistically informative example; aggregate sign not fully resolved",
+      "imposed": "Shared physiological/allometric rules and environmental light change",
+      "emergent": "Community C:N can decline while the within-class component increases",
+      "evidence": "Inflow DIN4: total change-1.118, within+.990, composition-2.109",
+      "counterexample": "At DIN1 both components are positive; step/grid can change small aggregate differences",
+      "robustness": "Exact descriptive decomposition; not a causal or universally monotonic law"
+    },
+    {
+      "id": "S06", "pattern": "Persistent internally generated variability",
+      "status": "Recognizable; detailed dynamics not converged",
+      "imposed": "Constant uniform light, constant chemostat conditions, no seasonal forcing",
+      "emergent": "Recurrent biomass and stoichiometry fluctuations with class succession",
+      "evidence": "Rich-N corner has55-79 late PN peaks over1824days across principal checks, median spacing22-28days",
+      "counterexample": "Low-N and closed assembly can approach nearly constant states",
+      "robustness": "Persists at h.0125 and35/70/140 classes; phase, amplitude, evenness and nano/micro allocation remain sensitive; chaos not demonstrated"
+    },
+    {
+      "id": "S07", "pattern": "Stoichiometric sequence memory",
+      "status": "Not established by the present design",
+      "imposed": "Equal added N and integrated light dose in two reversed sequences",
+      "emergent": "Different post-sequence trajectories",
+      "evidence": "Z-production contrast at30days changes+20.3percent at h.05 to-.60percent at h.0125",
+      "counterexample": "Burn-in phase, pulse age and dilution losses are alternative explanations",
+      "robustness": "Fails as a specific robust reserve-memory inference; requires common snapshot and early/late N-only controls"
+    }
+  ]
+}

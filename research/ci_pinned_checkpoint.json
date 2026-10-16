@@ -1,0 +1,9 @@
+{
+  "id": 38862154695,
+  "sha": "8ad7bd76765e183a35640f9f0616e8e343eefc88",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/Marcofianchini/SPLAS-1.1/actions/runs/38862154695",
+  "environment": "research/requirements-reference.txt exact scientific dependency constraints",
+  "checks": "20 scientific tests, culture extraction, CLI smoke"
+}

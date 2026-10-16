@@ -1,0 +1,10 @@
+{
+  "test_count": 20,
+  "runtime_seconds": 40.199,
+  "status": "passed",
+  "log_sha256": "71d873a8b35910a3969282f40f65adb5f072d11b0d4bd05e61e368404b024eee",
+  "model_sha256": "e7de66b3983742fc84e8114862c9a3c8fe9969fe950dc303e720395fcb6c3f85",
+  "pure_python_smoke": "passed2+2 classes,2layers,.1day,conservativeIMEX",
+  "wheel_install_smoke": "passed, installed outside source tree,1day,20+20classes",
+  "installed_core_sha256": "e7de66b3983742fc84e8114862c9a3c8fe9969fe950dc303e720395fcb6c3f85"
+}

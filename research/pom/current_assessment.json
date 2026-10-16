@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "baseline_commit": "ae55985e0f05ae05f0930c1bdfc1cca6f04052b6",
+  "baseline_manifest_sha256": "7547e5c5c32a8b1da4a5965fa145a8fdd3bba36f59490bfeb2afbba66c25553d",
+  "analysis_script_sha256": "bd5e94c058dfae8ac6ba6295fc409b41a464045f35a1c557e86b01a307b5ac0e",
+  "new_simulations": 0,
+  "analysis_environment": {
+    "Python": "3.12.14",
+    "NumPy": "2.3.5",
+    "SciPy": "1.17.0"
+  },
+  "analysis_role": "Retrospective exploratory POM diagnosis; not independent validation or preregistration",
+  "cohort_rule": "D00,D01,D02,D04,D05,D06: steady default-closure perturbations corresponding to De Pasquale3.4.4. No claim of an identical historical ensemble.",
+  "cohort_ids": [
+    "D00_reference",
+    "D01_supply_0.001",
+    "D01_supply_0.01",
+    "D01_supply_0.1",
+    "D01_supply_0.5",
+    "D01_supply_2",
+    "D01_supply_5",
+    "D01_supply_7",
+    "D01_supply_10",
+    "D02_zmort_0.05",
+    "D02_zmort_0.1",
+    "D02_zmort_0.15",
+    "D02_zmort_0.25",
+    "D04_kernel_0.177",
+    "D04_kernel_0.2",
+    "D04_kernel_0.354",
+    "D04_kernel_0.5",
+    "D04_kernel_1.0",
+    "D05_pmort_0.05",
+    "D05_pmort_0.2",
+    "D05_pmort_0.4",
+    "D06_sink_0.0",
+    "D06_sink_0.001",
+    "D06_sink_0.01"
+  ],
+  "associations": {
+    "pooled_24": {
+      "case_ids": [
+        "D00_reference",
+        "D01_supply_0.001",
+        "D01_supply_0.01",
+        "D01_supply_0.1",
+        "D01_supply_0.5",
+        "D01_supply_2",
+        "D01_supply_5",
+        "D01_supply_7",
+        "D01_supply_10",
+        "D02_zmort_0.05",
+        "D02_zmort_0.1",
+        "D02_zmort_0.15",
+        "D02_zmort_0.25",
+        "D04_kernel_0.177",
+        "D04_kernel_0.2",
+        "D04_kernel_0.354",
+        "D04_kernel_0.5",
+        "D04_kernel_1.0",
+        "D05_pmort_0.05",
+        "D05_pmort_0.2",
+        "D05_pmort_0.4",
+        "D06_sink_0.0",
+        "D06_sink_0.001",
+        "D06_sink_0.01"
+      ],
+      "metrics": {
+        "stock_ZN_PN": {
+          "prey_evenness_N": {
+            "Pearson_raw": -0.22949953521401534,
+            "Spearman_raw": 0.15478260869565216
+          },
+          "predator_evenness": {
+            "Pearson_raw": -0.13763416505668452,
+            "Spearman_raw": 0.3817391304347826
+          }
+        },
+        "Z_to_P_stock_C": {
+          "prey_evenness_N": {
+            "Pearson_raw": -0.31404814818720966,
+            "Spearman_raw": 0.48173913043478256
+          },
+          "predator_evenness": {
+            "Pearson_raw": -0.23238689107570315,
+            "Spearman_raw": 0.4434782608695652
+          }
+        },
+        "TTE_flux_C": {
+          "prey_evenness_N": {
+            "Pearson_raw": 0.019085220921330606,
+            "Spearman_raw": 0.4156521739130434
+          },
+          "predator_evenness": {
+            "Pearson_raw": -0.03478600125686233,
+            "Spearman_raw": 0.2756521739130435
+          }
+        }
+      }
+    },
+    "N_supply_9": {
+      "case_ids": [
+        "D01_supply_0.001",
+        "D01_supply_0.01",
+        "D01_supply_0.1",
+        "D01_supply_0.5",
+        "D00_reference",
+        "D01_supply_2",
+        "D01_supply_5",
+        "D01_supply_7",
+        "D01_supply_10"
+      ],
+      "metrics": {
+        "stock_ZN_PN": {
+          "prey_evenness_N": {
+            "Pearson_raw": -0.6366372449048789,
+            "Spearman_raw": -0.5666666666666667
+          },
+          "predator_evenness": {
+            "Pearson_raw": -0.5251703734210913,
+            "Spearman_raw": -0.2833333333333333
+          }
+        },
+        "Z_to_P_stock_C": {
+          "prey_evenness_N": {
+            "Pearson_raw": -0.7261546595634437,
+            "Spearman_raw": -0.049999999999999996
+          },
+          "predator_evenness": {
+            "Pearson_raw": -0.6824565994990841,
+            "Spearman_raw": -0.16666666666666669
+          }
+        },
+        "TTE_flux_C": {
+          "prey_evenness_N": {
+            "Pearson_raw": -0.5238528197212812,
+            "Spearman_raw": -0.2333333333333333
+          },
+          "predator_evenness": {
+            "Pearson_raw": -0.5425425445302583,
+            "Spearman_raw": -0.45
+          }
+        }
+      }
+    },
+    "Z_mortality_5": {
+      "case_ids": [
+        "D02_zmort_0.05",
+        "D02_zmort_0.1",
+        "D02_zmort_0.15",
+        "D00_reference",
+        "D02_zmort_0.25"
+      ],
+      "metrics": {
+        "stock_ZN_PN": {
+          "prey_evenness_N": {
+            "Pearson_raw": 0.9734808183530647,
+            "Spearman_raw": 0.8999999999999998
+          },
+          "predator_evenness": {
+            "Pearson_raw": 0.9863286248193742,
+            "Spearman_raw": 0.9999999999999999
+          }
+        },
+        "Z_to_P_stock_C": {
+          "prey_evenness_N": {
+            "Pearson_raw": 0.9118136746971632,
+            "Spearman_raw": 0.8999999999999998
+          },
+          "predator_evenness": {
+            "Pearson_raw": 0.9809709447914597,
+            "Spearman_raw": 0.9999999999999999
+          }
+        },
+        "TTE_flux_C": {
+          "prey_evenness_N": {
+            "Pearson_raw": 0.9124720791508194,
+            "Spearman_raw": 0.8999999999999998
+          },
+          "predator_evenness": {
+            "Pearson_raw": 0.9855888288634407,
+            "Spearman_raw": 0.9999999999999999
+          }
+        }
+      }
+    }
+  },
+  "supply_hump_diagnostics": {
+    "phyto": {
+      "case_ids": [
+        "D01_supply_0.001",
+        "D01_supply_0.01",
+        "D01_supply_0.1",
+        "D01_supply_0.5",
+        "D00_reference",
+        "D01_supply_2",
+        "D01_supply_5",
+        "D01_supply_7",
+        "D01_supply_10"
+      ],
+      "log10_mass_field": "phyto_N_mmol_m2",
+      "evenness_field": "phyto_evenness_N",
+      "quadratic_coefficients": [
+        -0.05329113505960008,
+        0.2745516398237778,
+        -0.054684960357416455
+      ],
+      "R2_descriptive": 0.45788864974473775,
+      "interior_observed_maximum": true,
+      "quadratic_vertex_log10_mass": 2.5759597681370736,
+      "observed_log10_mass_range": [
+        0.3411481518180081,
+        3.679745941222769
+      ],
+      "interpretation": "Interior diversity maximum is compatible with a hump. Rebounds remain; the quadratic is a descriptive diagnostic, not a selection criterion, causal proof or new calibration."
+    },
+    "zoo": {
+      "case_ids": [
+        "D01_supply_0.001",
+        "D01_supply_0.01",
+        "D01_supply_0.1",
+        "D01_supply_0.5",
+        "D00_reference",
+        "D01_supply_2",
+        "D01_supply_5",
+        "D01_supply_7",
+        "D01_supply_10"
+      ],
+      "log10_mass_field": "zoo_C_mmol_m2",
+      "evenness_field": "zoo_evenness_C",
+      "quadratic_coefficients": [
+        -0.448464821478509,
+        2.224627460044159,
+        -2.294657683815316
+      ],
+      "R2_descriptive": 0.7500982766911116,
+      "interior_observed_maximum": true,
+      "quadratic_vertex_log10_mass": 2.4802697485947243,
+      "observed_log10_mass_range": [
+        1.5734328645482878,
+        3.0453432661194486
+      ],
+      "interpretation": "Interior diversity maximum is compatible with a hump. Rebounds remain; the quadratic is a descriptive diagnostic, not a selection criterion, causal proof or new calibration."
+    }
+  },
+  "grid_observables": [
+    {
+      "id": "D07_size_bins_35",
+      "n_classes": 35,
+      "dominant_ESD_um": 19.31388777001908,
+      "native_evenness_N": 0.15121418158220631,
+      "common_log_bin_evenness_N": {
+        "7": 0.39164098494514665,
+        "14": 0.31089386953472387,
+        "28": 0.2462234063434914
+      }
+    },
+    {
+      "id": "D00_reference",
+      "n_classes": 70,
+      "dominant_ESD_um": 19.97938756249444,
+      "native_evenness_N": 0.1552474032001034,
+      "common_log_bin_evenness_N": {
+        "7": 0.4385360296719494,
+        "14": 0.3234086131700864,
+        "28": 0.2562564942033038
+      }
+    },
+    {
+      "id": "D07_size_bins_140",
+      "n_classes": 140,
+      "dominant_ESD_um": 20.313260491554715,
+      "native_evenness_N": 0.29912053338786265,
+      "common_log_bin_evenness_N": {
+        "7": 0.5255859933080785,
+        "14": 0.3875410766079498,
+        "28": 0.30693059397320727
+      }
+    }
+  ],
+  "vertical_profiles": [
+    {
+      "id": "F00_open_reference",
+      "maximum_depth_m": 62.5,
+      "maximum_type": "interior",
+      "interior_peak_depths_by_relative_prominence": {
+        "0.02": [
+          62.5
+        ],
+        "0.05": [
+          62.5
+        ],
+        "0.1": [
+          62.5
+        ]
+      },
+      "note": "Local maxima of the saved mean N-biomass profile. Chlorophyll maxima, instantaneous multiple maxima and optical causation are not inferred."
+    },
+    {
+      "id": "F02_semiannual",
+      "maximum_depth_m": 52.5,
+      "maximum_type": "interior",
+      "interior_peak_depths_by_relative_prominence": {
+        "0.02": [
+          52.5
+        ],
+        "0.05": [
+          52.5
+        ],
+        "0.1": [
+          52.5
+        ]
+      },
+      "note": "Local maxima of the saved mean N-biomass profile. Chlorophyll maxima, instantaneous multiple maxima and optical causation are not inferred."
+    },
+    {
+      "id": "F05_no_shading",
+      "maximum_depth_m": 132.5,
+      "maximum_type": "interior",
+      "interior_peak_depths_by_relative_prominence": {
+        "0.02": [
+          132.5
+        ],
+        "0.05": [
+          132.5
+        ],
+        "0.1": [
+          132.5
+        ]
+      },
+      "note": "Local maxima of the saved mean N-biomass profile. Chlorophyll maxima, instantaneous multiple maxima and optical causation are not inferred."
+    },
+    {
+      "id": "F05_no_grazers",
+      "maximum_depth_m": 2.5,
+      "maximum_type": "surface_cell",
+      "interior_peak_depths_by_relative_prominence": {
+        "0.02": [],
+        "0.05": [],
+        "0.1": []
+      },
+      "note": "Local maxima of the saved mean N-biomass profile. Chlorophyll maxima, instantaneous multiple maxima and optical causation are not inferred."
+    },
+    {
+      "id": "F04_mixing_0.1",
+      "maximum_depth_m": 107.5,
+      "maximum_type": "interior",
+      "interior_peak_depths_by_relative_prominence": {
+        "0.02": [
+          107.5
+        ],
+        "0.05": [
+          107.5
+        ],
+        "0.1": [
+          107.5
+        ]
+      },
+      "note": "Local maxima of the saved mean N-biomass profile. Chlorophyll maxima, instantaneous multiple maxima and optical causation are not inferred."
+    },
+    {
+      "id": "F04_mixing_10",
+      "maximum_depth_m": 107.5,
+      "maximum_type": "interior",
+      "interior_peak_depths_by_relative_prominence": {
+        "0.02": [
+          107.5
+        ],
+        "0.05": [
+          107.5
+        ],
+        "0.1": [
+          107.5
+        ]
+      },
+      "note": "Local maxima of the saved mean N-biomass profile. Chlorophyll maxima, instantaneous multiple maxima and optical causation are not inferred."
+    },
+    {
+      "id": "R00_buffered_reference",
+      "maximum_depth_m": 2.5,
+      "maximum_type": "surface_cell",
+      "interior_peak_depths_by_relative_prominence": {
+        "0.02": [],
+        "0.05": [],
+        "0.1": []
+      },
+      "note": "Local maxima of the saved mean N-biomass profile. Chlorophyll maxima, instantaneous multiple maxima and optical causation are not inferred."
+    }
+  ],
+  "aggregation_warning": "Correlations across deterministic scenarios depend on the perturbation distribution. No p-values, causal identification, or population inference.",
+  "fixed_CN_assembly": [
+    {
+      "steps": 904739,
+      "mass_error_N": -4.068745340646274e-12,
+      "mass_error_C": 1.9235955051044584e-09,
+      "n_zoo": 0,
+      "final_DIN": 0.004014589647802703,
+      "winning_phyto_ESD": 1.0,
+      "final_P_N": 7.995985410348126,
+      "final_Z_N": 0.0,
+      "analytic_Rstar": 0.004014589647802712,
+      "Rstar_absolute_error": 9.540979117872439e-18
+    },
+    {
+      "steps": 677689,
+      "mass_error_N": -9.50350909079134e-14,
+      "mass_error_C": -3.180630869792367e-09,
+      "n_zoo": 1,
+      "final_DIN": 0.006013022568033299,
+      "winning_phyto_ESD": 1.1659945530360056,
+      "final_P_N": 7.523425600559318,
+      "final_Z_N": 0.48056137687254924
+    },
+    {
+      "steps": 602189,
+      "mass_error_N": 1.3500311979441904e-13,
+      "mass_error_C": -3.615987509419938e-09,
+      "n_zoo": 2,
+      "final_DIN": 0.006836870173926309,
+      "winning_phyto_ESD": 1.2590552330005393,
+      "final_P_N": 7.511628478059265,
+      "final_Z_N": 0.5015346517669437
+    },
+    {
+      "steps": 476033,
+      "mass_error_N": -1.8065549056700547e-12,
+      "mass_error_C": -3.046018548502616e-09,
+      "n_zoo": 4,
+      "final_DIN": 0.008844532749182388,
+      "winning_phyto_ESD": 1.468051543650108,
+      "final_P_N": 7.4886328756246066,
+      "final_Z_N": 0.5425225916244039
+    },
+    {
+      "steps": 296460,
+      "mass_error_N": -1.4424017535930034e-12,
+      "mass_error_C": 1.1097966989837005e-09,
+      "n_zoo": 8,
+      "final_DIN": 0.014562550596085303,
+      "winning_phyto_ESD": 1.9958796368617877,
+      "final_P_N": 7.485232552363213,
+      "final_Z_N": 0.5802048970392576
+    },
+    {
+      "steps": 115793,
+      "mass_error_N": -1.5631940186722204e-13,
+      "mass_error_C": -9.599432360118954e-11,
+      "n_zoo": 16,
+      "final_DIN": 0.03679338314034161,
+      "winning_phyto_ESD": 3.9835355248395414,
+      "final_P_N": 7.589407722214662,
+      "final_Z_N": 0.5337988946448389
+    },
+    {
+      "steps": 91306,
+      "mass_error_N": -1.438849039914203e-13,
+      "mass_error_C": 4.737472636406892e-10,
+      "n_zoo": 32,
+      "final_DIN": 0.21597035164399891,
+      "winning_phyto_ESD": 11.671974923043441,
+      "final_P_N": 7.155754669762555,
+      "final_Z_N": 0.9482749785932993
+    },
+    {
+      "steps": 95326,
+      "mass_error_N": -5.915268275202834e-13,
+      "mass_error_C": 4.757083615913871e-11,
+      "n_zoo": 70,
+      "final_DIN": 4.6090550098126375,
+      "winning_phyto_ESD": 34.19951893353395,
+      "final_P_N": 2.084394364277663,
+      "final_Z_N": 2.006550625909108
+    }
+  ],
+  "dynamic_assembly": [
+    {
+      "id": "D11_quota_assembly_0",
+      "n_zoo": 0,
+      "dominant_ESD_um": 1.0,
+      "geomean_ESD_um": 1.0,
+      "ESD95_um": 1.0
+    },
+    {
+      "id": "D11_quota_assembly_1",
+      "n_zoo": 1,
+      "dominant_ESD_um": 1.0798122767574028,
+      "geomean_ESD_um": 1.0797919096884698,
+      "ESD95_um": 1.0798122767574028
+    },
+    {
+      "id": "D11_quota_assembly_2",
+      "n_zoo": 2,
+      "dominant_ESD_um": 1.1659945530360056,
+      "geomean_ESD_um": 1.1660010434606825,
+      "ESD95_um": 1.1659945530360056
+    },
+    {
+      "id": "D11_quota_assembly_4",
+      "n_zoo": 4,
+      "dominant_ESD_um": 1.3595432977096347,
+      "geomean_ESD_um": 1.359794052818066,
+      "ESD95_um": 1.3595432977096347
+    },
+    {
+      "id": "D11_quota_assembly_8",
+      "n_zoo": 8,
+      "dominant_ESD_um": 1.8483579783471882,
+      "geomean_ESD_um": 1.8660322049991018,
+      "ESD95_um": 1.9958796368617877
+    },
+    {
+      "id": "D11_quota_assembly_16",
+      "n_zoo": 16,
+      "dominant_ESD_um": 3.4164272161197053,
+      "geomean_ESD_um": 3.494718246006902,
+      "ESD95_um": 3.689100050614174
+    }
+  ],
+  "metric_crosswalk": {
+    "historical_ZP": "N-stock Z:N / P:N; compute Z_C / zoo_CN / P_N. C-stock ratio and C-production ratio are additional different observables.",
+    "Fianchini_export_efficiency": "Export weighted by biomass then normalized by irradiation (pp39-40,43-46); exact weighting requires historical code/run provenance. Not export/NPP.",
+    "time_windows": "Theses often average10years including transients; current spectra/profiles average last364days of3652day runs. Full ten-year size-resolved trajectories cannot be reconstructed from the reduced archives.",
+    "seasonality": "Fianchini p33 deliberately specifies two light maxima per year; emergent targets are response phase, amplitude, succession and persistence, not the imposed count of light peaks."
+  }
+}
