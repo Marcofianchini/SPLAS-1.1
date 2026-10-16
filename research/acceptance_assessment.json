@@ -1,0 +1,662 @@
+{
+  "invariants_pass_1e_minus8": true,
+  "maximum_reported_mass_error_C_relative": 1.6174041253540978e-11,
+  "maximum_reported_mass_error_N_relative": 4.229028182562197e-09,
+  "recommended_numerical_gates": [
+    {
+      "test": "time_step",
+      "reference": "R01_same_state_dt_0.00625",
+      "alternative": "R01_same_state_dt_0.0125",
+      "relative_changes": {
+        "phyto_N_mmol_m2": 0.000478443406893847,
+        "phyto_CN_inventory_ratio": -0.0005719453532070373,
+        "NPP_C_mmol_m2_d": 0.0001081766851944721,
+        "bottom_export_C_mmol_m2_d": -0.00015579502859996985,
+        "N_weighted_geomean_ESD_um": 0.00030101920234093527
+      },
+      "pass_5pct_bulk_10pct_size": true
+    },
+    {
+      "test": "vertical_grid",
+      "reference": "R02_grid80",
+      "alternative": "R01_same_state_dt_0.0125",
+      "relative_changes": {
+        "phyto_N_mmol_m2": 0.10570708390813621,
+        "phyto_CN_inventory_ratio": 0.011243385671826811,
+        "NPP_C_mmol_m2_d": 0.030388268748699154,
+        "bottom_export_C_mmol_m2_d": 0.36354532223102876,
+        "N_weighted_geomean_ESD_um": 0.13761952508378728
+      },
+      "pass_5pct_bulk_10pct_size": false
+    },
+    {
+      "test": "vertical_grid80_to160",
+      "reference": "R02_grid160",
+      "alternative": "R02_grid80",
+      "relative_changes": {
+        "phyto_N_mmol_m2": -0.06624423411068492,
+        "phyto_CN_inventory_ratio": 0.014681939368174746,
+        "NPP_C_mmol_m2_d": -0.0543774316447323,
+        "bottom_export_C_mmol_m2_d": -0.0218163943188735,
+        "N_weighted_geomean_ESD_um": 0.018573316675514207
+      },
+      "pass_5pct_bulk_10pct_size": false
+    },
+    {
+      "test": "particle_grid",
+      "reference": "R02_particles32",
+      "alternative": "R01_same_state_dt_0.0125",
+      "relative_changes": {
+        "phyto_N_mmol_m2": 8.870466510213504e-07,
+        "phyto_CN_inventory_ratio": 3.501882059886441e-07,
+        "NPP_C_mmol_m2_d": 5.71913133740054e-07,
+        "bottom_export_C_mmol_m2_d": 0.027587989913485877,
+        "N_weighted_geomean_ESD_um": 1.0785642512445293e-06
+      },
+      "pass_5pct_bulk_10pct_size": true
+    }
+  ],
+  "recommended_bulk_convergence_demonstrated": false,
+  "gates_definition": "Relative to finer reference: <=5percent for bulkP_N,C:N,NPP and Cexport; <=10percent for N-weighted geometric size. Annual comparison from matched10year state; heuristic research thresholds, not observational error bars.",
+  "empirical_verdict": "Partial exploratory N-starvation assessment. No species-universal validation. Micromonas persistence is better for C,N,density and C:N than the shared model. No field/grazing/export validation.",
+  "matched_fixed_ratio_kinetic_control": false,
+  "no_full_ATP_redox_budget": true,
+  "no_P_Fe_Si_O2": true,
+  "endpoint_checks": [
+    {
+      "id": "D00_reference",
+      "endpoint_mass_error_C": 1.2660166248679161e-08,
+      "endpoint_mass_error_N": -4.053039219797938e-07
+    },
+    {
+      "id": "D01_supply_0.001",
+      "endpoint_mass_error_C": -2.048327587544918e-07,
+      "endpoint_mass_error_N": 3.41970007866621e-10
+    },
+    {
+      "id": "D01_supply_0.01",
+      "endpoint_mass_error_C": -3.856548573821783e-07,
+      "endpoint_mass_error_N": -1.5566001820843667e-09
+    },
+    {
+      "id": "D01_supply_0.1",
+      "endpoint_mass_error_C": -4.838802851736546e-07,
+      "endpoint_mass_error_N": 3.0537762540916447e-08
+    },
+    {
+      "id": "D01_supply_0.5",
+      "endpoint_mass_error_C": -3.4371623769402504e-08,
+      "endpoint_mass_error_N": -2.0654590571211884e-07
+    },
+    {
+      "id": "D01_supply_2",
+      "endpoint_mass_error_C": 1.6737612895667553e-07,
+      "endpoint_mass_error_N": -8.175810535249184e-07
+    },
+    {
+      "id": "D01_supply_5",
+      "endpoint_mass_error_C": -2.328015398234129e-07,
+      "endpoint_mass_error_N": 3.2712819120206404e-08
+    },
+    {
+      "id": "D01_supply_7",
+      "endpoint_mass_error_C": -1.391163095831871e-08,
+      "endpoint_mass_error_N": 1.7564744894116302e-06
+    },
+    {
+      "id": "D01_supply_10",
+      "endpoint_mass_error_C": -1.4857505448162556e-07,
+      "endpoint_mass_error_N": 4.656624241761165e-08
+    },
+    {
+      "id": "D02_zmort_0.05",
+      "endpoint_mass_error_C": -2.823944669216871e-07,
+      "endpoint_mass_error_N": -4.083584599356982e-07
+    },
+    {
+      "id": "D02_zmort_0.1",
+      "endpoint_mass_error_C": -1.0503572411835194e-07,
+      "endpoint_mass_error_N": -4.1820283058768837e-07
+    },
+    {
+      "id": "D02_zmort_0.15",
+      "endpoint_mass_error_C": -5.23286871612072e-08,
+      "endpoint_mass_error_N": -4.1879536638589343e-07
+    },
+    {
+      "id": "D02_zmort_0.25",
+      "endpoint_mass_error_C": -2.6193447411060333e-09,
+      "endpoint_mass_error_N": -4.2195904370601056e-07
+    },
+    {
+      "id": "D03_own_closure",
+      "endpoint_mass_error_C": -2.3675966076552868e-07,
+      "endpoint_mass_error_N": -4.094907808394055e-07
+    },
+    {
+      "id": "D04_kernel_0.177",
+      "endpoint_mass_error_C": -2.6627094484865665e-07,
+      "endpoint_mass_error_N": -4.153592954025953e-07
+    },
+    {
+      "id": "D04_kernel_0.2",
+      "endpoint_mass_error_C": 8.396455086767673e-08,
+      "endpoint_mass_error_N": -4.126044359509251e-07
+    },
+    {
+      "id": "D04_kernel_0.354",
+      "endpoint_mass_error_C": -1.5503610484302044e-07,
+      "endpoint_mass_error_N": -4.212591875329963e-07
+    },
+    {
+      "id": "D04_kernel_0.5",
+      "endpoint_mass_error_C": -1.9409344531595707e-07,
+      "endpoint_mass_error_N": -4.1131704620056553e-07
+    },
+    {
+      "id": "D04_kernel_1.0",
+      "endpoint_mass_error_C": -7.592316251248121e-07,
+      "endpoint_mass_error_N": -4.1810551465459866e-07
+    },
+    {
+      "id": "D05_pmort_0.05",
+      "endpoint_mass_error_C": -2.547167241573334e-07,
+      "endpoint_mass_error_N": -4.1585178678360535e-07
+    },
+    {
+      "id": "D05_pmort_0.2",
+      "endpoint_mass_error_C": -1.6533886082470417e-07,
+      "endpoint_mass_error_N": -4.1534701722412137e-07
+    },
+    {
+      "id": "D05_pmort_0.4",
+      "endpoint_mass_error_C": -5.563488230109215e-07,
+      "endpoint_mass_error_N": -4.157190005571465e-07
+    },
+    {
+      "id": "D06_sink_0.0",
+      "endpoint_mass_error_C": -1.0628718882799149e-07,
+      "endpoint_mass_error_N": -4.2158342239417834e-07
+    },
+    {
+      "id": "D06_sink_0.001",
+      "endpoint_mass_error_C": -6.676418706774712e-08,
+      "endpoint_mass_error_N": -4.1253622384829214e-07
+    },
+    {
+      "id": "D06_sink_0.01",
+      "endpoint_mass_error_C": -2.5980989448726177e-07,
+      "endpoint_mass_error_N": -4.155443775744061e-07
+    },
+    {
+      "id": "D07_size_bins_35",
+      "endpoint_mass_error_C": -1.41531927511096e-07,
+      "endpoint_mass_error_N": -4.170736929154373e-07
+    },
+    {
+      "id": "D07_size_bins_140",
+      "endpoint_mass_error_C": -1.831504050642252e-07,
+      "endpoint_mass_error_N": -4.123567123315297e-07
+    },
+    {
+      "id": "D08_yield_0.16",
+      "endpoint_mass_error_C": -1.6388366930186749e-07,
+      "endpoint_mass_error_N": -7.869664386817021e-08
+    },
+    {
+      "id": "D08_yield_0.5",
+      "endpoint_mass_error_C": -7.508788257837296e-08,
+      "endpoint_mass_error_N": 9.196924111165572e-09
+    },
+    {
+      "id": "D08_yield_0.66",
+      "endpoint_mass_error_C": 1.0276562534272671e-07,
+      "endpoint_mass_error_N": 3.8999246498860884e-08
+    },
+    {
+      "id": "D09_Kz_1",
+      "endpoint_mass_error_C": 1.7369166016578674e-07,
+      "endpoint_mass_error_N": 8.847678145684768e-09
+    },
+    {
+      "id": "D09_Kz_2",
+      "endpoint_mass_error_C": -1.3213139027357101e-07,
+      "endpoint_mass_error_N": 3.958132310799556e-08
+    },
+    {
+      "id": "D09_Kz_4",
+      "endpoint_mass_error_C": -3.1653326004743576e-07,
+      "endpoint_mass_error_N": 2.3050347408570815e-08
+    },
+    {
+      "id": "D09_Kz_5",
+      "endpoint_mass_error_C": -1.1932570487260818e-09,
+      "endpoint_mass_error_N": 4.1211137613572646e-08
+    },
+    {
+      "id": "D10_constant_mean",
+      "endpoint_mass_error_C": -3.4371623769402504e-08,
+      "endpoint_mass_error_N": -2.0654590571211884e-07
+    },
+    {
+      "id": "D10_periodic_phase_0",
+      "endpoint_mass_error_C": -2.296001184731722e-07,
+      "endpoint_mass_error_N": -3.1469653549720533e-09
+    },
+    {
+      "id": "D10_periodic_phase_91.25",
+      "endpoint_mass_error_C": -1.2869713827967644e-07,
+      "endpoint_mass_error_N": 4.459934643818997e-10
+    },
+    {
+      "id": "D11_quota_assembly_0",
+      "endpoint_mass_error_C": -2.1883170120418072e-07,
+      "endpoint_mass_error_N": 4.4929038267582655e-10
+    },
+    {
+      "id": "D11_quota_assembly_1",
+      "endpoint_mass_error_C": -2.9604416340589523e-07,
+      "endpoint_mass_error_N": 4.206412995699793e-12
+    },
+    {
+      "id": "D11_quota_assembly_2",
+      "endpoint_mass_error_C": -3.144959919154644e-07,
+      "endpoint_mass_error_N": 2.091837814077735e-11
+    },
+    {
+      "id": "D11_quota_assembly_4",
+      "endpoint_mass_error_C": -3.1126546673476696e-07,
+      "endpoint_mass_error_N": 1.5347723092418164e-11
+    },
+    {
+      "id": "D11_quota_assembly_8",
+      "endpoint_mass_error_C": -2.955785021185875e-07,
+      "endpoint_mass_error_N": 3.7630343285854906e-11
+    },
+    {
+      "id": "D11_quota_assembly_16",
+      "endpoint_mass_error_C": -1.3734097592532635e-07,
+      "endpoint_mass_error_N": 6.934897101018578e-12
+    },
+    {
+      "id": "F00_open_reference",
+      "endpoint_mass_error_C": -1.7724232748150826e-06,
+      "endpoint_mass_error_N": -6.239861249923706e-08
+    },
+    {
+      "id": "F00_closed_reference",
+      "endpoint_mass_error_C": -9.93022695183754e-07,
+      "endpoint_mass_error_N": -5.502442945726216e-10
+    },
+    {
+      "id": "F01_open_light_0.7",
+      "endpoint_mass_error_C": -1.8231221474707127e-06,
+      "endpoint_mass_error_N": -6.111804395914078e-08
+    },
+    {
+      "id": "F01_closed_light_0.7",
+      "endpoint_mass_error_C": -1.0281219147145748e-06,
+      "endpoint_mass_error_N": -5.711626727133989e-10
+    },
+    {
+      "id": "F01_open_light_0.8",
+      "endpoint_mass_error_C": -1.8193386495113373e-06,
+      "endpoint_mass_error_N": -6.402842700481415e-08
+    },
+    {
+      "id": "F01_closed_light_0.8",
+      "endpoint_mass_error_C": -9.693321771919727e-07,
+      "endpoint_mass_error_N": -5.484253051690757e-10
+    },
+    {
+      "id": "F01_open_light_0.9",
+      "endpoint_mass_error_C": -1.8005375750362873e-06,
+      "endpoint_mass_error_N": -6.135087460279465e-08
+    },
+    {
+      "id": "F01_closed_light_0.9",
+      "endpoint_mass_error_C": -1.0363291949033737e-06,
+      "endpoint_mass_error_N": -5.466063157655299e-10
+    },
+    {
+      "id": "F01_open_light_1.1",
+      "endpoint_mass_error_C": -1.7879065126180649e-06,
+      "endpoint_mass_error_N": -6.117625162005424e-08
+    },
+    {
+      "id": "F01_closed_light_1.1",
+      "endpoint_mass_error_C": -9.709037840366364e-07,
+      "endpoint_mass_error_N": -5.693436833098531e-10
+    },
+    {
+      "id": "F01_open_light_1.2",
+      "endpoint_mass_error_C": -1.7326674424111843e-06,
+      "endpoint_mass_error_N": -6.228219717741013e-08
+    },
+    {
+      "id": "F01_closed_light_1.2",
+      "endpoint_mass_error_C": -9.74221620708704e-07,
+      "endpoint_mass_error_N": -5.57520252186805e-10
+    },
+    {
+      "id": "F01_open_light_1.3",
+      "endpoint_mass_error_C": -1.7521670088171959e-06,
+      "endpoint_mass_error_N": -6.234040483832359e-08
+    },
+    {
+      "id": "F01_closed_light_1.3",
+      "endpoint_mass_error_C": -9.764335118234158e-07,
+      "endpoint_mass_error_N": -5.557012627832592e-10
+    },
+    {
+      "id": "F02_semiannual",
+      "endpoint_mass_error_C": -1.8122373148798943e-06,
+      "endpoint_mass_error_N": -6.26896508038044e-08
+    },
+    {
+      "id": "F02_annual",
+      "endpoint_mass_error_C": -1.8271966837346554e-06,
+      "endpoint_mass_error_N": -6.164191290736198e-08
+    },
+    {
+      "id": "F02_constant_matched",
+      "endpoint_mass_error_C": -1.948093995451927e-06,
+      "endpoint_mass_error_N": -6.216578185558319e-08
+    },
+    {
+      "id": "F02_seasonal_light_0.7",
+      "endpoint_mass_error_C": -1.9675935618579388e-06,
+      "endpoint_mass_error_N": -6.280606612563133e-08
+    },
+    {
+      "id": "F02_seasonal_light_0.8",
+      "endpoint_mass_error_C": -1.919281203299761e-06,
+      "endpoint_mass_error_N": -6.123445928096771e-08
+    },
+    {
+      "id": "F02_seasonal_light_0.9",
+      "endpoint_mass_error_C": -1.893902663141489e-06,
+      "endpoint_mass_error_N": -6.152549758553505e-08
+    },
+    {
+      "id": "F02_seasonal_light_1.1",
+      "endpoint_mass_error_C": -1.8041464500129223e-06,
+      "endpoint_mass_error_N": -6.362097337841988e-08
+    },
+    {
+      "id": "F02_seasonal_light_1.2",
+      "endpoint_mass_error_C": -1.8212595023214817e-06,
+      "endpoint_mass_error_N": -6.280606612563133e-08
+    },
+    {
+      "id": "F02_seasonal_light_1.3",
+      "endpoint_mass_error_C": -1.8116552382707596e-06,
+      "endpoint_mass_error_N": -6.117625162005424e-08
+    },
+    {
+      "id": "F03_100m_light_0.7",
+      "endpoint_mass_error_C": -3.015447873622179e-07,
+      "endpoint_mass_error_N": -1.8504238141758833e-07
+    },
+    {
+      "id": "F03_100m_light_0.8",
+      "endpoint_mass_error_C": -3.043969627469778e-07,
+      "endpoint_mass_error_N": -1.8638115761859808e-07
+    },
+    {
+      "id": "F03_100m_light_0.9",
+      "endpoint_mass_error_C": -3.030872903764248e-07,
+      "endpoint_mass_error_N": -1.8515879673941527e-07
+    },
+    {
+      "id": "F03_100m_light_1.0",
+      "endpoint_mass_error_C": -3.019522409886122e-07,
+      "endpoint_mass_error_N": -1.8512969290895853e-07
+    },
+    {
+      "id": "F03_100m_light_1.1",
+      "endpoint_mass_error_C": -3.0340743251144886e-07,
+      "endpoint_mass_error_N": -1.8626474229677115e-07
+    },
+    {
+      "id": "F03_100m_light_1.2",
+      "endpoint_mass_error_C": -3.051827661693096e-07,
+      "endpoint_mass_error_N": -1.8652667677088175e-07
+    },
+    {
+      "id": "F03_100m_light_1.3",
+      "endpoint_mass_error_C": -2.862652763724327e-07,
+      "endpoint_mass_error_N": -1.8582818483992014e-07
+    },
+    {
+      "id": "F04_mixing_0.1",
+      "endpoint_mass_error_C": -2.291169948875904e-06,
+      "endpoint_mass_error_N": -6.041955202817917e-08
+    },
+    {
+      "id": "F04_mixing_10",
+      "endpoint_mass_error_C": -8.785282261669636e-07,
+      "endpoint_mass_error_N": -5.663605406880379e-08
+    },
+    {
+      "id": "F04_variable_mixing",
+      "endpoint_mass_error_C": -1.9214930944144726e-06,
+      "endpoint_mass_error_N": -6.129266694188118e-08
+    },
+    {
+      "id": "F05_no_grazers",
+      "endpoint_mass_error_C": -4.4499756768345833e-07,
+      "endpoint_mass_error_N": -5.5122654885053635e-08
+    },
+    {
+      "id": "F05_no_shading",
+      "endpoint_mass_error_C": 2.0954757928848267e-09,
+      "endpoint_mass_error_N": -6.332993507385254e-08
+    },
+    {
+      "id": "F06_PAR_fraction_043",
+      "endpoint_mass_error_C": -1.9829021766781807e-06,
+      "endpoint_mass_error_N": -6.181653589010239e-08
+    },
+    {
+      "id": "F06_DIC_exchange",
+      "endpoint_mass_error_C": -1.4105462469160557e-06,
+      "endpoint_mass_error_N": -5.762558430433273e-08
+    },
+    {
+      "id": "F07_layers_20",
+      "endpoint_mass_error_C": -1.964624971151352e-06,
+      "endpoint_mass_error_N": 1.8748687580227852e-07
+    },
+    {
+      "id": "F07_layers_80",
+      "endpoint_mass_error_C": -1.7030979506671429e-06,
+      "endpoint_mass_error_N": 4.735775291919708e-07
+    },
+    {
+      "id": "F08_detritus_bins_4",
+      "endpoint_mass_error_C": -2.0252191461622715e-06,
+      "endpoint_mass_error_N": -5.832407623529434e-08
+    },
+    {
+      "id": "F08_detritus_bins_8",
+      "endpoint_mass_error_C": -2.078828401863575e-06,
+      "endpoint_mass_error_N": -5.634501576423645e-08
+    },
+    {
+      "id": "F09_dt_0.025",
+      "endpoint_mass_error_C": -3.650668077170849e-06,
+      "endpoint_mass_error_N": -1.1810334399342537e-07
+    },
+    {
+      "id": "F09_dt_0.0125",
+      "endpoint_mass_error_C": -7.1328249759972095e-06,
+      "endpoint_mass_error_N": -2.0784209482371807e-06
+    },
+    {
+      "id": "F10_product_colimitation",
+      "endpoint_mass_error_C": -2.02452065423131e-06,
+      "endpoint_mass_error_N": -6.05359673500061e-08
+    },
+    {
+      "id": "F10_prior_physiology",
+      "endpoint_mass_error_C": -2.0671868696808815e-06,
+      "endpoint_mass_error_N": -6.03613443672657e-08
+    },
+    {
+      "id": "F10_selective_remin",
+      "endpoint_mass_error_C": -1.7727143131196499e-06,
+      "endpoint_mass_error_N": -6.298068910837173e-08
+    },
+    {
+      "id": "D12_dt_0.025",
+      "endpoint_mass_error_C": -1.439475454390049e-07,
+      "endpoint_mass_error_N": 1.9807999933618703e-06
+    },
+    {
+      "id": "D12_dt_0.0125",
+      "endpoint_mass_error_C": -2.614106051623821e-07,
+      "endpoint_mass_error_N": 3.6792545188291115e-06
+    },
+    {
+      "id": "F08_detritus_bins_16",
+      "endpoint_mass_error_C": -2.084707375615835e-06,
+      "endpoint_mass_error_N": -5.995389074087143e-08
+    },
+    {
+      "id": "D13_Ncost_0.5",
+      "endpoint_mass_error_C": 3.605964593589306e-08,
+      "endpoint_mass_error_N": -4.1318378407595446e-07
+    },
+    {
+      "id": "D13_Ncost_3.0",
+      "endpoint_mass_error_C": -6.239861249923706e-08,
+      "endpoint_mass_error_N": -4.134275286560296e-07
+    },
+    {
+      "id": "D14_Cbath_supply_0.001",
+      "endpoint_mass_error_C": -1.9674189388751984e-07,
+      "endpoint_mass_error_N": 2.474962457199581e-10
+    },
+    {
+      "id": "D14_Cbath_supply_0.01",
+      "endpoint_mass_error_C": -3.975583240389824e-07,
+      "endpoint_mass_error_N": -1.6283365766867064e-09
+    },
+    {
+      "id": "D14_Cbath_supply_0.1",
+      "endpoint_mass_error_C": -4.945613909512758e-07,
+      "endpoint_mass_error_N": 3.031436790479347e-08
+    },
+    {
+      "id": "D14_Cbath_supply_0.5",
+      "endpoint_mass_error_C": -4.54107066616416e-07,
+      "endpoint_mass_error_N": -2.0936488454026403e-07
+    },
+    {
+      "id": "D14_Cbath_supply_1",
+      "endpoint_mass_error_C": -6.003829184919596e-07,
+      "endpoint_mass_error_N": -4.153260988459806e-07
+    },
+    {
+      "id": "D14_Cbath_supply_2",
+      "endpoint_mass_error_C": -8.819915819913149e-07,
+      "endpoint_mass_error_N": -8.366822612515534e-07
+    },
+    {
+      "id": "D14_Cbath_supply_5",
+      "endpoint_mass_error_C": 4.567846190184355e-07,
+      "endpoint_mass_error_N": 2.3894358491816092e-08
+    },
+    {
+      "id": "D14_Cbath_supply_7",
+      "endpoint_mass_error_C": 1.2768141459673643e-06,
+      "endpoint_mass_error_N": 2.291293753842183e-06
+    },
+    {
+      "id": "D14_Cbath_supply_10",
+      "endpoint_mass_error_C": 1.5813566278666258e-06,
+      "endpoint_mass_error_N": 7.284700132004218e-08
+    },
+    {
+      "id": "D14_Cbath_tau10",
+      "endpoint_mass_error_C": -1.0899384506046772e-07,
+      "endpoint_mass_error_N": -4.1424516439292347e-07
+    },
+    {
+      "id": "R00_buffered_reference",
+      "endpoint_mass_error_C": -5.782116204500198e-06,
+      "endpoint_mass_error_N": -2.0565930753946304e-06
+    },
+    {
+      "id": "R01_same_state_dt_0.0125",
+      "endpoint_mass_error_C": -2.8940849006175995e-07,
+      "endpoint_mass_error_N": 1.1408701539039612e-08
+    },
+    {
+      "id": "R01_same_state_dt_0.00625",
+      "endpoint_mass_error_C": -5.564070306718349e-07,
+      "endpoint_mass_error_N": -4.0745362639427185e-09
+    },
+    {
+      "id": "R02_grid80",
+      "endpoint_mass_error_C": -2.55415216088295e-07,
+      "endpoint_mass_error_N": 3.998866304755211e-08
+    },
+    {
+      "id": "R02_grid160",
+      "endpoint_mass_error_C": -2.164742909371853e-07,
+      "endpoint_mass_error_N": 3.2014213502407074e-08
+    },
+    {
+      "id": "R02_particles32",
+      "endpoint_mass_error_C": -2.873712219297886e-07,
+      "endpoint_mass_error_N": 1.2980308383703232e-08
+    },
+    {
+      "id": "R04_Ninput_0.25",
+      "endpoint_mass_error_C": -2.8742942959070206e-07,
+      "endpoint_mass_error_N": 5.995389074087143e-09
+    },
+    {
+      "id": "R04_Ninput_2.0",
+      "endpoint_mass_error_C": -2.8742942959070206e-07,
+      "endpoint_mass_error_N": 2.3224856704473495e-08
+    },
+    {
+      "id": "R04_remin_twice",
+      "endpoint_mass_error_C": -2.9010698199272156e-07,
+      "endpoint_mass_error_N": 1.2165401130914688e-08
+    },
+    {
+      "id": "R04_phyto_sink_twice",
+      "endpoint_mass_error_C": -4.810281097888947e-07,
+      "endpoint_mass_error_N": 2.898741513490677e-08
+    },
+    {
+      "id": "R04_lower_C_yield",
+      "endpoint_mass_error_C": -2.770102582871914e-07,
+      "endpoint_mass_error_N": 1.3213139027357101e-08
+    },
+    {
+      "id": "R05_water_attenuation_0.015",
+      "endpoint_mass_error_C": -2.917950041592121e-07,
+      "endpoint_mass_error_N": 1.3387762010097504e-08
+    },
+    {
+      "id": "R05_water_attenuation_0.06",
+      "endpoint_mass_error_C": -2.803863026201725e-07,
+      "endpoint_mass_error_N": 1.123407855629921e-08
+    }
+  ],
+  "revised_reference_element_balance": {
+    "id": "R00_buffered_reference",
+    "window_days": 364.0,
+    "C_external_net_mmol_m2_d": 97.5200020121878,
+    "N_external_input_mmol_m2_d": 100.00000000328939,
+    "N_external_output_mmol_m2_d": 16.490305512135194,
+    "N_inventory_accumulation_mmol_m2_d": 83.50969449115419,
+    "DIN_whole_run_change_mean_mmol_m2_d": 84.23525089941771,
+    "interpretation": "Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity."
+  }
+}

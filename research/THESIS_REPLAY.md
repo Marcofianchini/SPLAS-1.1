@@ -23,9 +23,14 @@ rejects stale numerical results.
 | Carbon-boundary discrimination | N enrichment versus changing C limitation | D14 plus R00/F06 | A declared C reservoir separates resource-boundary effects. This is not carbonate/air-sea chemistry. |
 | Physiological discrimination | N starvation and recovery | Four Liefer taxa;25 light×DIN cases;16 light phases; three recovery/chemostat protocols | Culture scores are empirical but exploratory; idealized protocols verify mechanisms without supplying independent observations. |
 
+The historical200→100m contrast also changes total areal N input from100 to60
+mmolN/m2/day (`0.4*H+20`) and truncates the physical initial profile. It is not
+a single-factor test of turbulent mixing depth. The18 mechanism experiments
+retain one domain and prescribe mixing independently of optical depth.
+
 ## Order and evidence
 
-Run the commands in the main README. The finalized study contains116 registered
+Run the commands in the main README. The finalized study contains117 registered
 long/annual community cases,67 additional assembly/light/mixing cases and three
 recovery protocols; four culture trajectories are evaluated separately.
 `validation_summary.json` records numerical summaries, deterministic pattern
@@ -39,3 +44,7 @@ A missing historical pattern is retained; parameters are not fitted to thesis
 curves to make that pattern reappear. No field/export data were used as a
 validation target. Alternative particle, grazing and allocation mechanisms
 remain scientifically open.
+
+The failed40-to80 vertical gate triggered one additional160-cell annual run.
+The80-to160 comparison retains the same5percent bulk/10percent size criteria;
+the failed40-cell result remains in the assessment.

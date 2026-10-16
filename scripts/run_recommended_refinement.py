@@ -12,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
  path=ROOT/'research/recommended_registry.json';base=None;source=ROOT/'results/thesis_replay/R00_buffered_reference.npz'
- for _ in range(180):
+ for _ in range(720):
   if source.exists() and source.with_suffix('.json').exists():
    try:base=copy.deepcopy(json.load(open(path))[0]);break
    except json.JSONDecodeError:pass
@@ -20,10 +20,11 @@ def main():
  if base is None:raise RuntimeError('Revised reference did not finish')
  cfg=Config(**base['config']);p=Physiology(**base['physiology']);old=Model(cfg,p);y=np.load(source)['final_state'].copy();y[old.ntr:]=0
  idir=ROOT/'results/recommended_initials';idir.mkdir(parents=True,exist_ok=True);cases=[]
- for kind in ['grid80','particles32']:
-  conf=copy.deepcopy(base['config']);conf['n_layers']=80 if kind=='grid80' else 40;conf['n_detritus']=32 if kind=='particles32' else 16
+ for kind in ['grid80','grid160','particles32']:
+  vertical=kind.startswith('grid')
+  conf=copy.deepcopy(base['config']);conf['n_layers']=int(kind[4:]) if vertical else 40;conf['n_detritus']=32 if kind=='particles32' else 16
   model=Model(Config(**conf),p)
-  if kind=='grid80':new=np.repeat(y,2,axis=1)
+  if vertical:new=np.repeat(y,conf['n_layers']//40,axis=1)
   else:
    new=np.zeros((model.nvar,40));new[:old.dc.start]=y[:old.dc.start]
    weights=_particle_weights(old.particle_sizes,model.particle_sizes)
@@ -34,6 +35,7 @@ def main():
   c=copy.deepcopy(base);c.update(id='R02_'+kind,config=conf,days=365.,family='Same-state conservative grid/particle refinement',
     initial_state_file=ipath.relative_to(ROOT).as_posix(),initial_state_sha256=hashlib.sha256(new.tobytes()).hexdigest(),
     interpretation='Same10year physical inventories; piecewise-constant conservative vertical prolongation or log-particle rebinning. Compare with R01_same_state_dt_0.0125, same365day window.')
+  if kind=='grid160':c['interpretation']+=' Additional nested comparison with R02_grid80 after the40-to80 test failed.'
   cases.append(c)
  (ROOT/'research/recommended_refinement_registry.json').write_text(json.dumps(cases,indent=2))
  with ProcessPoolExecutor(max_workers=2) as pool:

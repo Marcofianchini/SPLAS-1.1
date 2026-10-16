@@ -127,9 +127,14 @@ reflection.
 
 Volumetric DIN source, bottom areal DIN flux, dilution and optional DIC
 relaxation have independent external input/output counters. DIC relaxation is a
-boundary hypothesis, not a carbonate equilibrium/air-sea CO2 model. The 0D
+boundary hypothesis, not a carbonate equilibrium/air-sea CO2 model. The external
+reservoir acts volumetrically in every cell as `k*(DIC_external-DIC)`,
+not as a physical sea-surface gas flux. The 0D
 community counterpart uses it to avoid an unintended closed-carbon resource
 experiment during decades of N addition. Closed cases have no exchange.
+External inputs need not balance outputs: a nearly stationary phytoplankton
+stock can coexist with accumulating DIN. Whole-system stationarity must be
+assessed from element retention and inorganic inventories as well as biomass.
 
 PAR uses Beer-Lambert attenuation by water and diagnostic chlorophyll, with
 three local fixed-point iterations. A homogeneous0D box receives prescribed

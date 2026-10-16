@@ -17,7 +17,7 @@ def main():
   path=ROOT/'research'/name
   if path.exists():registry+=json.load(open(path))
   elif not args.allow_partial:raise RuntimeError('Missing registry '+name)
- if not args.allow_partial and len(registry)!=116:raise RuntimeError('Expected116 registered cases')
+ if not args.allow_partial and len(registry)!=117:raise RuntimeError('Expected117 registered cases')
  for case in registry:
   p=ROOT/'results/thesis_replay'/(case['id']+'.json')
   if not p.exists():continue
@@ -36,7 +36,7 @@ def main():
   err=m.budgets(a['final_state'],True)-m.budgets(a['initial_state'],True)
   residuals.append({'id':key,'endpoint_mass_error_C':float(err[0]),'endpoint_mass_error_N':float(err[1])})
  gates=[]
- for ref,alt,label in [('R01_same_state_dt_0.00625','R01_same_state_dt_0.0125','time_step'),('R02_grid80','R01_same_state_dt_0.0125','vertical_grid'),('R02_particles32','R01_same_state_dt_0.0125','particle_grid')]:
+ for ref,alt,label in [('R01_same_state_dt_0.00625','R01_same_state_dt_0.0125','time_step'),('R02_grid80','R01_same_state_dt_0.0125','vertical_grid'),('R02_grid160','R02_grid80','vertical_grid80_to160'),('R02_particles32','R01_same_state_dt_0.0125','particle_grid')]:
   if ref not in cases or alt not in cases:continue
   sr=cases[ref]['summary'];sa=cases[alt]['summary'];row={'test':label,'reference':ref,'alternative':alt,'relative_changes':{}}
   for field in FIELDS:
@@ -45,10 +45,11 @@ def main():
   row['pass_5pct_bulk_10pct_size']=all(v is not None and abs(v)<= (.10 if key=='N_weighted_geomean_ESD_um' else .05) for key,v in row['relative_changes'].items());gates.append(row)
  inv=s['mass_C_max_relative']<=1e-8 and s['mass_N_max_relative']<=1e-8 and not s['negative_state_cases']
  out={'invariants_pass_1e_minus8':inv,'maximum_reported_mass_error_C_relative':s['mass_C_max_relative'],'maximum_reported_mass_error_N_relative':s['mass_N_max_relative'],
-  'recommended_numerical_gates':gates,'recommended_bulk_convergence_demonstrated':len(gates)==3 and all(g['pass_5pct_bulk_10pct_size'] for g in gates),
+  'recommended_numerical_gates':gates,'recommended_bulk_convergence_demonstrated':len(gates)>=3 and all(g['pass_5pct_bulk_10pct_size'] for g in gates),
   'gates_definition':'Relative to finer reference: <=5percent for bulkP_N,C:N,NPP and Cexport; <=10percent for N-weighted geometric size. Annual comparison from matched10year state; heuristic research thresholds, not observational error bars.',
   'empirical_verdict':'Partial exploratory N-starvation assessment. No species-universal validation. Micromonas persistence is better for C,N,density and C:N than the shared model. No field/grazing/export validation.',
-  'matched_fixed_ratio_kinetic_control':False,'no_full_ATP_redox_budget':True,'no_P_Fe_Si_O2':True,'endpoint_checks':residuals}
+  'matched_fixed_ratio_kinetic_control':False,'no_full_ATP_redox_budget':True,'no_P_Fe_Si_O2':True,'endpoint_checks':residuals,
+  'revised_reference_element_balance':next((r for r in s.get('last_window_element_balance',[]) if r['id']=='R00_buffered_reference'),None)}
  (ROOT/'research/acceptance_assessment.json').write_text(json.dumps(out,indent=2,allow_nan=False))
  lines=['# Validation of SPLAS-CN0.2','',f"Frozen model SHA256: `{s['model_sha256']}`.",'',
   f"{s['current_cases']} registered simulations completed, including{s.get('decadal_case_count',0)} ten-year cases and{s.get('annual_continuation_count',0)} annual interventions/refinement cases. Additional mechanism protocols are reported separately.",'',
@@ -78,6 +79,7 @@ def main():
  '- StockZ:P and fluxTTE are distinct. Consumer production depends on actual preyC:N and on the declared fixed consumer stoichiometry.',
  '- C:N differences are decomposed into within-class and composition terms; an algebraic decomposition is not unique causal attribution.',
  '- Ten years do not guarantee a stationary community. Temporal means,phase sensitivity and drift flags remain part of the result.','',
+ '- A nearly stationary phytoplankton stock can coexist with accumulatingDIN. Inspect last_window_element_balance before asserting whole-system stationarity.','',
  '## Remaining validity limits','',
  'The model resolvesC:N, not fullC:N:P or redox. Reference size is not instantaneous cell volume. Storage capacity,carbon-based feeding,homeostatic grazers,famine attrition,particle mapping and remineralization are model hypotheses. Carbon cost is not a closed ATP/electron budget. No matched site forcing/observations,independent grazer data,ballast,aggregation,bacteria,mixotrophy or carbonate chemistry are resolved.','',
  'Primary literature and the thesis-family map are inLITERATURE.md,MODEL.md and the experiment registries. Generated arrays and figures are embedded in the distributed PDF; repository source remains inGit.']

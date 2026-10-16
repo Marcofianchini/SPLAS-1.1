@@ -1,6 +1,6 @@
 """Render a compact Italian scientific development report from actual results."""
 from pathlib import Path
-import json,csv,subprocess,html,sys
+import json,csv,subprocess,html,sys,re
 import numpy as np
 from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Table,TableStyle,PageBreak,Image,KeepTogether
 from reportlab.lib import colors
@@ -36,12 +36,25 @@ styles.add(ParagraphStyle(name='TableDV',fontName='DV',fontSize=7.6,leading=10))
 styles.add(ParagraphStyle(name='FormulaDV',fontName='DV',fontSize=10.5,leading=16,spaceBefore=5,spaceAfter=9,leftIndent=10,textColor=colors.HexColor('#14526a')))
 story=[];W=174*2.83465
 
-def p(s,small=False):story.append(Paragraph(s,styles['SmallDV' if small else 'BodyDV']))
+def tidy(s):
+ s=str(s)
+ if any(x in s for x in ['http','python','.py','SHA256']):return s
+ s=re.sub(r'(?<=[a-zàèéìòù])(?=\d)',' ',s)
+ s=re.sub(r'(?<=\d)(?=(?:mmol|mol|mg|pg|µmol|µm|m²|m³|m⁻|°C|giorni|classi|celle|test|repliche|m\b|d\b))',' ',s)
+ s=re.sub(r'(?<=[,;])(?=\S)',' ',s)
+ return s.replace('m⁻²s⁻¹','m⁻² s⁻¹')
+def linked(s):
+ def wrap(match):
+  token=match.group(0);value=token.rstrip(').,;]');tail=token[len(value):]
+  target=value if value.startswith('http') else 'https://doi.org/'+value
+  return '<link href="'+html.escape(target,quote=True)+'" color="#166b8c">'+html.escape(value)+'</link>'+tail
+ return re.sub(r'https?://[^\s<>]+|(?<![\w/])10\.\d{4,9}/[A-Za-z0-9().;:/_-]+',wrap,tidy(s))
+def p(s,small=False):story.append(Paragraph(linked(s),styles['SmallDV' if small else 'BodyDV']))
 def h(s):story.append(Paragraph(s,styles['HDV']))
 def page():story.append(PageBreak())
 def formula(s):story.append(Paragraph(s,styles['FormulaDV']))
 def tbl(rows,widths=None):
- data=[[Paragraph(str(v),styles['TableDV']) for v in row] for row in rows]
+ data=[[Paragraph(linked(v),styles['TableDV']) for v in row] for row in rows]
  t=Table(data,colWidths=widths or [W/len(rows[0])]*len(rows[0]),repeatRows=1,hAlign='LEFT')
  t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#dfeef2')),('FONTNAME',(0,0),(-1,0),'DVB'),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),6),('RIGHTPADDING',(0,0),(-1,-1),6),('TOPPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),6),('LINEBELOW',(0,0),(-1,0),.7,colors.HexColor('#9abac7')),('ROWBACKGROUNDS',(0,1),(-1,-1),[colors.white,colors.HexColor('#f4f7f8')])]))
  story.append(t);story.append(Spacer(1,9))
@@ -54,7 +67,9 @@ def fig(name,height=None):
  else:story.append(Image(str(path),width=W,height=hh))
  story.append(Spacer(1,7))
 def n(x,d=3):return 'n.d.' if x is None else f'{x:.{d}g}'
+def pct(x):return 'n.d.' if x is None else f'{100*x:+.2f}%'
 def summ(key):return CASES[key]['summary']
+def balance(key):return next((r for r in S.get('last_window_element_balance',[]) if r['id']==key),{})
 def footer(canvas,doc):
  canvas.setStrokeColor(colors.HexColor('#b7cbd3'));canvas.line(18*2.83465,17*2.83465,192*2.83465,17*2.83465)
  canvas.setFont('DV',7);canvas.setFillColor(colors.HexColor('#59717c'));canvas.drawString(18*2.83465,12*2.83465,'SPLAS-CN 0.2 | verifica del 16 ottobre 2026');canvas.drawRightString(192*2.83465,12*2.83465,str(doc.page))
@@ -106,6 +121,8 @@ for key in ['Tp','Ms']:
  m=next(x for x in CULT['metrics'] if x['species']==key);rows.append([key,n(m['final_CN_predicted']),n(m['final_CN_observed']),'Sovrastima; evitare trasferibilità universale.'])
 tbl(rows,[W*.19,W*.22,W*.19,W*.40])
 p('Su Micromonas la persistenza dei valori iniziali è più accurata per C,N e densità cellulare. La temperatura6°C è vicina all’optimum del ceppo: un Q10 universale non rappresenta l’adattamento termico. Differenze di accumulo e regolazione tra taxa restano una priorità scientifica, non un dettaglio da assorbire in una curva di taglia.')
+if S.get('culture_phase_uncertainty'):
+ q=S['culture_phase_uncertainty'];p('Spostando il ciclo diurno di0/6/12/18ore rispetto allo stato iniziale, il C:N finale di Tp varia tra '+n(q['Tp']['min_final_CN'])+' e '+n(q['Tp']['max_final_CN'])+'; quello di Micromonas tra '+n(q['Ms']['min_final_CN'])+' e '+n(q['Ms']['max_final_CN'])+'. Le quattro fasi non risolvono gli scarti rispetto ai dati.',small=True)
 #7
 page();h('6. De Pasquale: dal meccanismo alla comunità')
 fig('09_predator_assembly',height=210)
@@ -116,6 +133,7 @@ p('Conservare le equazioni storiche per il controllo didattico non implica mante
 page();h('7. Nutrienti, taglie e trasferimento trofico')
 fig('03_bottom_up')
 p('La relazione tra apporto N e taglie è non monotona. Anche nel controllo con DIC mantenuto elevato, taglia media e percentile95 diminuiscono nella parte più arricchita della serie. Il pattern storico di aumento delle taglie non è quindi recuperato in modo robusto. Selettività, qualità stechiometrica delle prede e mortalità sono ipotesi da discriminare; l’evenness per taglia non è biodiversità tassonomica.')
+p('Le taglie sintetiche sono media geometrica e percentile95 pesati sullo stock N. Il percentile è un osservabile diverso dalla massima classe con biomassa positiva; evita di interpretare tracce numeriche come presenza ecologica.',small=True)
 p('TTE di flusso=produzione C dello zooplancton/NPP_C nello stesso intervallo; Z:P è un rapporto tra stock. La loro relazione non viene imposta. Un’associazione tra diversità e Z:P non valida automaticamente un meccanismo di efficienza trofica.')
 p(f"{len(S['drifting_cases'])} casi mostrano una differenza oltre10% tra la biomassa N media dell’ultimo intervallo annuale e quella del precedente. Dieci anni di integrazione non certificano l’equilibrio. Gli intervalli effettivi sono registrati nei JSON dei risultati.",small=True)
 # Carbon boundary and a derived trophic hypothesis
@@ -138,7 +156,7 @@ for a in S.get('pattern_assessment',[]):
  if a['family'] not in labels:continue
  m=a['metrics'];rows.append([labels[a['family']],*[n(m.get(k,{}).get('spearman_rho')) for k in ['phyto_CN_inventory_ratio','phyto_evenness_N','e_ratio_at_bottom']],n(m.get('bottom_export_C_mmol_m2_d',{}).get('linear_R2'))])
 if len(rows)>1:tbl(rows,[W*.32,W*.16,W*.16,W*.16,W*.20])
-p('Controllo dei pattern della tesi: C:N crescente, evenness decrescente, export circa lineare ed e-ratio decrescente. ρ è la correlazione di rango tra sette esperimenti deterministici, non un test statistico su osservazioni. R² descrive il fit lineare interno; nel sistema chiuso export ed e-ratio sono nulli.',small=True)
+p('Controllo dei pattern della tesi: C:N crescente, evenness N decrescente, export circa lineare ed e-ratio decrescente. ρ è la correlazione di rango tra sette esperimenti deterministici, non un test statistico su osservazioni. R² descrive il fit lineare interno; nel sistema chiuso export ed e-ratio sono nulli. Il CSV riporta evenness con pesi N e C.',small=True)
 for a in S.get('pattern_assessment',[]):
  if a['family']=='Fianchini_constant_open':
   q=a['metrics']['phyto_CN_inventory_ratio'];e=a['metrics']['phyto_evenness_N']
@@ -156,6 +174,7 @@ p('La scomposizione simmetrica usa pesi di biomassa N e separa variazione dei ra
 page();h('11. Profondità critica: un test più circoscritto')
 fig('08_mixing_mechanism')
 p('Diciotto esperimenti annuali incrociano mixing prescritto25/50/100m, PAR40/120/360 e presenza/assenza di grazers. D=10⁻²m²/s nello strato mescolante e10⁻⁶ sotto; luce e mixing variano indipendentemente.')
+p('Il confronto storico200→100m cambia anche l’apporto areale N:0.4×H+20 passa da100 a60mmolN/m²/d, oltre a troncare l’inventario iniziale. Questo confronto di domini non isola causalmente la profondità di mixing.')
 p('Il diagnostico Dcr cerca il primo attraversamento positivo→negativo dell’integrale verticale del tasso biologico di crescita netta C, a stato istantaneo congelato e senza interpretare il trasporto come crescita. Un valore assente è registrato come tale. Una soglia locale della crescita non viene chiamata profondità critica integrata.')
 p('<b>Portata:</b> il diagnostico non soddisfa automaticamente tutte le ipotesi di Sverdrup: uniformità della popolazione nello strato, tempi di rimescolamento, acclimatazione e perdita. Le colture non validano l’innesco di bloom oceanici. Zeu è ottica; se raggiunge il fondo del dominio è censurata, e non viene identificata con la profondità del mixing.')
 p('I lavori osservativi recenti su luce e stratificazione sostengono la necessità di inferire il mixing indipendentemente. Qui si verifica la distinzione dei meccanismi; non si riproduce una serie osservata di un bacino.',small=True)
@@ -175,25 +194,28 @@ p('Due classi detritiche chiudono la massa ma interpolano in modo grossolano le 
 p('La maggiore complessità della fisiologia può aumentare NPP senza aumentare export. La letteratura2025-2026 distingue inoltre export superficiale e trasferimento in profondità. Le forzanti ideali non autorizzano un confronto quantitativo diretto con medie globali.',small=True)
 # Revised reference and annual interventions
 page();h('14. La configurazione riveduta alla prova')
-p('Il riferimento R00 integra dieci anni con DIC rilassato a2200mmolC/m³, tempo100giorni,16 classi detritiche e passo massimo0.0125d. Usa70+70 classi di plankton,40 celle e la luce costante storica. È un esperimento ideale con ingressi/uscite C contabilizzati, non una ricostruzione di scambio aria-mare.')
+p('Il riferimento R00 integra dieci anni con DIC rilassato in ogni cella a2200mmolC/m³, tempo100giorni,16 classi detritiche e passo massimo0.0125d. Usa70+70 classi di plankton,40 celle e la luce costante storica. È un esperimento ideale con ingressi/uscite C contabilizzati, non una ricostruzione di scambio aria-mare.')
 if 'R00_buffered_reference' in CASES:
  r=summ('R00_buffered_reference')
- tbl([['Indicatore, ultimo intervallo annuale','Valore'],['P_N',n(r['phyto_N_mmol_m2'])+' mmolN/m²'],['C:N fitoplancton',n(r['phyto_CN_inventory_ratio'])],['NPP C',n(r['NPP_C_mmol_m2_d'])+' mmolC/m²/d'],['Export C a200m',n(r['bottom_export_C_mg_m2_d'])+' mgC/m²/d'],['DIC minimo campionato',n(r['last_year_min_DIC'])+' mmolC/m³'],['Deriva P_N tra ultimi intervalli annuali',n(100*r['last_year_N_drift_fraction'])+'%']],[W*.66,W*.34])
+ tbl([['Indicatore, ultimo intervallo annuale','Valore'],['P_N',n(r['phyto_N_mmol_m2'])+' mmolN/m²'],['C:N fitoplancton',n(r['phyto_CN_inventory_ratio'])],['NPP C',n(r['NPP_C_mmol_m2_d'])+' mmolC/m²/d'],['Export C a200m',n(r['bottom_export_C_mg_m2_d'])+' mgC/m²/d'],['DIC minimo campionato',n(r['last_year_min_DIC'])+' mmolC/m³'],['DIN massimo campionato',n(r['last_year_max_DIN'])+' mmolN/m³'],['Apporto C netto dal reservoir',n(balance('R00_buffered_reference').get('C_external_net_mmol_m2_d'))+' mmolC/m²/d'],['Accumulo N nel sistema',n(balance('R00_buffered_reference').get('N_inventory_accumulation_mmol_m2_d'))+' mmolN/m²/d'],['Deriva P_N tra ultimi intervalli annuali',n(100*r['last_year_N_drift_fraction'])+'%']],[W*.66,W*.34])
+p('L’apporto N supera le uscite e il DIN continua ad accumularsi. La quasi-stazionarietà della biomassa non è equilibrio dell’intero sistema. Il reservoir C è un controllo volumetrico ideale; non rappresenta uno scambio gassoso alla superficie.',small=True)
 p('I confronti successivi partono tutti dallo stesso stato fisico finale R00 e durano365giorni. I contatori vengono azzerati. Il raddoppio della griglia verticale prolunga conservativamente le concentrazioni;16→32 classi di particelle conserva C e N mediante mappatura logaritmica.')
-rows=[['Confronto annuale','Δ P_N','Δ C:N','Δ NPP','Δ export','Esito']]
+rows=[['Prova annuale','Δ P_N','Δ C:N','Δ NPP','Δ export','Δ ESD','Esito']]
 for g in ASSESS.get('recommended_numerical_gates',[]):
- changes=g['relative_changes'];rows.append([g['test'],*[n(100*changes[k],3)+'%' for k in ['phyto_N_mmol_m2','phyto_CN_inventory_ratio','NPP_C_mmol_m2_d','bottom_export_C_mmol_m2_d']], 'passa' if g['pass_5pct_bulk_10pct_size'] else 'non passa'])
-tbl(rows,[W*.25,W*.14,W*.14,W*.14,W*.14,W*.19])
+ changes=g['relative_changes'];label={'time_step':'Passo temporale','vertical_grid':'40 vs80 celle','vertical_grid80_to160':'80 vs160 celle','particle_grid':'Classi detritiche'}[g['test']]
+ rows.append([label,*[pct(changes[k]) for k in ['phyto_N_mmol_m2','phyto_CN_inventory_ratio','NPP_C_mmol_m2_d','bottom_export_C_mmol_m2_d','N_weighted_geomean_ESD_um']], 'passa' if g['pass_5pct_bulk_10pct_size'] else 'non passa'])
+tbl(rows,[W*.22,*[W*.125]*5,W*.155])
 p('Scarti rispetto al riferimento più fine; soglie euristiche dichiarate:5% per stock N,C:N,NPP ed export,10% per taglia media geometrica. Non sono errori osservativi. Un solo confronto annuale non dimostra convergenza asintotica, né trasferisce automaticamente l’esito alla traiettoria decennale.',small=True)
 if ASSESS:p('<b>Giudizio numerico:</b> '+('tutte le soglie annuali sono rispettate.' if ASSESS.get('recommended_bulk_convergence_demonstrated') else 'la convergenza complessiva della configurazione riveduta non è dimostrata. I confronti che falliscono sono mantenuti e limitano le inferenze quantitative.'))
 page();h('15. Export e luce: interventi controllati')
 fig('12_annual_interventions',height=260)
 p('Sette interventi annuali riprendono le domande di DePasquale4.5 e5: apporto N×0.25/2, lisi e remineralizzazione×2, sinking del fitoplancton×2, minore resa C dei consumatori e attenuazione dell’acqua0.015/0.06m⁻¹. Il controllo è R01 con identico stato iniziale, passo e finestra annuale.')
 p('I cambiamenti includono risposte transitorie della comunità, non nuovi equilibri decennali. NPP ed export possono avere segno e ampiezza differenti: la quantità di carbonio fissato non determina da sola quanto attraversa il fondo. Nessun intervento convalida la legge di sinking o la remineralizzazione contro osservazioni oceaniche.')
+p('Gli interventi sull’apporto N partono da un grande inventario DIN ereditato dal riferimento. Una risposta biologica debole nel corso di un anno riguarda quel regime già ricco di N; le serie inizializzate separatamente e le colture in carenza esplorano condizioni diverse.',small=True)
 if S.get('annual_intervention_comparisons'):
  rows=[['Intervento','Δ NPP','Δ export C']]
  for a in S['annual_intervention_comparisons']:
-  rows.append([a['alternative'].replace('R04_','').replace('R05_',''),n(100*a['relative_changes']['NPP_C_mmol_m2_d'])+'%',n(100*a['relative_changes']['bottom_export_C_mmol_m2_d'])+'%'])
+  rows.append([a['alternative'].replace('R04_','').replace('R05_',''),pct(a['relative_changes']['NPP_C_mmol_m2_d']),pct(a['relative_changes']['bottom_export_C_mmol_m2_d'])])
  tbl(rows,[W*.56,W*.22,W*.22])
 #14
 page();h('16. Confronto critico con la letteratura recente')
@@ -203,11 +225,11 @@ p('Questa è una comparazione mirata con studi primari, verificata al16/10/2026;
 page();h('17. Configurazione operativa e decisioni')
 p('<b>Utilizzabile adesso:</b> il codice per esperimenti di meccanismo, controlli di bilancio, confronto di ipotesi e valutazione fisiologica circoscritta. Ogni esecuzione registra metodo,passo,parametri,forzanti,finestre e hash del nucleo.')
 p('<b>Da non considerare dimostrato:</b> validità universale delle allometrie e del Q10; fit entro l’incertezza delle repliche; convergenza di tutte le metriche; risposta realistica dell’export o previsione di bloom per un sito.')
-tbl([['Criterio','Regola operativa'],['C:N e unità','Usare inventari molari espliciti; conservare carbonio anche nel pool organico di N.'],['Integratore','Riferimento esplicito per casi piccoli; IMEX solo con raffinamento del passo e riscontri per la metrica di interesse.'],['Risoluzione','Conservare inventari iniziali e profilo fisico DIN sotto raffinamento; normalizzare spettri in Δlog ESD.'],['Particelle','Scegliere classi dopo il confronto2/4/8/16; la chiusura della massa non certifica export convergente.'],['Diagnostici','TTE di flusso e Z:P separati; e-ratio alla profondità dichiarata; soglie critiche integrate, Zeu e mixing distinti.'],['Uso empirico','Stimare su dati dedicati e verificare su un nuovo dataset non usato nello sviluppo, con forzanti e pool confrontabili.']],[W*.29,W*.71])
+tbl([['Criterio','Regola operativa'],['C:N e unità','Usare inventari molari espliciti; conservare carbonio anche nel pool organico di N.'],['Integratore','Riferimento esplicito per casi piccoli; IMEX solo con raffinamento del passo e riscontri per la metrica di interesse.'],['Griglia verticale','La configurazione40celle fallisce il confronto con80; consultare anche il controllo80→160 prima di usare export quantitativo.'],['Risoluzione','Conservare inventari iniziali e profilo fisico DIN sotto raffinamento; normalizzare spettri in Δlog ESD.'],['Particelle','Scegliere classi dopo il confronto2/4/8/16; la chiusura della massa non certifica export convergente.'],['Diagnostici','TTE di flusso e Z:P separati; e-ratio alla profondità dichiarata; soglie critiche integrate, Zeu e mixing distinti.'],['Uso empirico','Stimare su dati dedicati e verificare su un nuovo dataset non usato nello sviluppo, con forzanti e pool confrontabili.']],[W*.29,W*.71])
 p('Priorità scientifiche: un controllo a rapporto fisso con cinetiche abbinate; dati indipendenti su quota e crescita; diagnostica di N-speciation e dei costi energetici; successivamente P,Fe,Si e processi delle particelle se necessari alla domanda. Una componente aggiuntiva va giustificata dalla capacità predittiva, non dalla sola disponibilità di nuovi stati.')
 #16
 page();h('18. Riproducibilità e materiali')
-p('Repository: https://github.com/Marcofianchini/SPLAS-1.1<br/>Ramo: codex/dynamic-cn-development<br/>Base storica:76f992c9924420c715a660d017387882efe992dd')
+p('Repository: https://github.com/Marcofianchini/SPLAS-1.1<br/>Ramo: codex/dynamic-cn-development<br/>Proposta: https://github.com/Marcofianchini/SPLAS-1.1/pull/1<br/>Base storica:76f992c9924420c715a660d017387882efe992dd')
 p('Impronta SHA256 del nucleo verificato:<br/>'+S['model_sha256'],small=True)
 p('Installazione e prove:<br/><font face="DV">python -m pip install -c research/requirements-reference.txt -e &quot;.[fast,research]&quot;<br/>python -m unittest discover -s tests -v<br/>python -m splas2 --days 30 --output results/example.npz</font>',small=True)
 p('Sequenza riproducibile: prepare_cultures.py → calibrate_cultures.py → run_experiments.py → run_mechanisms.py → run_physiological_protocols.py → run_supplement.py → run_carbon_boundary.py → run_recommended.py → run_recommended_refinement.py → run_export_interventions.py → analyze_results.py → assess_validation.py → make_validation_report.py → package_report_data.py. Il PDF è generato dai JSON delle esecuzioni.')
@@ -216,6 +238,16 @@ p('Materiali principali: splas2/model.py;test_conservation.py;research/MODEL.md;
 refs=[('Moloney1988','https://hdl.handle.net/11427/22132'),('DePasquale2018','https://arts.units.it/bitstream/11368/2929831/2/M_DePasquale_TESI_FINAL.pdf'),('Fianchini2021','PDF corretto fornito dall’utente'),('Montagnes1994','https://doi.org/10.4319/lo.1994.39.5.1044'),('Liefer2019','https://doi.org/10.3389/fmicb.2019.00763'),('Liefer etal2026 dataset','https://doi.org/10.1594/PANGAEA.900248'),('Hagstrom2024','https://doi.org/10.1029/2023GB007991')]
 for name,url in refs:p('<b>'+name+'</b> - '+url,small=True)
 p('Il file LITERATURE.md contiene i riferimenti completi dei restanti studi e una matrice evidenza→decisione→limite. I PDF delle tesi e gli articoli non sono redistribuiti come parte del codice.')
+if 'R02_grid160' in CASES:
+ page();h('Appendice. Il raffinamento verticale adattivo')
+ fig('13_nested_vertical_refinement',height=310)
+ p('Il mancato superamento del criterio40→80 celle ha motivato un ulteriore confronto a160 celle. Le tre simulazioni annuali partono dallo stesso stato fisico R00, prolungato conservativamente. Ogni confronto mantiene parametri, forzanti, intervallo e passo massimo0.0125d.')
+ p('Il confronto aggiuntivo è adattivo, dichiarato dopo il fallimento40→80; le soglie5%/10% sono rimaste invariate. Tre punti di una dinamica ecologica non lineare non dimostrano da soli un ordine asintotico di convergenza.')
+ for g in ASSESS.get('recommended_numerical_gates',[]):
+  if g['test']=='vertical_grid80_to160':
+   d=g['relative_changes'];p('Rispetto alle160 celle, le80 celle danno scarti di '+pct(d['phyto_N_mmol_m2'])+' per P_N, '+pct(d['NPP_C_mmol_m2_d'])+' per NPP e '+pct(d['bottom_export_C_mmol_m2_d'])+' per export C. Il miglior accordo dell’export non basta a superare il criterio complessivo sugli stock e sui flussi.')
+ p('La prima formulazione usa advezione upwind del primo ordine e luce valutata al centro delle celle con clorofilla diagnostica. Diffusione numerica, discretizzazione della luce e riassetto biologico sono contributi da discriminare. Il bilancio atomico può restare chiuso durante una risposta sensibile alla griglia.')
+ p('L’export quantitativo richiede una verifica spaziale dedicata. Un futuro schema di trasporto di ordine superiore va sottoposto agli stessi controlli indipendenti di positività, conservazione e confronto con soluzioni analitiche; cambiare schema o aumentare la risoluzione non convalida le cinetiche delle particelle.',small=True)
 OUTPUT.parent.mkdir(parents=True,exist_ok=True)
 doc=SimpleDocTemplate(str(OUTPUT),pagesize=A4,rightMargin=18*2.83465,leftMargin=18*2.83465,topMargin=18*2.83465,bottomMargin=23*2.83465,title='SPLAS-CN: sviluppo e verifica',author='Codex - analisi per il progetto SPLAS')
 doc.build(story,onFirstPage=footer,onLaterPages=footer)

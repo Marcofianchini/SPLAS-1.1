@@ -9,6 +9,17 @@ costs, real prey stoichiometry, detrital C/N and conservative vertical transport
 assessment are distinguished from field validation. Do not use this release to
 claim validated ocean export, sequestration, or full C:N:P dynamics.
 
+| Evidence | Assessment |
+|---|---|
+|20 scientific implementation tests | Pass, locally and in GitHub Actions with recorded dependency versions. |
+|Carbon/nitrogen inventories and positivity | Verified for the registered experiments; inspect exact residuals in the validation summary. |
+|Annual time-step and16/32 particle-bin comparisons | Pass the declared numerical thresholds from a common state. |
+|Vertical resolution |40/80 fails. Between80/160, export changes2.18%, but N stock6.62% and NPP5.44% exceed the5% bulk criterion. Overall convergence is not demonstrated. |
+|Four N-starvation cultures | Partial exploratory skill; initial-value persistence outperforms the shared model for Micromonas. |
+
+The complete assessment is in [VALIDATION.md](research/VALIDATION.md). A
+closed element ledger does not establish physiological or field validity.
+
 ## Run
 
 Python 3.10+; the recorded reference environment is Python3.12, NumPy2.3.5,
@@ -102,12 +113,18 @@ against2024-2026 primary studies. P, Fe, Si, O2, carbonate chemistry, bacteria,
 mixotrophy, aggregation and explicit macromolecular allocation are absent.
 More physiological states do not themselves establish greater predictive skill.
 
-The improved idealized research configuration is in
+The revised idealized control configuration is in
 `research/recommended_idealized.json`: buffered DIC with an external ledger,
 16 particle bins,70+70 plankton classes,40 cells of5m and max_step0.0125day.
-Its status must be read with the same-state step-refinement results, not
-assumed to establish field validity. The historical irradiation is retained
+The40-cell vertical gate failed; this configuration is a traceable control,
+not a spatially converged export estimate. The nested80/160-cell result is
+reported separately. Temporal/particle refinement does not repair a failed
+vertical-resolution check. The historical irradiation is retained
 for traceability and does not describe a measured ocean site.
+
+Element conservation does not imply stationarity: an openN input can exceed
+exports while phytoplankton biomass appears stable. The result summary reports
+net N retention and DIN accumulation separately from biomass drift.
 
 The nominally open-N legacy counterpart has no matching C input and can
 become strongly DIC limited. `run_carbon_boundary.py` tests that confound

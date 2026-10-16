@@ -32,7 +32,7 @@ def main():
   supplement=ROOT/'research'/extra
   if supplement.exists():registry+=json.load(open(supplement))
   elif not args.allow_partial:raise RuntimeError('Unfinished study: missing registry '+extra)
- if not args.allow_partial and len(registry)!=116:raise RuntimeError('Unfinished study: expected116 registered cases')
+ if not args.allow_partial and len(registry)!=117:raise RuntimeError('Unfinished study: expected117 registered cases')
  cases={};missing=[]
  for c in registry:
   p=RDIR/(c['id']+'.json')
@@ -141,6 +141,22 @@ def main():
   meanC=np.trapezoid(a['phyto_C'][ix],tt)/(tt[-1]-tt[0]);meanN=np.trapezoid(a['phyto_N'][ix],tt)/(tt[-1]-tt[0])
   long_stats.append({'id':key,'two_year_CN_ratio':float(meanC/meanN),'two_year_phyto_N':float(meanN),'whole_run_mean_NPP_C':float(ledger[0]-ledger[1]),'whole_run_mean_export_C':float(ledger[6])})
  out['time_window_diagnostic']=long_stats
+ if all(k in cases for k in ['R01_same_state_dt_0.0125','R02_grid80','R02_grid160']):
+  keys=['R01_same_state_dt_0.0125','R02_grid80','R02_grid160'];cells=[40,80,160]
+  fig,axes=plt.subplots(2,2,figsize=(9.5,6.1))
+  for ax,field,label in zip(axes.ravel(),['phyto_N_mmol_m2','N_weighted_geomean_ESD_um','NPP_C_mmol_m2_d','bottom_export_C_mg_m2_d'],['P_N (mmolN/m²)','ESD geometrico pesato N (µm)','NPP C (mmolC/m²/d)','Export C a200m (mgC/m²/d)']):
+   ax.plot(cells,[cases[k]['summary'][field] for k in keys],'o-');ax.set_xscale('log',base=2);ax.set_xticks(cells,[str(n) for n in cells]);ax.set(xlabel='Numero di celle, stesso stato iniziale',ylabel=label)
+  figsave(fig,'13_nested_vertical_refinement')
+ # A stable phytoplankton stock does not imply a stationary inorganic inventory.
+ out['last_window_element_balance']=[]
+ for key,c in cases.items():
+  a=arr(key);d=a['diag_final_year'];dz=c['config']['depth']/c['config']['n_layers']
+  out['last_window_element_balance'].append({'id':key,'window_days':c['summary']['window_end_day']-c['summary']['window_start_day'],
+   'C_external_net_mmol_m2_d':float(d[10]-d[12]),'N_external_input_mmol_m2_d':float(d[11]),
+   'N_external_output_mmol_m2_d':float(d[7]+d[9]+d[13]),
+   'N_inventory_accumulation_mmol_m2_d':float(d[11]-d[7]-d[9]-d[13]),
+   'DIN_whole_run_change_mean_mmol_m2_d':float((a['final_state'][0]-a['initial_state'][0]).sum()*dz/c['days']),
+   'interpretation':'Net element retention from integrated external ledgers; consistent with conservation, distinct from phytoplankton-stock stationarity.'})
  mechanisms=ROOT/'results/mechanisms/mechanisms.json'
  if mechanisms.exists():
   mech=json.load(open(mechanisms));out['Rstar_oracle']=mech['fixed_CN_assembly'][0]
