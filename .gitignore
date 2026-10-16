@@ -13,4 +13,5 @@ tmp_*/
 tmp/
 research/*.log
 research/stoichiometry/*.log
+research/pom_validation_0d/*.log
 research/PROGRESS.md

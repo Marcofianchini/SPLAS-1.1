@@ -1,0 +1,32 @@
+{
+  "community_cases": 103,
+  "memory_cases": 84,
+  "garden_cases": 24,
+  "rare_reintroduction_cases": 10,
+  "total_cases": 221,
+  "maximum_relative_residual_CN": [
+    1.6713331048848767e-10,
+    1.0688104513173448e-09
+  ],
+  "minimum_live_state": 0.0,
+  "minimum_DIC": 1635.250769101527,
+  "maximum_N_network_RHS_absolute_error": 8.881784197001252e-16,
+  "archive_check": "SHA256 and complete ZIP CRC for every analyzed archive; signatures include frozen scientific source files.",
+  "scientific_tests": {
+    "tests": 26,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 19.862066587003937
+  },
+  "previous_baseline": {
+    "frozen_files_verified": 333,
+    "community_signatures_verified": 117,
+    "model_unchanged": true,
+    "new_simulations": 0
+  },
+  "equations_and_integrator_unchanged": true,
+  "model_sha256": "e7de66b3983742fc84e8114862c9a3c8fe9969fe950dc303e720395fcb6c3f85",
+  "ecological_conclusion": "Partial POM support; P1/P2 retained in fine plane, P3 conditional, P4 not reproduced; late low-N communities sensitive to rare trait redistribution.",
+  "validation_is_not_inferred_from_conservation": true
+}

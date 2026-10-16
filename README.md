@@ -52,6 +52,39 @@ All cases, including counterexamples, are in the
 [pattern assessment](research/stoichiometry/PATTERNS.json) and
 [current primary-literature comparison](research/stoichiometry/LITERATURE.md).
 
+The [independent 0D POM challenge](research/pom_validation_0d/RESULTS.md)
+adds **221 runs** with internally registered pattern criteria and explicit
+structural alternatives, followed by declared discriminating controls. The whole
+reference plane at a finer step retains enrichment/size expansion and size
+groups. The quantity/quality pattern remains conditional and fails its declared
+generality criterion; the opposite diversity/Z:P signature is not reproduced.
+Rare-trait redistribution can reorganize apparently stationary low-N communities
+at unchanged C/N inventories. Thus finite-window size groups do not establish
+invasion-resistant coexistence. This is **partial POM support**, not general
+ecological validation.
+
+Common-state pulse controls now support a phase-dependent interaction of event
+order and a physiological component of memory in reserve common gardens.
+Lower N retention still decreases grazer production and producer mean size in
+the new recycling contrasts, but the earlier evenness direction is **not
+universal**. See the [protocols and evidence](research/pom_validation_0d/PROTOCOL.md),
+[complete summary](research/pom_validation_0d/summary.csv),
+[fine-plane decisions](research/pom_validation_0d/summary.json) and
+[verification](research/pom_validation_0d/VERIFICATION.json). Equations,
+integrator and previous data remain unchanged.
+
+```bash
+python scripts/run_pom_validation.py --workers 4
+python scripts/run_pom_validation.py --stage memory --workers 4
+python scripts/run_pom_validation.py --stage garden --workers 4
+python scripts/run_pom_followup.py
+python scripts/run_pom_refinement.py
+python scripts/run_pom_rare_pool.py
+python scripts/analyze_pom_invasion.py
+python scripts/analyze_pom_validation.py
+python scripts/plot_pom_validation.py
+```
+
 **Status: research prototype.** The following implementation and auxiliary
 physiology checks support the POM study; they are not its ecological success
 score. Units, element closure and robustness of the claimed patterns remain
@@ -59,7 +92,7 @@ necessary in an idealized model.
 
 | Evidence | Assessment |
 |---|---|
-|23 scientific implementation/observation tests | Pass locally; the workflow repeats the same suite. Three added checks reconstruct process observations from the independent RHS, match inventories and conserve physical-bin mass. |
+|26 scientific implementation/observation tests | Pass locally; the workflow repeats the same suite. The latest three checks reconstruct the five-pool N network from the independent RHS, match all new initial inventories and conserve physical-bin mass in both trophic size domains. |
 |Carbon/nitrogen inventories and positivity | Verified for the registered experiments; inspect exact residuals in the validation summary. |
 |Annual time-step and16/32 particle-bin comparisons | Pass the declared numerical thresholds from a common state. |
 |Vertical resolution |40/80 fails. Between80/160, export changes2.18%, but N stock6.62% and NPP5.44% exceed the5% bulk criterion. Overall convergence is not demonstrated. |

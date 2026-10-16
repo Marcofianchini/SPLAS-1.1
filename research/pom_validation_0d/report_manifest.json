@@ -1,0 +1,17 @@
+{
+  "file_name": "SPLAS_Validazione_POM_0D_2026-10-16.pdf",
+  "bytes": 8953463,
+  "pages": 16,
+  "sha256": "c48062ed99615c5f9b5a584599292bde203041756c78329cde846e43d98445a1",
+  "script_sha256": "9db9a1c9a97250244fb8214d12e766ae478e4949af7b270d4f87290dcde52c82",
+  "data_sha256": "0130c69431223fc78f08b99824024e680d0988aa8e75c3a3dc9606d0f487f2e8",
+  "attachments": {
+    "summary.csv": "ea82ebb653b28c117011a79f862536ce76f64789dbf91833ccff3b788d9d160b",
+    "summary.json": "06d351e74351a0ef518bcbc8d49f6634f0c37149ddcc01088e11dc96cf935cde",
+    "PATTERN_DECISIONS.json": "9b6da7149329e16c8b14706fee3b944c348d7722fbf54a41f45481c2e135eab6",
+    "VERIFICATION.json": "0d228c04ac3b6495a86975d3118753bacee77d4114ee8463e7d0806333dbaba8",
+    "data_manifest.json": "dfeaf8136c7740b43d079622ed85d2153b008f42c2ffb4b5f7ad5c4410d4ecca",
+    "invasion_diagnostic.json": "e41d074e8d2f25a5511bd119e2572686df67485eae5da9159035dfa8d12d5e41"
+  },
+  "figures": 12
+}

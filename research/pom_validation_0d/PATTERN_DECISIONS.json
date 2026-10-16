@@ -1,0 +1,2020 @@
+{
+  "primary_registered_plane": {
+    "full": {
+      "role": "candidate structure",
+      "P1": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "PAR": 30.0,
+            "PN_change": 26.612218518379212,
+            "geomean_change": 3.7055993089432313,
+            "ESD95_change": 4.55201819802847,
+            "small_fraction_high": 0.26063005642580395,
+            "pass": true
+          },
+          {
+            "PAR": 300.0,
+            "PN_change": 28.912493202077858,
+            "geomean_change": 4.600719044473966,
+            "ESD95_change": 4.55201819802847,
+            "small_fraction_high": 0.19363729852074543,
+            "pass": true
+          }
+        ]
+      },
+      "P2": {
+        "pass_pattern": true,
+        "cases_with_multiple_modes": [
+          "V_full_L30_N0.5",
+          "V_full_L30_N2",
+          "V_full_L30_N8",
+          "V_full_L300_N0.5",
+          "V_full_L300_N2",
+          "V_full_L300_N8"
+        ],
+        "modes_all_6": {
+          "V_full_L30_N0.5": 2,
+          "V_full_L30_N2": 2,
+          "V_full_L30_N8": 4,
+          "V_full_L300_N0.5": 2,
+          "V_full_L300_N2": 2,
+          "V_full_L300_N8": 4
+        }
+      },
+      "P3": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "N": 0.5,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": -0.27373708208848,
+            "CN_change": 0.3602338925790904,
+            "diet_CN_change": 0.4613332374979101,
+            "production_change": 1.3578526136295292,
+            "TTE_flux_change": 0.7830922748588466,
+            "pass": false
+          },
+          {
+            "N": 0.5,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": -0.004891913577043884,
+            "CN_change": 0.027604752178005287,
+            "diet_CN_change": 0.037473223383363646,
+            "production_change": 0.024843603921103317,
+            "TTE_flux_change": 0.010318480280554754,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 1.2558666944998411,
+            "CN_change": 1.9908075886711665,
+            "diet_CN_change": 0.903030592195019,
+            "production_change": 1.1493520779686834,
+            "TTE_flux_change": -0.22577416949210918,
+            "pass": true
+          },
+          {
+            "N": 2.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": -0.019185182129685133,
+            "CN_change": 0.01592883353561042,
+            "diet_CN_change": 0.048515549075923224,
+            "production_change": 0.03676291685775503,
+            "TTE_flux_change": 0.014682269914495963,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 3.0341861632851894,
+            "CN_change": 2.217911997638318,
+            "diet_CN_change": 1.4377761427622804,
+            "production_change": 1.1919727258127049,
+            "TTE_flux_change": -0.466435188622292,
+            "pass": true
+          },
+          {
+            "N": 8.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.21432271249905813,
+            "CN_change": 0.15754705770564817,
+            "diet_CN_change": 0.08821937327781568,
+            "production_change": -0.016534329280813095,
+            "TTE_flux_change": -0.14134596793760074,
+            "pass": true
+          }
+        ]
+      },
+      "P4": {
+        "pass_pattern": false,
+        "common_9": {
+          "N": {
+            "n": 9,
+            "rho_P": -0.7333333333333334,
+            "rho_Z": -0.7833333333333333,
+            "pearson_P": -0.8508685641013842,
+            "pearson_Z": -0.9533270795331171,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.10010533162260622,
+              -0.14005378610340238,
+              -1.1256544634301304,
+              -0.2904369164879812
+            ],
+            "interaction_design_condition_number": 34.19507514686362,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 9,
+            "rho_P": -0.3,
+            "rho_Z": -0.6833333333333333,
+            "pearson_P": -0.1309956858500728,
+            "pearson_Z": -0.8484154394705548,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.6897155109996316,
+              1.0903653193732503,
+              -1.3350084781856204,
+              3.825121610780407
+            ],
+            "interaction_design_condition_number": 44.09742287940861,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        },
+        "extended_15": {
+          "N": {
+            "n": 15,
+            "rho_P": -0.5964285714285712,
+            "rho_Z": -0.7214285714285712,
+            "pearson_P": -0.6394884976708579,
+            "pearson_Z": -0.7792986794110163,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.12141805876304525,
+              0.2683363062796671,
+              -1.0626392830673819,
+              2.1937499229506043
+            ],
+            "interaction_design_condition_number": 35.02265632671725,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 15,
+            "rho_P": -0.20357142857142854,
+            "rho_Z": -0.7357142857142855,
+            "pearson_P": -0.09515188004770175,
+            "pearson_Z": -0.754100937242564,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.703525169648071,
+              1.0611293492194038,
+              -1.5507464723365953,
+              5.276215016833632
+            ],
+            "interaction_design_condition_number": 45.58808311863725,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        }
+      },
+      "all_four_patterns": false
+    },
+    "own": {
+      "role": "candidate structure",
+      "P1": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "PAR": 30.0,
+            "PN_change": 7.3480782175637955,
+            "geomean_change": 5.315135929320972,
+            "ESD95_change": 11.101456527743936,
+            "small_fraction_high": 0.19087363664759216,
+            "pass": true
+          },
+          {
+            "PAR": 300.0,
+            "PN_change": 6.982003357125059,
+            "geomean_change": 5.098178490117872,
+            "ESD95_change": 11.101456527743936,
+            "small_fraction_high": 0.17895497111112124,
+            "pass": true
+          }
+        ]
+      },
+      "P2": {
+        "pass_pattern": true,
+        "cases_with_multiple_modes": [
+          "V_own_L30_N0.5",
+          "V_own_L30_N2",
+          "V_own_L30_N8",
+          "V_own_L300_N0.5",
+          "V_own_L300_N2",
+          "V_own_L300_N8"
+        ],
+        "modes_all_6": {
+          "V_own_L30_N0.5": 2,
+          "V_own_L30_N2": 4,
+          "V_own_L30_N8": 5,
+          "V_own_L300_N0.5": 2,
+          "V_own_L300_N2": 4,
+          "V_own_L300_N8": 5
+        }
+      },
+      "P3": {
+        "pass_pattern": false,
+        "contrasts": [
+          {
+            "N": 0.5,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.1348074938723698,
+            "CN_change": 0.972818425974804,
+            "diet_CN_change": 0.6090832546822924,
+            "production_change": 1.2689720700961866,
+            "TTE_flux_change": 0.41129658619684356,
+            "pass": false
+          },
+          {
+            "N": 0.5,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.015376176966689449,
+            "CN_change": 0.03061278225029968,
+            "diet_CN_change": 0.06907933273141001,
+            "production_change": 0.007597252128625855,
+            "TTE_flux_change": -0.029346255484343997,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.8449130448626078,
+            "CN_change": 1.4342225294272104,
+            "diet_CN_change": 0.8759747086673154,
+            "production_change": 1.1534340989806517,
+            "TTE_flux_change": -0.1155937112123967,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.029664855218292395,
+            "CN_change": 0.054468591903021356,
+            "diet_CN_change": 0.06222525787813422,
+            "production_change": 0.04104955457872487,
+            "TTE_flux_change": -0.01234381286754506,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 1.8140324876890654,
+            "CN_change": 1.6144388759493016,
+            "diet_CN_change": 1.0916938231066697,
+            "production_change": 1.5210883806685016,
+            "TTE_flux_change": -0.25207468636924785,
+            "pass": true
+          },
+          {
+            "N": 8.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": -0.03210875265317882,
+            "CN_change": 0.027471350016935712,
+            "diet_CN_change": 0.0371420180655913,
+            "production_change": 0.01358207095557712,
+            "TTE_flux_change": 0.006462863636431984,
+            "pass": false
+          }
+        ]
+      },
+      "P4": {
+        "pass_pattern": false,
+        "common_9": {
+          "N": {
+            "n": 9,
+            "rho_P": -0.6333333333333333,
+            "rho_Z": -0.5,
+            "pearson_P": -0.5788538142543564,
+            "pearson_Z": -0.48643225284986935,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              0.2334564590206199,
+              -1.6327409079664124,
+              0.5197513665188939,
+              0.5823159596085047
+            ],
+            "interaction_design_condition_number": 57.11607949531685,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 9,
+            "rho_P": -0.65,
+            "rho_Z": -0.6,
+            "pearson_P": -0.33009247618690335,
+            "pearson_Z": -0.5913874407125211,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.2408084212382124,
+              -0.06021134189560806,
+              -0.06052710115363675,
+              2.304239107796778
+            ],
+            "interaction_design_condition_number": 74.69275007398163,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        },
+        "extended_15": {
+          "N": {
+            "n": 15,
+            "rho_P": -0.7428571428571428,
+            "rho_Z": -0.6499999999999999,
+            "pearson_P": -0.6008262859538241,
+            "pearson_Z": -0.552861567972595,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              0.33509827540285086,
+              -1.2249268709491223,
+              0.130086725575047,
+              -1.269212752695699
+            ],
+            "interaction_design_condition_number": 56.26084993405473,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 15,
+            "rho_P": -0.7392857142857142,
+            "rho_Z": -0.7,
+            "pearson_P": -0.5291392442844711,
+            "pearson_Z": -0.6839679935481746,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.22708916796909423,
+              0.03346659723487466,
+              -0.2687295747993726,
+              1.4590411720783558
+            ],
+            "interaction_design_condition_number": 56.19815758003789,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        }
+      },
+      "all_four_patterns": false
+    },
+    "flat": {
+      "role": "candidate structure",
+      "P1": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "PAR": 30.0,
+            "PN_change": 15.661032299285885,
+            "geomean_change": 3.7674824615302507,
+            "ESD95_change": 5.488259835659543,
+            "small_fraction_high": 0.24350436782997165,
+            "pass": true
+          },
+          {
+            "PAR": 300.0,
+            "PN_change": 13.251366514494064,
+            "geomean_change": 2.97767038668305,
+            "ESD95_change": 4.552018198028472,
+            "small_fraction_high": 0.39737129188549686,
+            "pass": true
+          }
+        ]
+      },
+      "P2": {
+        "pass_pattern": true,
+        "cases_with_multiple_modes": [
+          "V_flat_L30_N0.5",
+          "V_flat_L30_N2",
+          "V_flat_L30_N8",
+          "V_flat_L300_N0.5",
+          "V_flat_L300_N2",
+          "V_flat_L300_N8"
+        ],
+        "modes_all_6": {
+          "V_flat_L30_N0.5": 2,
+          "V_flat_L30_N2": 3,
+          "V_flat_L30_N8": 4,
+          "V_flat_L300_N0.5": 2,
+          "V_flat_L300_N2": 3,
+          "V_flat_L300_N8": 4
+        }
+      },
+      "P3": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "N": 0.5,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.8072684051969079,
+            "CN_change": 1.63190507961753,
+            "diet_CN_change": 1.7393464625625923,
+            "production_change": 0.8347899124096064,
+            "TTE_flux_change": -0.23949646902650162,
+            "pass": false
+          },
+          {
+            "N": 0.5,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.09441867018415635,
+            "CN_change": 0.08901916239632184,
+            "diet_CN_change": 0.1532925403866839,
+            "production_change": -0.0029028790937297997,
+            "TTE_flux_change": -0.11431773189799437,
+            "pass": true
+          },
+          {
+            "N": 2.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.54708398620684,
+            "CN_change": 1.6137354673591924,
+            "diet_CN_change": 0.7903435417890089,
+            "production_change": 1.6283824660518584,
+            "TTE_flux_change": 0.132518402963591,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.07865362636042064,
+            "CN_change": 0.07919931145556341,
+            "diet_CN_change": 0.184461708842249,
+            "production_change": 0.0006322720103982518,
+            "TTE_flux_change": -0.12521406543052624,
+            "pass": true
+          },
+          {
+            "N": 8.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 1.5074350010204538,
+            "CN_change": 1.793012260184488,
+            "diet_CN_change": 1.1040599065851995,
+            "production_change": 1.9113867459959963,
+            "TTE_flux_change": -0.12857303704693152,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": -0.1397840649782948,
+            "CN_change": 0.0007023248225159963,
+            "diet_CN_change": -0.03748525233791587,
+            "production_change": 0.15494607629029844,
+            "TTE_flux_change": 0.17015990148621185,
+            "pass": false
+          }
+        ]
+      },
+      "P4": {
+        "pass_pattern": false,
+        "common_9": {
+          "N": {
+            "n": 9,
+            "rho_P": -0.8833333333333333,
+            "rho_Z": -0.7999999999999999,
+            "pearson_P": -0.8968961451689174,
+            "pearson_Z": -0.839752646109382,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              0.055019928790503776,
+              -1.2350338071071199,
+              -0.46905769056695884,
+              -3.078134342699076
+            ],
+            "interaction_design_condition_number": 45.83455212713961,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 9,
+            "rho_P": -0.5333333333333333,
+            "rho_Z": -0.75,
+            "pearson_P": -0.5220879516234525,
+            "pearson_Z": -0.8043521071397566,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.4766306727955999,
+              1.0933957850724934,
+              -1.5842556075710512,
+              -3.5276125294187968
+            ],
+            "interaction_design_condition_number": 53.88838230365779,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        }
+      },
+      "all_four_patterns": false
+    },
+    "uniform": {
+      "role": "candidate structure",
+      "P1": {
+        "pass_pattern": false,
+        "contrasts": [
+          {
+            "PAR": 30.0,
+            "PN_change": -0.0652440522208354,
+            "geomean_change": 0.5960198067754104,
+            "ESD95_change": 0.5959969550557687,
+            "small_fraction_high": 0.9999999999998781,
+            "pass": false
+          },
+          {
+            "PAR": 300.0,
+            "PN_change": -0.0453346421984662,
+            "geomean_change": 0.5787581263979673,
+            "ESD95_change": 0.5959969550557687,
+            "small_fraction_high": 0.9999999999999999,
+            "pass": false
+          }
+        ]
+      },
+      "P2": {
+        "pass_pattern": false,
+        "cases_with_multiple_modes": [],
+        "modes_all_6": {
+          "V_uniform_L30_N0.5": 1,
+          "V_uniform_L30_N2": 1,
+          "V_uniform_L30_N8": 1,
+          "V_uniform_L300_N0.5": 1,
+          "V_uniform_L300_N2": 1,
+          "V_uniform_L300_N8": 1
+        }
+      },
+      "P3": {
+        "pass_pattern": false,
+        "contrasts": [
+          {
+            "N": 0.5,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.3149919406207666,
+            "CN_change": 0.46384898560520915,
+            "diet_CN_change": 0.47373544367033793,
+            "production_change": 3.1992490701070344,
+            "TTE_flux_change": 0.342496864071674,
+            "pass": false
+          },
+          {
+            "N": 0.5,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.0068290996450194865,
+            "CN_change": 0.08835885812495718,
+            "diet_CN_change": 0.08843702719982938,
+            "production_change": 0.02600204794751318,
+            "TTE_flux_change": 0.0031951717691155817,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.2647830016120966,
+            "CN_change": 0.521253557231531,
+            "diet_CN_change": 0.5295674986296758,
+            "production_change": 2.926980675946623,
+            "TTE_flux_change": 0.38354909747558164,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.06141832332708063,
+            "CN_change": 0.06810359034467124,
+            "diet_CN_change": 0.06868549597532751,
+            "production_change": 0.09958611352295511,
+            "TTE_flux_change": -0.02300637717528941,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.2631584107846059,
+            "CN_change": 0.2609858450031595,
+            "diet_CN_change": 0.2680081819515991,
+            "production_change": 3.216608036744465,
+            "TTE_flux_change": 0.4454477406441217,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.022832179662656035,
+            "CN_change": 0.08259947949459645,
+            "diet_CN_change": 0.08315495787980808,
+            "production_change": 0.10056906025986298,
+            "TTE_flux_change": 0.013895623699569738,
+            "pass": false
+          }
+        ]
+      },
+      "P4": {
+        "pass_pattern": false,
+        "common_9": {
+          "N": {
+            "n": 9,
+            "rho_P": 0.7833333333333333,
+            "rho_Z": -0.9833333333333333,
+            "pearson_P": 0.9275232888711397,
+            "pearson_Z": -0.9725922080884067,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              0.5305018088655093,
+              1.3512573912739754,
+              -21209283.558414187,
+              -24145399.276212852
+            ],
+            "interaction_design_condition_number": 4834796605.297527,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 9,
+            "rho_P": 0.7949860383179369,
+            "rho_Z": -0.9833333333333333,
+            "pearson_P": 0.8972779012087376,
+            "pearson_Z": -0.9868993753633768,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              0.309006175594341,
+              0.5987189710140228,
+              -18388207.220417213,
+              -17185693.9801894
+            ],
+            "interaction_design_condition_number": 4797249376.40176,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        }
+      },
+      "all_four_patterns": false
+    },
+    "prior": {
+      "role": "candidate structure",
+      "P1": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "PAR": 30.0,
+            "PN_change": 14.36007263874835,
+            "geomean_change": 5.847459603227655,
+            "ESD95_change": 13.142135623730953,
+            "small_fraction_high": 0.34715286870047796,
+            "pass": true
+          },
+          {
+            "PAR": 300.0,
+            "PN_change": 21.899875732445196,
+            "geomean_change": 4.570053956254283,
+            "ESD95_change": 7.861004138467658,
+            "small_fraction_high": 0.26108687801024827,
+            "pass": true
+          }
+        ]
+      },
+      "P2": {
+        "pass_pattern": true,
+        "cases_with_multiple_modes": [
+          "V_prior_L30_N0.5",
+          "V_prior_L30_N2",
+          "V_prior_L30_N8",
+          "V_prior_L300_N0.5",
+          "V_prior_L300_N2",
+          "V_prior_L300_N8"
+        ],
+        "modes_all_6": {
+          "V_prior_L30_N0.5": 2,
+          "V_prior_L30_N2": 4,
+          "V_prior_L30_N8": 5,
+          "V_prior_L300_N0.5": 2,
+          "V_prior_L300_N2": 3,
+          "V_prior_L300_N8": 4
+        }
+      },
+      "P3": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "N": 0.5,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": null,
+            "CN_change": null,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 0.5,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.5672589327910358,
+            "CN_change": 1.2643496966987167,
+            "diet_CN_change": 1.090743071663747,
+            "production_change": 0.5026945282165141,
+            "TTE_flux_change": -0.13278932924543246,
+            "pass": true
+          },
+          {
+            "N": 2.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": null,
+            "CN_change": null,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.3201589412164809,
+            "CN_change": 0.9289581435659781,
+            "diet_CN_change": 0.6743616671832583,
+            "production_change": 0.9119161105612386,
+            "TTE_flux_change": 0.036165165316180456,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": null,
+            "CN_change": null,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 1.4813916448558484,
+            "CN_change": 1.4046850531752855,
+            "diet_CN_change": 1.2041302077620595,
+            "production_change": 0.9242414606847407,
+            "TTE_flux_change": -0.300721745231732,
+            "pass": true
+          }
+        ]
+      },
+      "P4": {
+        "pass_pattern": false,
+        "common_9": {
+          "N": {
+            "n": 6,
+            "rho_P": -0.8857142857142858,
+            "rho_Z": -0.942857142857143,
+            "pearson_P": -0.9487969972571556,
+            "pearson_Z": -0.936616396449884,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              0.033407609221252,
+              -0.509632733992746,
+              -1.0819492931240458,
+              -2.5155940913883503
+            ],
+            "interaction_design_condition_number": 75.42839513173581,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 6,
+            "rho_P": -0.8857142857142858,
+            "rho_Z": -0.8857142857142858,
+            "pearson_P": -0.8554794217396823,
+            "pearson_Z": -0.8968504125192762,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.32744411706369025,
+              3.1365972821785,
+              -3.1168903583961205,
+              -3.9844901632715715
+            ],
+            "interaction_design_condition_number": 63.19432628237411,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        }
+      },
+      "all_four_patterns": false
+    },
+    "noZ": {
+      "role": "mechanism removal control",
+      "P1": {
+        "pass_pattern": false,
+        "contrasts": [
+          {
+            "PAR": 30.0,
+            "PN_change": 15.030467407794555,
+            "geomean_change": 0.0,
+            "ESD95_change": 0.0,
+            "small_fraction_high": 1.0,
+            "pass": false
+          },
+          {
+            "PAR": 300.0,
+            "PN_change": 15.030467407794683,
+            "geomean_change": 0.0,
+            "ESD95_change": 0.0,
+            "small_fraction_high": 1.0,
+            "pass": false
+          }
+        ]
+      },
+      "P2": {
+        "pass_pattern": false,
+        "cases_with_multiple_modes": [],
+        "modes_all_6": {
+          "V_noZ_L30_N0.5": 1,
+          "V_noZ_L30_N2": 1,
+          "V_noZ_L30_N8": 1,
+          "V_noZ_L300_N0.5": 1,
+          "V_noZ_L300_N2": 1,
+          "V_noZ_L300_N8": 1
+        }
+      },
+      "P3": {
+        "pass_pattern": false,
+        "contrasts": [
+          {
+            "N": 0.5,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.16572175013094242,
+            "CN_change": 0.1657217501309088,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 0.5,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.011007080887889804,
+            "CN_change": 0.011007080887898046,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.16572794743498734,
+            "CN_change": 0.1657279474349873,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.011007488389459393,
+            "CN_change": 0.011007488389459476,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.16575358099600085,
+            "CN_change": 0.16575358099600088,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.011009184796330685,
+            "CN_change": 0.011009184796330656,
+            "diet_CN_change": null,
+            "production_change": null,
+            "TTE_flux_change": null,
+            "pass": false
+          }
+        ]
+      },
+      "P4": {
+        "pass_pattern": false,
+        "common_9": {
+          "N": {
+            "n": 0,
+            "pass_signature": false
+          },
+          "C": {
+            "n": 0,
+            "pass_signature": false
+          }
+        }
+      },
+      "all_four_patterns": false
+    }
+  },
+  "fine_reference_plane": {
+    "step": 0.00625,
+    "source_case_ids": {
+      "V_full_L3_N0.5": "V_full_L3_N0.5_h00625",
+      "V_full_L3_N2": "V_full_L3_N2_h00625",
+      "V_full_L3_N8": "V_full_L3_N8_h00625",
+      "V_full_L30_N0.5": "V_full_L30_N0.5_h00625",
+      "V_full_L30_N2": "V_full_L30_N2_h00625",
+      "V_full_L30_N8": "V_full_L30_N8_h00625",
+      "V_full_L300_N0.5": "V_full_L300_N0.5_h00625",
+      "V_full_L300_N2": "V_full_L300_N2_h00625",
+      "V_full_L300_N8": "V_full_L300_N8_h00625"
+    },
+    "decision": {
+      "role": "candidate structure",
+      "P1": {
+        "pass_pattern": true,
+        "contrasts": [
+          {
+            "PAR": 30.0,
+            "PN_change": 20.830787793809158,
+            "geomean_change": 4.570653765737722,
+            "ESD95_change": 4.55201819802847,
+            "small_fraction_high": 0.10797739227916643,
+            "pass": true
+          },
+          {
+            "PAR": 300.0,
+            "PN_change": 19.434163300024075,
+            "geomean_change": 4.012340661695981,
+            "ESD95_change": 3.7508741715036304,
+            "small_fraction_high": 0.11590968481068968,
+            "pass": true
+          }
+        ]
+      },
+      "P2": {
+        "pass_pattern": true,
+        "cases_with_multiple_modes": [
+          "V_full_L30_N0.5",
+          "V_full_L30_N2",
+          "V_full_L30_N8",
+          "V_full_L300_N0.5",
+          "V_full_L300_N2",
+          "V_full_L300_N8"
+        ],
+        "modes_all_6": {
+          "V_full_L30_N0.5": 2,
+          "V_full_L30_N2": 2,
+          "V_full_L30_N8": 3,
+          "V_full_L300_N0.5": 2,
+          "V_full_L300_N2": 2,
+          "V_full_L300_N8": 3
+        }
+      },
+      "P3": {
+        "pass_pattern": false,
+        "contrasts": [
+          {
+            "N": 0.5,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 0.22344719338434815,
+            "CN_change": 0.843802360684444,
+            "diet_CN_change": 0.8347133868982269,
+            "production_change": 1.9920292169848883,
+            "TTE_flux_change": 0.6455133611152047,
+            "pass": false
+          },
+          {
+            "N": 0.5,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": 0.03247308286934997,
+            "CN_change": 0.03496598756169725,
+            "diet_CN_change": 0.04523285425684868,
+            "production_change": 0.0015421276433640468,
+            "TTE_flux_change": -0.036924902829007906,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 1.2931814314866117,
+            "CN_change": 2.0899752109211063,
+            "diet_CN_change": 0.92237552481613,
+            "production_change": 1.324952844378006,
+            "TTE_flux_change": -0.18671961280574434,
+            "pass": false
+          },
+          {
+            "N": 2.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": -0.02585803152358879,
+            "CN_change": 0.009081908400510583,
+            "diet_CN_change": 0.05355830918467121,
+            "production_change": 0.03427572791615503,
+            "TTE_flux_change": 0.00980798924002038,
+            "pass": false
+          },
+          {
+            "N": 8.0,
+            "light": [
+              3.0,
+              30.0
+            ],
+            "PC_change": 3.411059133050062,
+            "CN_change": 2.773221846440049,
+            "diet_CN_change": 1.6490730401320752,
+            "production_change": 1.3053054369590815,
+            "TTE_flux_change": -0.49396806672368093,
+            "pass": true
+          },
+          {
+            "N": 8.0,
+            "light": [
+              30.0,
+              300.0
+            ],
+            "PC_change": -0.09098487119602773,
+            "CN_change": -0.0265111107852498,
+            "diet_CN_change": 0.04648025627293054,
+            "production_change": 0.08298635561878868,
+            "TTE_flux_change": 0.08308895364072229,
+            "pass": false
+          }
+        ]
+      },
+      "P4": {
+        "pass_pattern": false,
+        "common_9": {
+          "N": {
+            "n": 9,
+            "rho_P": -0.75,
+            "rho_Z": -0.9333333333333332,
+            "pearson_P": -0.7591053980110802,
+            "pearson_Z": -0.8870972972031643,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.15404492539975,
+              -0.24444364125943904,
+              -1.2033039284077578,
+              0.4883879974338333
+            ],
+            "interaction_design_condition_number": 37.92399763838203,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          },
+          "C": {
+            "n": 9,
+            "rho_P": -0.45,
+            "rho_Z": -0.65,
+            "pearson_P": -0.32993702485401794,
+            "pearson_Z": -0.7377709248143495,
+            "pass_signature": false,
+            "interaction_coefficients": [
+              -0.8004204379728346,
+              0.5537752591963603,
+              -1.3853802568996219,
+              5.17480719677613
+            ],
+            "interaction_design_condition_number": 38.99186597000801,
+            "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+          }
+        }
+      },
+      "all_four_patterns": false
+    },
+    "annual": [
+      {
+        "role": "candidate structure",
+        "P1": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "PAR": 30.0,
+              "PN_change": 20.619653371315337,
+              "geomean_change": 4.451819592764971,
+              "ESD95_change": 4.55201819802847,
+              "small_fraction_high": 0.11520164255504932,
+              "pass": true
+            },
+            {
+              "PAR": 300.0,
+              "PN_change": 19.867549036068567,
+              "geomean_change": 3.992712146494728,
+              "ESD95_change": 3.7508741715036304,
+              "small_fraction_high": 0.12175831597076475,
+              "pass": true
+            }
+          ]
+        },
+        "P2": {
+          "pass_pattern": true,
+          "cases_with_multiple_modes": [
+            "V_full_L30_N0.5",
+            "V_full_L30_N2",
+            "V_full_L30_N8",
+            "V_full_L300_N0.5",
+            "V_full_L300_N2",
+            "V_full_L300_N8"
+          ],
+          "modes_all_6": {
+            "V_full_L30_N0.5": 2,
+            "V_full_L30_N2": 2,
+            "V_full_L30_N8": 3,
+            "V_full_L300_N0.5": 2,
+            "V_full_L300_N2": 2,
+            "V_full_L300_N8": 3
+          }
+        },
+        "P3": {
+          "pass_pattern": false,
+          "contrasts": [
+            {
+              "N": 0.5,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 0.6965783922633328,
+              "CN_change": 1.5607687346997736,
+              "diet_CN_change": 0.7848718780220798,
+              "production_change": 2.1040980811992185,
+              "TTE_flux_change": 0.34904971043074795,
+              "pass": false
+            },
+            {
+              "N": 0.5,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": 0.03593457660287275,
+              "CN_change": 0.03676463225132382,
+              "diet_CN_change": 0.04578353726573872,
+              "production_change": 0.0005668160615764526,
+              "TTE_flux_change": -0.0392931040788255,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 1.480094426803959,
+              "CN_change": 2.5267876161020473,
+              "diet_CN_change": 1.0949653268596573,
+              "production_change": 1.4866160090551364,
+              "TTE_flux_change": -0.1872702177879249,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.040020567976205554,
+              "CN_change": -0.00783755516181962,
+              "diet_CN_change": 0.06334047470167012,
+              "production_change": 0.016759529059408775,
+              "TTE_flux_change": -0.01691086786684036,
+              "pass": false
+            },
+            {
+              "N": 8.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 3.558523783992077,
+              "CN_change": 2.6462872739208265,
+              "diet_CN_change": 1.6791516957631316,
+              "production_change": 1.398199871665532,
+              "TTE_flux_change": -0.48842494653816926,
+              "pass": true
+            },
+            {
+              "N": 8.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.028749464203066392,
+              "CN_change": 0.007062443067749837,
+              "diet_CN_change": 0.04724053221337392,
+              "production_change": 0.06899128179585863,
+              "TTE_flux_change": 0.0420970015376603,
+              "pass": false
+            }
+          ]
+        },
+        "P4": {
+          "pass_pattern": false,
+          "common_9": {
+            "N": {
+              "n": 9,
+              "rho_P": -0.6666666666666667,
+              "rho_Z": -0.8333333333333333,
+              "pearson_P": -0.5990260764639275,
+              "pearson_Z": -0.702789582830976,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.009477425887254948,
+                -0.178857730696528,
+                -1.0436322577525543,
+                -4.781895937527171
+              ],
+              "interaction_design_condition_number": 43.01254962845945,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            },
+            "C": {
+              "n": 9,
+              "rho_P": -0.5666666666666667,
+              "rho_Z": -0.6833333333333333,
+              "pearson_P": -0.39724588800677946,
+              "pearson_Z": -0.7402450352507016,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.7977129781159343,
+                0.4534448791396226,
+                -1.1593536830861944,
+                5.4275989964465055
+              ],
+              "interaction_design_condition_number": 44.757433284184714,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            }
+          }
+        },
+        "all_four_patterns": false
+      },
+      {
+        "role": "candidate structure",
+        "P1": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "PAR": 30.0,
+              "PN_change": 21.17890871778896,
+              "geomean_change": 4.581305637085351,
+              "ESD95_change": 4.55201819802847,
+              "small_fraction_high": 0.10162333840288876,
+              "pass": true
+            },
+            {
+              "PAR": 300.0,
+              "PN_change": 19.654906091113045,
+              "geomean_change": 4.08095552171176,
+              "ESD95_change": 3.7508741715036304,
+              "small_fraction_high": 0.11133802605258802,
+              "pass": true
+            }
+          ]
+        },
+        "P2": {
+          "pass_pattern": true,
+          "cases_with_multiple_modes": [
+            "V_full_L30_N0.5",
+            "V_full_L30_N2",
+            "V_full_L30_N8",
+            "V_full_L300_N0.5",
+            "V_full_L300_N2",
+            "V_full_L300_N8"
+          ],
+          "modes_all_6": {
+            "V_full_L30_N0.5": 2,
+            "V_full_L30_N2": 2,
+            "V_full_L30_N8": 3,
+            "V_full_L300_N0.5": 2,
+            "V_full_L300_N2": 2,
+            "V_full_L300_N8": 3
+          }
+        },
+        "P3": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "N": 0.5,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 1.54013124861645,
+              "CN_change": 1.8254557545831385,
+              "diet_CN_change": 0.7863430383188056,
+              "production_change": 1.9935576946903233,
+              "TTE_flux_change": 0.0031730165735130308,
+              "pass": false
+            },
+            {
+              "N": 0.5,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": 0.03283210349512227,
+              "CN_change": 0.03511407153744137,
+              "diet_CN_change": 0.04535996537301354,
+              "production_change": 0.0014199353675480172,
+              "TTE_flux_change": -0.03720586734543257,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 1.243241995790612,
+              "CN_change": 2.0104347295835185,
+              "diet_CN_change": 0.8580423522307731,
+              "production_change": 1.0729750875123385,
+              "TTE_flux_change": -0.23123737111540518,
+              "pass": true
+            },
+            {
+              "N": 2.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.025938986116787,
+              "CN_change": 0.009792879635673043,
+              "diet_CN_change": 0.06947110073041975,
+              "production_change": 0.06792047924496095,
+              "TTE_flux_change": 0.04669654259186669,
+              "pass": false
+            },
+            {
+              "N": 8.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 3.7056127979526914,
+              "CN_change": 2.84074820565447,
+              "diet_CN_change": 1.6550914636910712,
+              "production_change": 1.1296497314785592,
+              "TTE_flux_change": -0.5390999319208722,
+              "pass": true
+            },
+            {
+              "N": 8.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.10579358404792612,
+              "CN_change": -0.0376939544231787,
+              "diet_CN_change": 0.03828472239789749,
+              "production_change": 0.07574201678765227,
+              "TTE_flux_change": 0.08403550862643458,
+              "pass": false
+            }
+          ]
+        },
+        "P4": {
+          "pass_pattern": false,
+          "common_9": {
+            "N": {
+              "n": 9,
+              "rho_P": -0.65,
+              "rho_Z": -0.8333333333333333,
+              "pearson_P": -0.48030924035418,
+              "pearson_Z": -0.8485325491718841,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.006763012645131558,
+                0.17628597484349795,
+                -1.7169055868967193,
+                -4.083660358894587
+              ],
+              "interaction_design_condition_number": 42.66351552790355,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            },
+            "C": {
+              "n": 9,
+              "rho_P": -0.6166666666666666,
+              "rho_Z": -0.8333333333333333,
+              "pearson_P": -0.49720317162179006,
+              "pearson_Z": -0.8414131434563733,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.78222398006351,
+                0.6653974259314914,
+                -1.7250486733205919,
+                5.304839526520394
+              ],
+              "interaction_design_condition_number": 42.17260993766354,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            }
+          }
+        },
+        "all_four_patterns": false
+      },
+      {
+        "role": "candidate structure",
+        "P1": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "PAR": 30.0,
+              "PN_change": 20.81991500851459,
+              "geomean_change": 4.621066193887864,
+              "ESD95_change": 4.55201819802847,
+              "small_fraction_high": 0.10987530800701059,
+              "pass": true
+            },
+            {
+              "PAR": 300.0,
+              "PN_change": 19.203948646638864,
+              "geomean_change": 4.008533403379635,
+              "ESD95_change": 3.7508741715036304,
+              "small_fraction_high": 0.11798209324821733,
+              "pass": true
+            }
+          ]
+        },
+        "P2": {
+          "pass_pattern": true,
+          "cases_with_multiple_modes": [
+            "V_full_L30_N0.5",
+            "V_full_L30_N2",
+            "V_full_L30_N8",
+            "V_full_L300_N0.5",
+            "V_full_L300_N2",
+            "V_full_L300_N8"
+          ],
+          "modes_all_6": {
+            "V_full_L30_N0.5": 2,
+            "V_full_L30_N2": 2,
+            "V_full_L30_N8": 3,
+            "V_full_L300_N0.5": 2,
+            "V_full_L300_N2": 2,
+            "V_full_L300_N8": 3
+          }
+        },
+        "P3": {
+          "pass_pattern": false,
+          "contrasts": [
+            {
+              "N": 0.5,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 0.19957410150847416,
+              "CN_change": 0.6048766001102505,
+              "diet_CN_change": 0.900622190760668,
+              "production_change": 7.134786836015808,
+              "TTE_flux_change": 2.94568951031736,
+              "pass": false
+            },
+            {
+              "N": 0.5,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": 0.031454780565760634,
+              "CN_change": 0.03443352930619828,
+              "diet_CN_change": 0.04509434396904839,
+              "production_change": 0.001840080353245971,
+              "TTE_flux_change": -0.03621436641594472,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 1.26047395307332,
+              "CN_change": 1.9825105119078226,
+              "diet_CN_change": 0.8779603968480367,
+              "production_change": 1.3832597349509848,
+              "TTE_flux_change": -0.171503378449775,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.0658044353882197,
+              "CN_change": -0.00524240515549117,
+              "diet_CN_change": 0.022588305926466726,
+              "production_change": 0.025979465316174427,
+              "TTE_flux_change": 0.034195441386745164,
+              "pass": false
+            },
+            {
+              "N": 8.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 3.572989072804197,
+              "CN_change": 2.656910826827527,
+              "diet_CN_change": 1.5164717294223766,
+              "production_change": 1.3225943972351215,
+              "TTE_flux_change": -0.5024921886563412,
+              "pass": true
+            },
+            {
+              "N": 8.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.1095867364704553,
+              "CN_change": -0.035591975900353436,
+              "diet_CN_change": 0.037561400747175046,
+              "production_change": 0.06861778914819634,
+              "TTE_flux_change": 0.0839940433567798,
+              "pass": false
+            }
+          ]
+        },
+        "P4": {
+          "pass_pattern": false,
+          "common_9": {
+            "N": {
+              "n": 9,
+              "rho_P": -0.5166666666666667,
+              "rho_Z": -0.2333333333333333,
+              "pearson_P": -0.4530093195861681,
+              "pearson_Z": -0.4565826079265569,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.13524881339410216,
+                -0.5343286704417274,
+                -0.5297917710348925,
+                -2.074083492788456
+              ],
+              "interaction_design_condition_number": 50.757368288190506,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            },
+            "C": {
+              "n": 9,
+              "rho_P": -0.33333333333333337,
+              "rho_Z": -0.35,
+              "pearson_P": -0.24234417765681612,
+              "pearson_Z": -0.4878914140900045,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.8913053608053582,
+                -0.09019336353036689,
+                -0.5209844915389106,
+                7.651827581178911
+              ],
+              "interaction_design_condition_number": 52.91620599473858,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            }
+          }
+        },
+        "all_four_patterns": false
+      },
+      {
+        "role": "candidate structure",
+        "P1": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "PAR": 30.0,
+              "PN_change": 20.22982753080793,
+              "geomean_change": 4.46834803369376,
+              "ESD95_change": 4.55201819802847,
+              "small_fraction_high": 0.1144704177335116,
+              "pass": true
+            },
+            {
+              "PAR": 300.0,
+              "PN_change": 19.257213853742908,
+              "geomean_change": 3.944444762652581,
+              "ESD95_change": 3.7508741715036304,
+              "small_fraction_high": 0.11945130410849746,
+              "pass": true
+            }
+          ]
+        },
+        "P2": {
+          "pass_pattern": true,
+          "cases_with_multiple_modes": [
+            "V_full_L30_N0.5",
+            "V_full_L30_N2",
+            "V_full_L30_N8",
+            "V_full_L300_N0.5",
+            "V_full_L300_N2",
+            "V_full_L300_N8"
+          ],
+          "modes_all_6": {
+            "V_full_L30_N0.5": 2,
+            "V_full_L30_N2": 2,
+            "V_full_L30_N8": 3,
+            "V_full_L300_N0.5": 2,
+            "V_full_L300_N2": 2,
+            "V_full_L300_N8": 3
+          }
+        },
+        "P3": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "N": 0.5,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": -0.4603138327289097,
+              "CN_change": 0.26489562010644624,
+              "diet_CN_change": 0.7163026544036155,
+              "production_change": 5.358803052245646,
+              "TTE_flux_change": 5.15146053958883,
+              "pass": false
+            },
+            {
+              "N": 0.5,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": 0.031103831553735996,
+              "CN_change": 0.03428464132896667,
+              "diet_CN_change": 0.044971499412268925,
+              "production_change": 0.0019603097941780297,
+              "TTE_flux_change": -0.03593491024739383,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 1.4458342447897472,
+              "CN_change": 2.0674570582616174,
+              "diet_CN_change": 0.9515094751548808,
+              "production_change": 1.1103515561052,
+              "TTE_flux_change": -0.2761781059317429,
+              "pass": true
+            },
+            {
+              "N": 2.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": 0.011087315067410643,
+              "CN_change": 0.025884472085615638,
+              "diet_CN_change": 0.0641979979239993,
+              "production_change": 0.025048552647246605,
+              "TTE_flux_change": -0.022593361681384157,
+              "pass": false
+            },
+            {
+              "N": 8.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 3.45799047150282,
+              "CN_change": 2.5919382946929037,
+              "diet_CN_change": 1.4600447392844274,
+              "production_change": 1.3802974943727417,
+              "TTE_flux_change": -0.4784239332166399,
+              "pass": true
+            },
+            {
+              "N": 8.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.056512597799548425,
+              "CN_change": -0.008162478573347905,
+              "diet_CN_change": 0.06575049072065793,
+              "production_change": 0.09322463296041926,
+              "TTE_flux_change": 0.0685900053996244,
+              "pass": false
+            }
+          ]
+        },
+        "P4": {
+          "pass_pattern": false,
+          "common_9": {
+            "N": {
+              "n": 9,
+              "rho_P": -0.45,
+              "rho_Z": -0.21666666666666667,
+              "pearson_P": -0.35077255800831103,
+              "pearson_Z": -0.3192866933854444,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.18322509434829454,
+                -0.6688009785178037,
+                -0.23086539764716413,
+                -0.5163948881052669
+              ],
+              "interaction_design_condition_number": 51.621567198434924,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            },
+            "C": {
+              "n": 9,
+              "rho_P": -0.26666666666666666,
+              "rho_Z": -0.13333333333333333,
+              "pearson_P": 0.004559726018541868,
+              "pearson_Z": -0.2460068511339797,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.8579641371878864,
+                0.7149466899920656,
+                -0.7789455408585917,
+                4.356406622441925
+              ],
+              "interaction_design_condition_number": 52.375657523902206,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            }
+          }
+        },
+        "all_four_patterns": false
+      },
+      {
+        "role": "candidate structure",
+        "P1": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "PAR": 30.0,
+              "PN_change": 21.303512272781866,
+              "geomean_change": 4.724789690072646,
+              "ESD95_change": 4.55201819802847,
+              "small_fraction_high": 0.099374776256049,
+              "pass": true
+            },
+            {
+              "PAR": 300.0,
+              "PN_change": 19.198112597826775,
+              "geomean_change": 4.037261414882546,
+              "ESD95_change": 3.7508741715036304,
+              "small_fraction_high": 0.10901764348407979,
+              "pass": true
+            }
+          ]
+        },
+        "P2": {
+          "pass_pattern": true,
+          "cases_with_multiple_modes": [
+            "V_full_L30_N0.5",
+            "V_full_L30_N2",
+            "V_full_L30_N8",
+            "V_full_L300_N0.5",
+            "V_full_L300_N2",
+            "V_full_L300_N8"
+          ],
+          "modes_all_6": {
+            "V_full_L30_N0.5": 2,
+            "V_full_L30_N2": 2,
+            "V_full_L30_N8": 3,
+            "V_full_L300_N0.5": 2,
+            "V_full_L300_N2": 2,
+            "V_full_L300_N8": 3
+          }
+        },
+        "P3": {
+          "pass_pattern": true,
+          "contrasts": [
+            {
+              "N": 0.5,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 1.4998646983324544,
+              "CN_change": 2.0706419795476316,
+              "diet_CN_change": 0.8942809959185107,
+              "production_change": 0.3605064224968657,
+              "TTE_flux_change": -0.2868954618149123,
+              "pass": true
+            },
+            {
+              "N": 0.5,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": 0.031200579066591218,
+              "CN_change": 0.03434826816152071,
+              "diet_CN_change": 0.04494433949337946,
+              "production_change": 0.0019381401456225516,
+              "TTE_flux_change": -0.035983654600759425,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 1.0728608184761255,
+              "CN_change": 1.902029870422146,
+              "diet_CN_change": 0.8371760256926631,
+              "production_change": 1.6776099778633045,
+              "TTE_flux_change": -0.03331038598649716,
+              "pass": false
+            },
+            {
+              "N": 2.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.005968241328816802,
+              "CN_change": 0.024113216151499996,
+              "diet_CN_change": 0.04877072669460097,
+              "production_change": 0.03644106898234528,
+              "TTE_flux_change": 0.009543583117389705,
+              "pass": false
+            },
+            {
+              "N": 8.0,
+              "light": [
+                3.0,
+                30.0
+              ],
+              "PC_change": 2.889660446591604,
+              "CN_change": 3.077552094095427,
+              "diet_CN_change": 1.9535505741359451,
+              "production_change": 1.3133191870671515,
+              "TTE_flux_change": -0.4585164226349856,
+              "pass": true
+            },
+            {
+              "N": 8.0,
+              "light": [
+                30.0,
+                300.0
+              ],
+              "PC_change": -0.14637915855165265,
+              "CN_change": -0.054522661548594295,
+              "diet_CN_change": 0.04357523956732389,
+              "production_change": 0.1094349468930422,
+              "TTE_flux_change": 0.1385166886682967,
+              "pass": false
+            }
+          ]
+        },
+        "P4": {
+          "pass_pattern": false,
+          "common_9": {
+            "N": {
+              "n": 9,
+              "rho_P": -0.8499999999999999,
+              "rho_Z": -0.9,
+              "pearson_P": -0.666471878976888,
+              "pearson_Z": -0.8890280399033089,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                0.0052086430639591225,
+                -0.1631105962034689,
+                -1.5036377036707427,
+                -3.620756721515682
+              ],
+              "interaction_design_condition_number": 33.457082400621275,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            },
+            "C": {
+              "n": 9,
+              "rho_P": -0.6166666666666666,
+              "rho_Z": -0.6833333333333333,
+              "pearson_P": -0.6422861343073014,
+              "pearson_Z": -0.8753027208871994,
+              "pass_signature": false,
+              "interaction_coefficients": [
+                -0.7560627052866936,
+                0.5670456098599379,
+                -1.6250136822206276,
+                3.791489060172795
+              ],
+              "interaction_design_condition_number": 31.18552300872617,
+              "interpretation": "Deterministic cohort association; no sampling p-values or causal diversity effect."
+            }
+          }
+        },
+        "all_four_patterns": false
+      }
+    ]
+  },
+  "general_ecological_validation": false,
+  "note": "Primary results are retained; whole-plane refinement qualifies the ecological verdict."
+}
