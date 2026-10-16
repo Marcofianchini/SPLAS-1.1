@@ -1,74 +1,89 @@
-# SPLAS 1.1 #
+# SPLAS-CN 0.2 - dynamic carbon and nitrogen
 
-SPLAS 1.0 (Sea PLAnkton Simulator) is a size-structure resolving N-P-Z (nutrient-phytoplankton-zooplankton) model, based on two simple assumptions: 
-fundamental plankton physiological traits scale with organism size and grazing by zooplankton is structured by an optimal predator-prey length ratio
-(along with a complex log-gaussian preference function in this case).
-The model is based on empirical allometric relationships used to parameterize all major plankton characteristics (taken from available literature).
-70 size-classes are defined for phytoplankton, in the range 1-200 μm, and there are 70 matching size-classes for zooplankton,
-in the range 2-1000 μm. Here phytoplankton are considered all autotrophic, uptaking Nitrogen and growing according to an internal dynamics (cellular quota).
-The cellular quota is very important as it allows to link phytoplankton biomass with the density of cell, which is also an important derived variable of the model,
-allowing for a conversion from Nitrogen to Carbon biomass and fluxes.
-Zooplankton are all heterotrophic, feeding on phytoplankton through a size-based preference. No mixotrophy is represented inside SPLAS.
-Despite the idealized approach, the 0-D version of the model is able to catch the overall pattern of plankton size distribution and diversity, and reproduces correctly the bottom-up and top-down interactions,
-showing an emergent pattern of plankton size-structure consistent with theoretical and model prediction, e.g. Ward et al. (2013).
-SPLAS was also extended to a 1-D framework (adding the vertical dimension) with further complications as detritus compartments, light effects and turbulent vertical diffusion.
-With 1-D SPLAS we obtained sensible vertical profiles of phytoplankton total biomass along with depth-inhomogeneous size-structures 
-(which are not possible to reproduce without light inclusion).
-We also obtained a reasonable interval of estimates for Carbon export (central value about 68 mgC m-2 day-1).
-For further details, see the PhD Thesis by Marco De Pasquale (2018) "The role of plankton size in community structure, biodiversity and biogeochemical fluxes: a modeling approach". It is present in this repository.
-If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this thesis.
-Marco put all of his effort in developing this stuff, so please give the right credit to this work.
-Thank you! :) 
+A new conservative implementation alongside the original SPLAS-1.1 Fortran.
+It retains the size-structured ecological questions of De Pasquale (2018) and
+Fianchini (2021), while resolving carbon, nitrogen, cellular reserves, energetic
+costs, real prey stoichiometry, detrital C/N and conservative vertical transport.
 
-SPLAS 1.1 :
-- inclusion of light input (izero),the possibility to increase/decrease light input linearly in time (delta) and the possibility to make it normally distributed(choosing the standard deviation,sd, parameter). 
-- subroutines supply_season and supply_day added in functions.f90 to simulate seasonal and daily light input variation.
-For further details see the Master's degree Thesis by Marco Fianchini, "The role of light in community structure, biodiversity and biogeochemical fluxes: a modeling approach"         (2021) OR just ask to fianchini.marco@libero.it :)
+**Status: research prototype.** Numerical verification and culture-starvation
+assessment are distinguished from field validation. Do not use this release to
+claim validated ocean export, sequestration, or full C:N:P dynamics.
 
-### Set-up of the model ###
+## Run
 
-Technical notes:
+Python 3.10+; the recorded reference environment is Python3.12, NumPy2.3.5,
+SciPy1.17, Numba0.68. Numba is strongly recommended for ensembles.
 
-* Fortran 2003 mathematical libraries + Python 3.5 I/O interface
-* Makefile compiles Fortran libraries and then python3.5 calls the main program (main.py)
-* 2 possible configurations or sets of dependencies: 
-	* intel environment (compile with ifort)
-		- intel/pe-xe-2016--binary
- 	    - intelmpi/5.1.3--binary
- 		- python/3.5.0
- 		- mkl/11.3.3--binary
+```bash
+python -m pip install -e '.[fast,research]'
+python -m unittest discover -s tests -v
+python -m splas2 --days 30 --output results/example.npz
+```
 
-	* gnu environment (compile with gfortran)
-		- mpi4py/1.3.1--openmpi--1.8.2--gnu--4.8.3
-		- lapack/3.5.0--gnu--4.8.3
-		- blas/3.5.0--gnu--4.8.3
-		- python/3.5.0
-		- openmpi/1.8.2--gnu--4.8.3
-		
-* Some profiling has been performed using vtune/16.3 and code has been optimized to a certain extent
+The default CLI uses20 phytoplankton and20 grazer classes. The thesis
+registry uses70+70 classes unless explicitly testing another resolution.
+Both C and N are in mmol element/m3 and all C:N ratios are **molar**.
 
-Few further notes:
+```bash
+python scripts/prepare_cultures.py
+python scripts/calibrate_cultures.py
+python scripts/run_experiments.py --workers 4
+python scripts/run_mechanisms.py
+python scripts/analyze_results.py
+```
 
-* SPLAS is already tested and validated for the 0-D part
-* 1-D part could be further developed and improved (link with biogeochemistry and C export should be enforced in particular!),
-  but it works well and gives rise to interesting patterns (although still far from reality)
-* SPLAS 1.1 improves light dynamics and works well for seasonal changes in light input, but still lot of work have to be done. 
+`run_experiments.py --filter F02_ --workers 2` selects a family. Every case
+saves actual configuration, initial inventory, diagnostics and reduced
+trajectories. Cached runs are keyed by configuration and model source hash.
+Large generated trajectories are excluded from Git. The scientific report
+and aggregate validation results document the tested revision and failures.
 
-### Contribution guidelines ###
+## What changes scientifically
 
-Please refer to the documentation cited above (and here recalled):
+- Independent C-only and organic-N pools, with carbon explicitly accompanying
+  organic N. Carbon fixation, energetic assimilation, division and maintenance
+  use the same conservative element ledgers. Consumer homeostasis remains an
+  assumption; phytoplankton and detrital C:N vary.
+- Grazing is normalized by `phi.T @ prey_C`, consumes actual prey C:N, obeys
+  its maximum ingestion and releases excess assimilated elements.
+- Finite-volume face fluxes conserve both elements at variable diffusivity;
+  diffusivity in m2/s is converted to the day timebase.
+- Explicit SSPRK3 with embedded error control is the reference integrator.
+  Long ensembles use an IMEX option: positive SSPRK3 with a transport CFL bound for nonstiff processes
+  plus an element-conservative implicit N-assimilation solve. The combined
+  method is **first order**; step refinement must be checked. No state clipping.
+- Stock Z:P, flux TTE, gravitational export and higher-trophic export are
+  different reported quantities. Euphotic depth is not a proxy for mixing depth.
 
-* For further details see the PhD Thesis by Marco De Pasquale, "The role of plankton size in community structure, biodiversity and biogeochemical fluxes: a modeling approach" (2018).
-  If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this work.
-* For further details see the Master's degree Thesis by Marco Fianchini, "The role of light in community structure, biodiversity and biogeochemical fluxes: a modeling approach"         (2021).
-  If you would like to use this code for further development or modifications/adaptations to your scope, please give credits to this work.
-* For the technical part, try to use the libraries reported in the section above ("Set-up of the model") which make up the two possible environments
-  that were used to conduct the experiments reported in the thesis. Since such experiments were finished at the end of 2017, if using those libraries is not possible for some reason,
-  or if updates with breaking changes have been released meantime...well, good luck with that!
-  UPDATE 07/2021 it still works but the warning for the future remains. 
+See [mathematical specification](research/MODEL.md),
+[data provenance](data/README.md), [experiment registry](research/experiment_registry.json)
+and [validation conclusions](research/VALIDATION.md).
 
+## Relation to the old code and Moloney-Field
 
-### Contacts ###
+The original Fortran and Python controller are retained unchanged. Their
+instructions are in [legacy README](research/README_legacy.md). No compiled
+legacy execution is claimed. The attached MoloneyField0D v0.1 provided a
+conservative developmental benchmark, not an archival Moloney-Field release.
+Moloney's1988 thesis used fixed group C:N mass ratios; this implementation is
+a new dynamic-stoichiometry hypothesis. The original1991 article was not
+fully available for source-level equivalence verification.
 
-* For any issue or question, admin of this project are: Fianchini Marco, Marco De Pasquale
-* Contact by E-mail: fianchini.marco@libero.it , depasquale.marco@gmail.com
+Montagnes etal1994 report `0.109*V^0.991 pgC/cell`, whereas the historical
+SPLAS carbon conversion uses0.0109. This correction changes reference
+biomass by a factor10 and must not be hidden inside a fitted parameter.
+
+## Literature and limits
+
+Culture observations: Liefer etal2019, DOI10.3389/fmicb.2019.00763;
+raw dataset Liefer etal2026, DOI10.1594/PANGAEA.900248 (CC-BY4.0).
+The archive explicitly lacks final formal author approval; published quota
+means were cross-checked before use. Ot/Tw estimate shared parameters;
+Tp/Micromonas observations are excluded from the optimizer. This is an
+exploratory withheld-species comparison, conditional on observed initial
+quotas/densities, and not an untouched prospective test set.
+
+[Current literature matrix](research/LITERATURE.md) explains model decisions
+against2024-2026 primary studies. P, Fe, Si, O2, carbonate chemistry, bacteria,
+mixotrophy, aggregation and explicit macromolecular allocation are absent.
+More physiological states do not themselves establish greater predictive skill.
