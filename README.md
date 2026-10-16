@@ -22,13 +22,35 @@ includes page-specific evidence and corrects unequal historical comparisons.
 
 The pre-POM checkpoint is commit `ae55985`; its
 [manifest](research/pom/BASELINE.json) records333 file hashes and117 community
-cases. This methodological consolidation changes no model equations and adds no
-ecological simulations. Reproduce the checks and diagnosis with:
+cases. The methodological consolidation at `a8192dc` changed no model equations
+and added no ecological simulations. Reproduce that checkpoint diagnosis with:
 
 ```bash
 python scripts/analyze_pom.py --check-only
 python scripts/analyze_pom.py
 ```
+
+The subsequent [dynamic-stoichiometry study](research/stoichiometry/RESULTS.md)
+executes **166 new 0D configurations**: resource-quality planes, matched closed
+assembly, selective/uniform/no-grazer controls, physiology/storage alternatives,
+step/size refinement and pulse sequences. It records full class histories and
+process observations without changing the frozen numerical model. Lower consumer
+N assimilation consistently contracts phytoplankton size and evenness in the
+paired checks. Bulk C:N can conceal a much richer ingested diet; oscillatory
+regimes remain sensitive in phase and fine composition. A robust stoichiometric
+memory effect is **not established** by the pulse experiment.
+
+```bash
+python scripts/run_stoichiometry.py --workers 4
+python scripts/run_stoichiometry_controls.py --workers 2
+python scripts/run_stoichiometry_robustness.py --workers 3
+python scripts/analyze_stoichiometry.py
+```
+
+All cases, including counterexamples, are in the
+[study summary](research/stoichiometry/summary.csv). See the
+[pattern assessment](research/stoichiometry/PATTERNS.json) and
+[current primary-literature comparison](research/stoichiometry/LITERATURE.md).
 
 **Status: research prototype.** The following implementation and auxiliary
 physiology checks support the POM study; they are not its ecological success
@@ -37,7 +59,7 @@ necessary in an idealized model.
 
 | Evidence | Assessment |
 |---|---|
-|20 scientific implementation tests | Pass, locally and in GitHub Actions with recorded dependency versions. |
+|23 scientific implementation/observation tests | Pass locally; the workflow repeats the same suite. Three added checks reconstruct process observations from the independent RHS, match inventories and conserve physical-bin mass. |
 |Carbon/nitrogen inventories and positivity | Verified for the registered experiments; inspect exact residuals in the validation summary. |
 |Annual time-step and16/32 particle-bin comparisons | Pass the declared numerical thresholds from a common state. |
 |Vertical resolution |40/80 fails. Between80/160, export changes2.18%, but N stock6.62% and NPP5.44% exceed the5% bulk criterion. Overall convergence is not demonstrated. |

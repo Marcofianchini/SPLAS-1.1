@@ -10,5 +10,7 @@ data/raw/*.html
 output/
 pip-*/
 tmp_*/
+tmp/
 research/*.log
+research/stoichiometry/*.log
 research/PROGRESS.md

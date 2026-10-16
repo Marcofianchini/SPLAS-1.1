@@ -1,0 +1,19 @@
+{
+  "file_name": "SPLAS_Patterns_Stechiometria_2026-10-16.zip",
+  "bytes": 213725001,
+  "sha256": "2fe19c8eded321afff78afc7667514b5aa3bad22b25a9e9c47eeee672bfd2025",
+  "cases": 166,
+  "stored_arrays": [
+    "time",
+    "state",
+    "sizes",
+    "zsizes",
+    "traits"
+  ],
+  "omitted": "Instantaneous processes, exactly recomputable from states and matching code",
+  "reconstruction_checks": [
+    "T_N_then_light",
+    "C_L45_N1_uniform",
+    "R_L405_N1_bins140"
+  ]
+}
