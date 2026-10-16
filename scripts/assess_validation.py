@@ -51,7 +51,9 @@ def main():
   'matched_fixed_ratio_kinetic_control':False,'no_full_ATP_redox_budget':True,'no_P_Fe_Si_O2':True,'endpoint_checks':residuals,
   'revised_reference_element_balance':next((r for r in s.get('last_window_element_balance',[]) if r['id']=='R00_buffered_reference'),None)}
  (ROOT/'research/acceptance_assessment.json').write_text(json.dumps(out,indent=2,allow_nan=False))
- lines=['# Validation of SPLAS-CN0.2','',f"Frozen model SHA256: `{s['model_sha256']}`.",'',
+ lines=['# Implementation checks and auxiliary physiology of SPLAS-CN0.2','',
+  'The primary objective is a Pattern Oriented Modelling toy study. See [the thesis-grounded protocol](pom/STUDY_PROTOCOL.md) and [current ecological diagnosis](pom/CURRENT_ASSESSMENT.md). These numerical and culture checks support that study; site prediction and absolute ocean-export matching are not its success criterion.','',
+  f"Frozen model SHA256: `{s['model_sha256']}`.",'',
   f"{s['current_cases']} registered simulations completed, including{s.get('decadal_case_count',0)} ten-year cases and{s.get('annual_continuation_count',0)} annual interventions/refinement cases. Additional mechanism protocols are reported separately.",'',
   'Twenty scientific tests pass locally and the checkpoint passed GitHub Actions. This verifies the assessed implementation; it does not certify ecological realism.','',
   f"Maximum relative element-inventory error: C{s['mass_C_max_relative']:.3e}, N{s['mass_N_max_relative']:.3e}. No negative saved live state.",'',
@@ -65,7 +67,7 @@ def main():
  '| Same-state test | Bulk<=5%,size<=10% |','|---|---|']
  for g in gates:lines.append('|'+g['test']+'|'+('pass' if g['pass_5pct_bulk_10pct_size'] else 'not demonstrated')+'|')
  lines+=['','These are declared heuristic numerical gates. Inspect individual metrics in acceptance_assessment.json. A failed gate is retained. No test establishes field validity.']
- lines+=['','## Pattern checks','', 'Rank correlations below describe seven deterministic light experiments, not statistical evidence from field observations. A failed historical pattern is retained.','', '| Light family | rho C:N | rho evenness | rho e-ratio |','|---|---:|---:|---:|']
+ lines+=['','## Pattern checks','', 'Rank correlations below describe seven deterministic light experiments. They are descriptive diagnostics, not a complete POM assessment. Fianchini p32 reports mixed diversity responses; pp39-40 use export weighted by biomass and normalized by irradiance, which is not export/NPP. Thus an e-ratio sign alone neither confirms nor contradicts that historical efficiency. Fianchini p33 deliberately prescribes two annual light maxima.','', '| Light family | rho C:N | rho evenness | rho e-ratio |','|---|---:|---:|---:|']
  def fmt(v):return 'undefined' if v is None else f'{v:.3f}'
  for a in s.get('pattern_assessment',[]):
   if a['family'].startswith('Fianchini_'):

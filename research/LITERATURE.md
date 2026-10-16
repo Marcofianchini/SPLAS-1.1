@@ -1,5 +1,22 @@
 # Primary literature and model decisions
 
+The primary purpose is a POM ecological toy study, as specified in
+[the thesis-grounded protocol](pom/STUDY_PROTOCOL.md). Literature constrains
+patterns, regimes and plausible mechanisms; reproducing a site or an absolute
+ocean-export value is not the principal selection criterion.
+
+Foundational method: Grimm and Railsback2012,
+https://doi.org/10.1098/rstb.2011.0180 (primary abstract verified in PubMed/PMC
+and institutional UFZ record): multiple patterns guide structure, submodel
+selection and calibration. This rationale is transferred to a compartment/size
+model; it does not require individual agents. Banas2011,
+https://doi.org/10.1016/j.ecolmodel.2011.05.018 (publisher abstract verified),
+links simple size-based rules, diversity patterns and long internal transients.
+García-Comas etal2016, https://doi.org/10.1098/rspb.2015.2129 (primary abstract
+and Figure1 verified), uses a biomass-ratio proxy for transfer and reports
+opposing associations with prey/predator size diversity. The exact measurement
+crosswalk and exploratory current cohort are specified in `research/pom`.
+
 Verification date:2026-10-16. This is a targeted critical comparison, not a
 systematic review and not an assertion of complete coverage. A newer model's
 existence is not empirical validation of SPLAS. Numerical tests, culture scores,

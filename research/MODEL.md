@@ -1,5 +1,13 @@
 # SPLAS-CN 0.2: mathematical and epistemic specification
 
+The scientific purpose is a Pattern Oriented Modelling toy study: identify
+relatively simple rules that jointly generate and explain ecosystem patterns.
+The [thesis-grounded protocol](pom/STUDY_PROTOCOL.md) defines the study sequence
+and the [current diagnosis](pom/CURRENT_ASSESSMENT.md) assesses the available
+pattern evidence. Site prediction and absolute ocean-export matching are not
+the primary objective. Element accounting and numerical robustness remain
+necessary for attributing an emergent pattern to the specified mechanisms.
+
 This is a new Python implementation beside the unchanged SPLAS-1.1 Fortran,
 base commit `76f992c9924420c715a660d017387882efe992dd`. It is a conservative
 reinterpretation of thesis experiments, not a bitwise reproduction or a claim

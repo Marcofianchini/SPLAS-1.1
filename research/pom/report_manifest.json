@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-16",
+  "pdf": "output/pdf/SPLAS_Protocollo_POM_2026-10-16.pdf",
+  "pages": 16,
+  "bytes": 383049,
+  "sha256": "19c0141364e1d25cbb7c3e16ada47e1ec8b84640583d9637d84c678ed3f0939e",
+  "baseline_commit": "ae55985e0f05ae05f0930c1bdfc1cca6f04052b6",
+  "model_sha256": "e7de66b3983742fc84e8114862c9a3c8fe9969fe950dc303e720395fcb6c3f85",
+  "new_ecological_simulations": 0,
+  "inputs_sha256": {
+    "research/pom/BASELINE.json": "7547e5c5c32a8b1da4a5965fa145a8fdd3bba36f59490bfeb2afbba66c25553d",
+    "research/pom/CURRENT_ASSESSMENT.md": "9a9c75ac421795d22798511c3a3c98691b811790a28db8409172fe858b9fa7c5",
+    "research/pom/README.md": "2c50ec2f3046f19c0b41867fcd2c2dc1235a48bba3001bff825415d500434c81",
+    "research/pom/STUDY_PROTOCOL.md": "20ee87ab799aa5452cbbd9c9bedc2c56809fdb2b2b38ae0e0f32d1370c12c10e",
+    "research/pom/argument-review.md": "22b9aff2443abd3087e6010587482126072a55f53badcc3b84e89097f94334ff",
+    "research/pom/current_assessment.json": "b67f37a782a16517fe3dbbc8255717d8f523ca94ec0800b6fd7c5bd09d9c698a",
+    "research/pom/next_experiments.json": "f27469d31c503cbf59fea0a8d9c5a9937133c0cbbae61080b7607e8bdff6b10d",
+    "research/pom/pattern_catalogue.json": "4ece0e8a196b8417db8a297b1179813b150b002430d371c498d964d29432715e"
+  },
+  "authoring_script_sha256": "6c9d1ff406afea8f88409d4817a60282a0e8cf09d1fd45724a5d45cee00d5933"
+}

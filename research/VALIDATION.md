@@ -1,4 +1,6 @@
-# Validation of SPLAS-CN0.2
+# Implementation checks and auxiliary physiology of SPLAS-CN0.2
+
+The primary objective is a Pattern Oriented Modelling toy study. See [the thesis-grounded protocol](pom/STUDY_PROTOCOL.md) and [current ecological diagnosis](pom/CURRENT_ASSESSMENT.md). These numerical and culture checks support that study; site prediction and absolute ocean-export matching are not its success criterion.
 
 Frozen model SHA256: `e7de66b3983742fc84e8114862c9a3c8fe9969fe950dc303e720395fcb6c3f85`.
 
@@ -38,7 +40,7 @@ These are declared heuristic numerical gates. Inspect individual metrics in acce
 
 ## Pattern checks
 
-Rank correlations below describe seven deterministic light experiments, not statistical evidence from field observations. A failed historical pattern is retained.
+Rank correlations below describe seven deterministic light experiments. They are descriptive diagnostics, not a complete POM assessment. Fianchini p32 reports mixed diversity responses; pp39-40 use export weighted by biomass and normalized by irradiance, which is not export/NPP. Thus an e-ratio sign alone neither confirms nor contradicts that historical efficiency. Fianchini p33 deliberately prescribes two annual light maxima.
 
 | Light family | rho C:N | rho evenness | rho e-ratio |
 |---|---:|---:|---:|

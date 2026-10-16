@@ -1,13 +1,39 @@
-# SPLAS-CN 0.2 - dynamic carbon and nitrogen
+# SPLAS-CN 0.2 - an ecological toy model with dynamic C and N
 
 A new conservative implementation alongside the original SPLAS-1.1 Fortran.
 It retains the size-structured ecological questions of De Pasquale (2018) and
 Fianchini (2021), while resolving carbon, nitrogen, cellular reserves, energetic
-costs, real prey stoichiometry, detrital C/N and conservative vertical transport.
+costs, actual prey stoichiometry, detrital C/N and conservative vertical transport.
 
-**Status: research prototype.** Numerical verification and culture-starvation
-assessment are distinguished from field validation. Do not use this release to
-claim validated ocean export, sequestration, or full C:N:P dynamics.
+The scientific aim is **Pattern Oriented Modelling**: explain recognizable
+ecosystem organization with relatively simple rules, following the progressive
+mechanism experiments of the two theses. Success means jointly generating and
+explaining size spectra, resource/grazer control, diversity, vertical organization
+and temporal succession within declared toy regimes. Site forecasting and matching
+an absolute ocean-export value are not the primary objective.
+
+The [thesis-grounded POM protocol](research/pom/STUDY_PROTOCOL.md) reconstructs
+that reasoning, separates imposed rules from emergent patterns, and orders the
+next experiments. The [current POM diagnosis](research/pom/CURRENT_ASSESSMENT.md)
+reuses existing results: competitive release is recognizable, while the joint
+diversity/transfer pattern remains unresolved and diversity needs further
+resolution checks. [The source argument review](research/pom/argument-review.md)
+includes page-specific evidence and corrects unequal historical comparisons.
+
+The pre-POM checkpoint is commit `ae55985`; its
+[manifest](research/pom/BASELINE.json) records333 file hashes and117 community
+cases. This methodological consolidation changes no model equations and adds no
+ecological simulations. Reproduce the checks and diagnosis with:
+
+```bash
+python scripts/analyze_pom.py --check-only
+python scripts/analyze_pom.py
+```
+
+**Status: research prototype.** The following implementation and auxiliary
+physiology checks support the POM study; they are not its ecological success
+score. Units, element closure and robustness of the claimed patterns remain
+necessary in an idealized model.
 
 | Evidence | Assessment |
 |---|---|
@@ -17,8 +43,9 @@ claim validated ocean export, sequestration, or full C:N:P dynamics.
 |Vertical resolution |40/80 fails. Between80/160, export changes2.18%, but N stock6.62% and NPP5.44% exceed the5% bulk criterion. Overall convergence is not demonstrated. |
 |Four N-starvation cultures | Partial exploratory skill; initial-value persistence outperforms the shared model for Micromonas. |
 
-The complete assessment is in [VALIDATION.md](research/VALIDATION.md). A
-closed element ledger does not establish physiological or field validity.
+Implementation evidence is in [VALIDATION.md](research/VALIDATION.md). Ecological
+pattern assessment and the new study design are in [research/pom](research/pom).
+Closed element ledgers do not alone identify the ecological mechanisms.
 
 ## Run
 
